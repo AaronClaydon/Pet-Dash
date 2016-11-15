@@ -36,7 +36,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bZ-zR-uOP">
                                 <rect key="frame" x="19" y="20" width="65" height="60"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8z-w7-9Da">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8z-w7-9Da">
                                 <rect key="frame" x="34" y="35" width="35" height="30"/>
                                 <state key="normal" title="Mute"/>
                             </button>
@@ -51,7 +51,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1wg-zM-fCe" secondAttribute="trailing" constant="50" id="odX-V9-q2q"/>
                             <constraint firstItem="vma-m3-9Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="pft-pK-QPy"/>
                             <constraint firstItem="8Vn-Ze-tLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="rua-HK-rEu"/>
+                            <constraint firstItem="q8z-w7-9Da" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="sQS-fI-TGS"/>
                             <constraint firstItem="1wg-zM-fCe" firstAttribute="top" secondItem="8Vn-Ze-tLD" secondAttribute="bottom" constant="20" id="vEt-af-pNq"/>
+                            <constraint firstItem="q8z-w7-9Da" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="y8C-6k-QDf"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -80,11 +82,11 @@
                                 <rect key="frame" x="167" y="619" width="81" height="30"/>
                                 <state key="normal" title="How to play"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-7p-O63">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-7p-O63">
                                 <rect key="frame" x="26" y="28" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sj-2F-QPV">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sj-2F-QPV">
                                 <rect key="frame" x="354" y="28" width="35" height="30"/>
                                 <state key="normal" title="Mute"/>
                             </button>
@@ -102,6 +104,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hLl-Ii-vD7" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="30" id="1UR-ch-Wgx"/>
+                            <constraint firstItem="tjA-7p-O63" firstAttribute="top" secondItem="UFx-jb-hwY" secondAttribute="bottom" constant="5" id="2st-7q-Zdc"/>
                             <constraint firstAttribute="trailing" secondItem="RwE-Fh-QBt" secondAttribute="trailing" constant="50" id="7QE-ow-vLg"/>
                             <constraint firstAttribute="trailing" secondItem="U8b-NX-FcA" secondAttribute="trailing" constant="50" id="7Ym-eR-Fg3"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leadingMargin" constant="50" id="9G1-Gp-549"/>
@@ -109,10 +112,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LC3-6u-T2d" secondAttribute="trailing" constant="50" id="J55-V3-aDt"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="top" secondItem="RwE-Fh-QBt" secondAttribute="bottom" constant="20" id="Kd1-4h-a3k"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="top" secondItem="U8b-NX-FcA" secondAttribute="bottom" constant="20" id="N2X-PI-JuW"/>
+                            <constraint firstItem="tjA-7p-O63" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leadingMargin" constant="5" id="N5k-nU-r7K"/>
+                            <constraint firstItem="2Sj-2F-QPV" firstAttribute="top" secondItem="UFx-jb-hwY" secondAttribute="bottom" constant="5" id="O5e-x8-HWo"/>
                             <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="hLl-Ii-vD7" secondAttribute="bottom" constant="400" id="OUE-Gc-wPg"/>
                             <constraint firstAttribute="trailing" secondItem="hLl-Ii-vD7" secondAttribute="trailing" constant="80" id="Qpk-Sq-jjy"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="50" id="UKN-oJ-B9t"/>
                             <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="LC3-6u-T2d" secondAttribute="bottom" constant="45" id="Uld-hI-bNV"/>
+                            <constraint firstAttribute="trailing" secondItem="2Sj-2F-QPV" secondAttribute="trailing" constant="10" id="eM6-zb-zAt"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
