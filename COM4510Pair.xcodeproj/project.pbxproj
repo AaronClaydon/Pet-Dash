@@ -15,6 +15,11 @@
 		5836541F1DDB485E00AC0F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */; };
 		5836542A1DDB485E00AC0F2D /* COM4510PairTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654291DDB485E00AC0F2D /* COM4510PairTests.m */; };
 		583654351DDB485F00AC0F2D /* COM4510PairUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654341DDB485F00AC0F2D /* COM4510PairUITests.m */; };
+		583654471DDB5A3500AC0F2D /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 583654421DDB5A3500AC0F2D /* bird.png */; };
+		583654481DDB5A3500AC0F2D /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 583654431DDB5A3500AC0F2D /* cat.png */; };
+		583654491DDB5A3500AC0F2D /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 583654441DDB5A3500AC0F2D /* dog.png */; };
+		5836544A1DDB5A3500AC0F2D /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 583654451DDB5A3500AC0F2D /* fish.png */; };
+		5836544B1DDB5A3500AC0F2D /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 583654461DDB5A3500AC0F2D /* mouse.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		583654301DDB485F00AC0F2D /* COM4510PairUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COM4510PairUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654341DDB485F00AC0F2D /* COM4510PairUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COM4510PairUITests.m; sourceTree = "<group>"; };
 		583654361DDB485F00AC0F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		583654421DDB5A3500AC0F2D /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		583654431DDB5A3500AC0F2D /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
+		583654441DDB5A3500AC0F2D /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
+		583654451DDB5A3500AC0F2D /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish.png; sourceTree = "<group>"; };
+		583654461DDB5A3500AC0F2D /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,11 @@
 		5836540F1DDB485E00AC0F2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				583654421DDB5A3500AC0F2D /* bird.png */,
+				583654431DDB5A3500AC0F2D /* cat.png */,
+				583654441DDB5A3500AC0F2D /* dog.png */,
+				583654451DDB5A3500AC0F2D /* fish.png */,
+				583654461DDB5A3500AC0F2D /* mouse.png */,
 				583654101DDB485E00AC0F2D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -243,7 +258,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583654491DDB5A3500AC0F2D /* dog.png in Resources */,
+				583654481DDB5A3500AC0F2D /* cat.png in Resources */,
+				583654471DDB5A3500AC0F2D /* bird.png in Resources */,
 				5836541F1DDB485E00AC0F2D /* LaunchScreen.storyboard in Resources */,
+				5836544A1DDB5A3500AC0F2D /* fish.png in Resources */,
+				5836544B1DDB5A3500AC0F2D /* mouse.png in Resources */,
 				5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */,
 				5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */,
 			);
