@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BvY-tY-9db">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lCb-sS-AFS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -166,8 +166,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-ha-tA1">
                                         <rect key="frame" x="153" y="21" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="Chh-VL-h1h"/>
-                                            <constraint firstAttribute="height" constant="64" id="Iy4-ex-qMT"/>
+                                            <constraint firstAttribute="height" constant="64" id="0a8-nj-cOD"/>
+                                            <constraint firstAttribute="width" constant="64" id="FZD-kM-zjo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
                                         <state key="normal" title="2" backgroundImage="grid_red.png">
@@ -182,17 +182,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
                                         <state key="normal" title="3" backgroundImage="grid_red.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-eK-woQ">
-                                        <rect key="frame" x="153" y="140" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="5w1-KU-heP"/>
-                                            <constraint firstAttribute="width" constant="64" id="syE-cg-Zhk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
-                                        <state key="normal" title="5" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -218,28 +207,37 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-eK-woQ">
+                                        <rect key="frame" x="153" y="140" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="TbO-vv-aA3"/>
+                                            <constraint firstAttribute="width" constant="64" id="eEL-i7-PWW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
+                                        <state key="normal" title="5" backgroundImage="grid_red.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TqG-eK-woQ" firstAttribute="leading" secondItem="ENQ-Ip-2eu" secondAttribute="trailing" constant="45" id="4NR-pf-4c6"/>
+                                    <constraint firstItem="pLr-ha-tA1" firstAttribute="centerX" secondItem="uRp-Cv-3V4" secondAttribute="centerX" id="60P-gs-5rS"/>
                                     <constraint firstAttribute="bottom" secondItem="iny-ii-7xB" secondAttribute="bottom" constant="10" id="F8o-R4-1VT"/>
-                                    <constraint firstItem="iny-ii-7xB" firstAttribute="leading" secondItem="TqG-eK-woQ" secondAttribute="trailing" constant="45" id="G02-yR-viz"/>
-                                    <constraint firstAttribute="bottom" secondItem="TqG-eK-woQ" secondAttribute="bottom" constant="10" id="OSE-Eo-Bkm"/>
+                                    <constraint firstItem="TqG-eK-woQ" firstAttribute="centerX" secondItem="uRp-Cv-3V4" secondAttribute="centerX" id="KvN-Wg-6Ga"/>
+                                    <constraint firstItem="pLr-ha-tA1" firstAttribute="top" secondItem="uRp-Cv-3V4" secondAttribute="top" constant="10" id="LuX-mt-5me"/>
                                     <constraint firstAttribute="bottom" secondItem="ENQ-Ip-2eu" secondAttribute="bottom" constant="10" id="Sba-8A-EHG"/>
                                     <constraint firstAttribute="trailing" secondItem="X0o-92-rHw" secondAttribute="trailing" constant="10" id="TZt-PV-7t1"/>
-                                    <constraint firstItem="X0o-92-rHw" firstAttribute="leading" secondItem="pLr-ha-tA1" secondAttribute="trailing" constant="45" id="TfX-gF-PIO"/>
                                     <constraint firstAttribute="width" constant="280" id="VOD-sq-EFO"/>
                                     <constraint firstItem="ENQ-Ip-2eu" firstAttribute="leading" secondItem="uRp-Cv-3V4" secondAttribute="leading" constant="10" id="YI8-a7-OVp"/>
                                     <constraint firstAttribute="trailing" secondItem="iny-ii-7xB" secondAttribute="trailing" constant="10" id="YzR-mq-AbK"/>
                                     <constraint firstAttribute="height" constant="200" id="dZB-KK-CQc"/>
                                     <constraint firstItem="7po-Mp-hQV" firstAttribute="leading" secondItem="uRp-Cv-3V4" secondAttribute="leading" constant="10" id="eyC-H0-12m"/>
-                                    <constraint firstItem="pLr-ha-tA1" firstAttribute="leading" secondItem="7po-Mp-hQV" secondAttribute="trailing" constant="45" id="hhn-ZA-rV4"/>
                                     <constraint firstItem="7po-Mp-hQV" firstAttribute="top" secondItem="uRp-Cv-3V4" secondAttribute="top" constant="10" id="i9p-Cw-a2F"/>
-                                    <constraint firstItem="pLr-ha-tA1" firstAttribute="top" secondItem="uRp-Cv-3V4" secondAttribute="top" constant="10" id="m7Z-6T-9Op"/>
+                                    <constraint firstAttribute="bottom" secondItem="TqG-eK-woQ" secondAttribute="bottom" constant="10" id="rbZ-ZW-6hg"/>
                                     <constraint firstItem="X0o-92-rHw" firstAttribute="top" secondItem="uRp-Cv-3V4" secondAttribute="top" constant="10" id="zE3-Gk-aQd"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose a level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-fB-Bvp">
-                                <rect key="frame" x="114" y="169" width="186" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose a level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-fB-Bvp">
+                                <rect key="frame" x="78" y="169" width="258" height="21"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -248,10 +246,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uRp-Cv-3V4" firstAttribute="leading" secondItem="XkF-7a-PSW" secondAttribute="leading" constant="10" id="PvX-L9-ZSc"/>
-                            <constraint firstAttribute="trailing" secondItem="CUx-fB-Bvp" secondAttribute="trailing" constant="100" id="dl8-YS-Vnm"/>
-                            <constraint firstItem="uRp-Cv-3V4" firstAttribute="top" secondItem="CUx-fB-Bvp" secondAttribute="bottom" constant="24" id="dsm-aw-m5S"/>
+                            <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerX" secondItem="XkF-7a-PSW" secondAttribute="centerX" id="gra-EM-tXl"/>
                             <constraint firstAttribute="trailing" secondItem="uRp-Cv-3V4" secondAttribute="trailing" constant="10" id="hFs-ej-cor"/>
-                            <constraint firstItem="CUx-fB-Bvp" firstAttribute="leading" secondItem="XkF-7a-PSW" secondAttribute="leading" constant="100" id="uco-Ck-1tX"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -569,7 +565,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eXL-Hs-ZZ9"/>
-        <segue reference="gWI-Sr-xIM"/>
+        <segue reference="u0Z-WW-6w5"/>
         <segue reference="Ru2-Wx-vd4"/>
     </inferredMetricsTieBreakers>
 </document>
