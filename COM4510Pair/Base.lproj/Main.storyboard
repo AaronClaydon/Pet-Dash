@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O7t-Sy-kha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BvY-tY-9db">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -263,7 +263,7 @@
         <!--Game-->
         <scene sceneID="Coh-fB-gQD">
             <objects>
-                <viewController title="Game" id="BvY-tY-9db" customClass="BackgroundViewController" sceneMemberID="viewController">
+                <viewController title="Game" id="BvY-tY-9db" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYd-nj-lPf"/>
                         <viewControllerLayoutGuide type="bottom" id="4HD-6E-ghQ"/>
@@ -305,18 +305,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCa-XD-DP2">
                                 <rect key="frame" x="20" y="149" width="374" height="481"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="game field demo.png" translatesAutoresizingMaskIntoConstraints="NO" id="PAa-W7-PMr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="481"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="PAa-W7-PMr" firstAttribute="leading" secondItem="yCa-XD-DP2" secondAttribute="leading" id="2MH-EN-hNd"/>
-                                    <constraint firstAttribute="trailing" secondItem="PAa-W7-PMr" secondAttribute="trailing" id="7K5-f0-gRx"/>
-                                    <constraint firstItem="PAa-W7-PMr" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="top" id="QZ2-Zz-1eT"/>
-                                    <constraint firstAttribute="bottom" secondItem="PAa-W7-PMr" secondAttribute="bottom" id="Vva-yA-tiI"/>
-                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpG-VU-YBQ">
                                 <rect key="frame" x="82" y="84" width="92" height="21"/>
@@ -351,6 +340,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="gameField" destination="yCa-XD-DP2" id="DU4-3o-lYU"/>
+                        <outlet property="scoreLabel" destination="WpG-VU-YBQ" id="Lkl-KJ-ID6"/>
+                        <outlet property="timerLabel" destination="izL-Z5-X3b" id="zQd-sb-qnA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e6-Tg-eoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -519,6 +513,9 @@
                                         <state key="normal" title="Back to home" backgroundImage="button.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="O7t-Sy-kha" kind="show" id="e6D-FK-vsE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-9G-aS1">
                                         <rect key="frame" x="4" y="77" width="146" height="59"/>
@@ -530,6 +527,9 @@
                                         <state key="normal" title="Change levels" backgroundImage="button.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="lCb-sS-AFS" kind="show" id="Ghj-ud-LWn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -562,14 +562,14 @@
         <image name="button_mute.png" width="500" height="500"/>
         <image name="button_pause.png" width="500" height="500"/>
         <image name="button_smaller.png" width="250" height="90"/>
-        <image name="game field demo.png" width="3672" height="4170"/>
         <image name="grid_red.png" width="500" height="500"/>
         <image name="score.png" width="500" height="500"/>
         <image name="scorefield.png" width="500" height="343"/>
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yun-N7-0Vo"/>
+        <segue reference="eXL-Hs-ZZ9"/>
+        <segue reference="gWI-Sr-xIM"/>
         <segue reference="Ru2-Wx-vd4"/>
     </inferredMetricsTieBreakers>
 </document>

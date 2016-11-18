@@ -16,6 +16,7 @@
 		5836542A1DDB485E00AC0F2D /* COM4510PairTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654291DDB485E00AC0F2D /* COM4510PairTests.m */; };
 		583654351DDB485F00AC0F2D /* COM4510PairUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654341DDB485F00AC0F2D /* COM4510PairUITests.m */; };
 		588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050E81DDF5243006D2AA3 /* BackgroundViewController.m */; };
+		588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050EB1DDF5926006D2AA3 /* GameViewController.m */; };
 		58C0E8BE1DDF1AF7004D847F /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8BD1DDF1AF7004D847F /* button.png */; };
 		58C0E8C01DDF1C92004D847F /* scorefield.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8BF1DDF1C92004D847F /* scorefield.png */; };
 		58C0E8C21DDF1C9A004D847F /* grid_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8C11DDF1C9A004D847F /* grid_red.png */; };
@@ -69,6 +70,8 @@
 		583654361DDB485F00AC0F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		588050E71DDF5243006D2AA3 /* BackgroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundViewController.h; sourceTree = "<group>"; };
 		588050E81DDF5243006D2AA3 /* BackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundViewController.m; sourceTree = "<group>"; };
+		588050EA1DDF5926006D2AA3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		588050EB1DDF5926006D2AA3 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		58C0E8BD1DDF1AF7004D847F /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		58C0E8BF1DDF1C92004D847F /* scorefield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scorefield.png; sourceTree = "<group>"; };
 		58C0E8C11DDF1C9A004D847F /* grid_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_red.png; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				583654161DDB485E00AC0F2D /* ViewController.m */,
 				588050E71DDF5243006D2AA3 /* BackgroundViewController.h */,
 				588050E81DDF5243006D2AA3 /* BackgroundViewController.m */,
+				588050EA1DDF5926006D2AA3 /* GameViewController.h */,
+				588050EB1DDF5926006D2AA3 /* GameViewController.m */,
 				583654181DDB485E00AC0F2D /* Main.storyboard */,
 				5836541B1DDB485E00AC0F2D /* Assets.xcassets */,
 				5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */,
@@ -335,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */,
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
 				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
@@ -482,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheffield.COM4510Pair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheffield.COM4510Pair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
