@@ -46,7 +46,7 @@
                                 @"red" : [UIImage imageNamed:@"grid_red.png"],
                                 @"green" : [UIImage imageNamed:@"grid_green.png"],
                                 @"blue" : [UIImage imageNamed:@"grid_blue.png"],
-                                @"yellow" : [UIImage imageNamed:@"grid_yellow.png"],
+                                @"yellow" : [UIImage imageNamed:@"grid_cat.png"],
                                 @"orange" : [UIImage imageNamed:@"grid_orange.png"]
                                 };
     

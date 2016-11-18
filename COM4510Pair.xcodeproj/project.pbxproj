@@ -17,6 +17,7 @@
 		583654351DDB485F00AC0F2D /* COM4510PairUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654341DDB485F00AC0F2D /* COM4510PairUITests.m */; };
 		588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050E81DDF5243006D2AA3 /* BackgroundViewController.m */; };
 		588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050EB1DDF5926006D2AA3 /* GameViewController.m */; };
+		588050EE1DDF6409006D2AA3 /* grid_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 588050ED1DDF6409006D2AA3 /* grid_cat.png */; };
 		58C0E8BE1DDF1AF7004D847F /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8BD1DDF1AF7004D847F /* button.png */; };
 		58C0E8C01DDF1C92004D847F /* scorefield.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8BF1DDF1C92004D847F /* scorefield.png */; };
 		58C0E8C21DDF1C9A004D847F /* grid_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8C11DDF1C9A004D847F /* grid_red.png */; };
@@ -72,6 +73,7 @@
 		588050E81DDF5243006D2AA3 /* BackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundViewController.m; sourceTree = "<group>"; };
 		588050EA1DDF5926006D2AA3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		588050EB1DDF5926006D2AA3 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		588050ED1DDF6409006D2AA3 /* grid_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_cat.png; sourceTree = "<group>"; };
 		58C0E8BD1DDF1AF7004D847F /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		58C0E8BF1DDF1C92004D847F /* scorefield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scorefield.png; sourceTree = "<group>"; };
 		58C0E8C11DDF1C9A004D847F /* grid_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_red.png; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		5836540F1DDB485E00AC0F2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				588050ED1DDF6409006D2AA3 /* grid_cat.png */,
 				58C0E8D91DDF3292004D847F /* game field demo.png */,
 				58C0E8D71DDF211C004D847F /* button_smaller.png */,
 				58C0E8C91DDF1F4F004D847F /* button_mute.png */,
@@ -302,6 +305,7 @@
 				58C0E8D11DDF1F4F004D847F /* grid_blue.png in Resources */,
 				58C0E8D31DDF1F4F004D847F /* grid_orange.png in Resources */,
 				58C0E8BE1DDF1AF7004D847F /* button.png in Resources */,
+				588050EE1DDF6409006D2AA3 /* grid_cat.png in Resources */,
 				58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */,
 				58C0E8C81DDF1D10004D847F /* background image.png in Resources */,
 				5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */,

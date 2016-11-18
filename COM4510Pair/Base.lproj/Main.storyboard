@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3R-e1-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2363" y="515"/>
+            <point key="canvasLocation" x="2775" y="363"/>
         </scene>
         <!--How to play-->
         <scene sceneID="aTh-iA-cCp">
@@ -119,6 +119,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Sc-tQc">
                                 <rect key="frame" x="94" y="204" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-X0-Ov4">
+                                <rect key="frame" x="26" y="15" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="O7t-Sy-kha" kind="show" id="UtM-ev-Xm3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -126,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQF-AC-TvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="1007"/>
+            <point key="canvasLocation" x="3248" y="1197"/>
         </scene>
         <!--Level-->
         <scene sceneID="wBk-NW-9o4">
@@ -140,15 +147,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp1-zg-Lt7">
-                                <rect key="frame" x="20" y="85" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BvY-tY-9db" kind="popoverPresentation" popoverAnchorView="fp1-zg-Lt7" id="u0Z-WW-6w5">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-Cv-3V4">
                                 <rect key="frame" x="16" y="227" width="382" height="246"/>
                                 <subviews>
@@ -242,9 +240,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-bV-R4A">
+                                <rect key="frame" x="331" y="28" width="46" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="NzE-mR-u0X"/>
+                                    <constraint firstAttribute="height" constant="46" id="hDx-bu-hFZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="button_mute.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-QK-UFU">
+                                <rect key="frame" x="31" y="37" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="O7t-Sy-kha" kind="show" id="JoY-oV-gFU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp1-zg-Lt7">
+                                <rect key="frame" x="190" y="102" width="96" height="30"/>
+                                <state key="normal" title="Choose levels"/>
+                                <connections>
+                                    <segue destination="BvY-tY-9db" kind="popoverPresentation" popoverAnchorView="fp1-zg-Lt7" id="u0Z-WW-6w5">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lJ7-bV-R4A" secondAttribute="trailing" constant="10" id="5GT-MG-M05"/>
+                            <constraint firstItem="lJ7-bV-R4A" firstAttribute="top" secondItem="kBe-rM-QRQ" secondAttribute="bottom" constant="10" id="N6J-yU-gJn"/>
                             <constraint firstItem="uRp-Cv-3V4" firstAttribute="leading" secondItem="XkF-7a-PSW" secondAttribute="leading" constant="10" id="PvX-L9-ZSc"/>
                             <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerX" secondItem="XkF-7a-PSW" secondAttribute="centerX" id="gra-EM-tXl"/>
                             <constraint firstAttribute="trailing" secondItem="uRp-Cv-3V4" secondAttribute="trailing" constant="10" id="hFs-ej-cor"/>
@@ -275,7 +299,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os8-Um-jqv">
-                                <rect key="frame" x="335" y="54" width="42" height="38"/>
+                                <rect key="frame" x="335" y="28" width="42" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ZHX-8z-dhq"/>
                                     <constraint firstAttribute="width" constant="45" id="fJ7-Xy-e6D"/>
@@ -316,11 +340,20 @@
                                     <segue destination="bzU-Gw-5Jv" kind="show" id="Gvo-da-ZSG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFy-J3-6Dt">
+                                <rect key="frame" x="330" y="84" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="40K-VF-Ygo"/>
+                                    <constraint firstAttribute="height" constant="45" id="NxM-g2-3Yr"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="button_mute.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vol-9P-812" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="10" id="6SM-uv-yRH"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="trailing" secondItem="ccd-Nh-Z2R" secondAttribute="trailingMargin" constant="10" id="Ap8-Cb-nlt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fFy-J3-6Dt" secondAttribute="trailing" constant="10" id="DaM-aF-788"/>
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="70" id="Jjw-Ab-aAr"/>
                             <constraint firstItem="vol-9P-812" firstAttribute="leading" secondItem="ccd-Nh-Z2R" secondAttribute="leadingMargin" constant="10" id="M7t-lm-3gU"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="leading" secondItem="ccd-Nh-Z2R" secondAttribute="leadingMargin" constant="-10" id="Qcx-wY-ZV0"/>
@@ -332,6 +365,7 @@
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="leading" secondItem="vol-9P-812" secondAttribute="leading" id="nz9-dd-z8h"/>
                             <constraint firstItem="os8-Um-jqv" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="10" id="qt3-C7-FAz"/>
                             <constraint firstItem="4HD-6E-ghQ" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="bottom" constant="90" id="x69-Za-DTi"/>
+                            <constraint firstItem="fFy-J3-6Dt" firstAttribute="top" secondItem="os8-Um-jqv" secondAttribute="bottom" constant="15" id="zPH-zq-jK8"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="55" id="zfj-jX-T1P"/>
                         </constraints>
                     </view>
@@ -564,8 +598,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eXL-Hs-ZZ9"/>
+        <segue reference="UtM-ev-Xm3"/>
+        <segue reference="IM3-SV-jrg"/>
         <segue reference="u0Z-WW-6w5"/>
-        <segue reference="Ru2-Wx-vd4"/>
     </inferredMetricsTieBreakers>
 </document>
