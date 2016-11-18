@@ -376,7 +376,7 @@
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="leading" secondItem="vol-9P-812" secondAttribute="trailing" constant="90" id="nz9-dd-z8h"/>
                             <constraint firstItem="os8-Um-jqv" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="10" id="qt3-C7-FAz"/>
                             <constraint firstItem="4HD-6E-ghQ" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="bottom" constant="90" id="x69-Za-DTi"/>
-                            <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="110" id="zfj-jX-T1P"/>
+                            <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="95" id="zfj-jX-T1P"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
