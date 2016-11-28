@@ -32,16 +32,16 @@
     self.height = 8;
     int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.width;
     
-    self.gameArray = @[
+    self.gameArray = [@[
+                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         ];
+                         ] mutableCopy];
     
     NSDictionary *tiles = @{
                                 @"red" : [UIImage imageNamed:@"grid_red.png"],
@@ -72,34 +72,68 @@
     int column = sender.column;
     NSString* tileType = [[self.gameArray objectAtIndex:row] objectAtIndex:column];
     
+    self.checkedArray = [@[
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
+                       ] mutableCopy];
+    
     int score = [self checkClusterMatchForTile:tileType inRow:row andColumn:column];
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
 }
 
 -(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column {
-    if(row - 1 >= 0) {
-        if([[self.gameArray objectAtIndex:row - 1] objectAtIndex:column] == tile) {
-            NSLog(@"row -1 match");
-        }
-    }
-    if(row + 1 < self.height) {
-        if([[self.gameArray objectAtIndex:row + 1] objectAtIndex:column] == tile) {
-            NSLog(@"row +1 match");
-        }
-    }
-    if(column - 1 >= 0) {
-        if([[self.gameArray objectAtIndex:row] objectAtIndex:column - 1] == tile) {
-            NSLog(@"column -1 match");
-        }
-    }
-    if(column + 1 < self.width) {
-        if([[self.gameArray objectAtIndex:row] objectAtIndex:column + 1] == tile) {
-            NSLog(@"column +1 match");
-        }
-    }
+    int score = 0;
     
-    return 0;
+    NSLog(@"row %i column %i", row, column);
+    
+    if([[[self.checkedArray objectAtIndex:row] objectAtIndex:column] isEqual: @false]) {
+        //[[self.checkedArray objectAtIndex:row] replaceObjectAtIndex:column withObject:@true];
+        NSMutableArray* rowArray = [self.checkedArray objectAtIndex:row];
+        [rowArray replaceObjectAtIndex:column withObject:@true];
+        [self.checkedArray replaceObjectAtIndex:row withObject:rowArray];
+        
+        if(row - 1 >= 0) {
+            if([[self.gameArray objectAtIndex:row - 1] objectAtIndex:column] == tile) {
+                NSLog(@"row -1 match");
+                score++;
+                
+                score += [self checkClusterMatchForTile:tile inRow:row-1 andColumn:column];
+            }
+        }
+        if(row + 1 < self.height) {
+            if([[self.gameArray objectAtIndex:row + 1] objectAtIndex:column] == tile) {
+                NSLog(@"row +1 match");
+                score++;
+                
+                score += [self checkClusterMatchForTile:tile inRow:row+1 andColumn:column];
+            }
+        }
+        if(column - 1 >= 0) {
+            if([[self.gameArray objectAtIndex:row] objectAtIndex:column - 1] == tile) {
+                NSLog(@"column -1 match");
+                score++;
+                
+                score += [self checkClusterMatchForTile:tile inRow:row andColumn:column-1];
+            }
+        }
+        if(column + 1 < self.width) {
+            if([[self.gameArray objectAtIndex:row] objectAtIndex:column + 1] == tile) {
+                NSLog(@"column +1 match");
+                score++;
+                
+                score += [self checkClusterMatchForTile:tile inRow:row andColumn:column+1];
+            }
+        }
+    }
+    NSLog(@"score %i", score);
+    return score;
 }
 
 /*

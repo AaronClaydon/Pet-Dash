@@ -14,9 +14,12 @@
 @property (weak) IBOutlet UILabel* scoreLabel;
 @property (weak) IBOutlet UILabel* timerLabel;
 @property (weak) IBOutlet UIView* gameField;
-@property (strong) NSArray* gameArray;
+@property (strong) NSMutableArray* gameArray;
 @property int width;
 @property int height;
+
+
+@property (strong) NSMutableArray* checkedArray;
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
