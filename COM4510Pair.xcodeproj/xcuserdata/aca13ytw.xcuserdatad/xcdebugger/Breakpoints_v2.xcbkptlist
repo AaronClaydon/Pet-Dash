@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COM4510Pair/GameViewController.m"
-            timestampString = "501178165.193925"
+            timestampString = "502033098.542888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-initGame"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COM4510Pair/GameViewController.m"
-            timestampString = "502031858.437556"
+            timestampString = "502033098.542888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-buttonClicked"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-buttonClicked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

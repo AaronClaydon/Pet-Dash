@@ -7,6 +7,7 @@
 //
 
 #import "BackgroundViewController.h"
+#import "TileButton.h"
 
 @interface GameViewController : BackgroundViewController
 
@@ -16,5 +17,5 @@
 @property (strong) NSArray* gameArray;
 
 -(void)initGame;
--(void)buttonClicked;
+-(void)buttonClicked:(TileButton*)sender;
 @end

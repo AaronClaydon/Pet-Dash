@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "TileButton.h"
 
 @interface GameViewController ()
 
@@ -50,22 +51,27 @@
                                 @"orange" : [UIImage imageNamed:@"grid_fish.png"]
                                 };
     
-    for (int x = 0; x < width; x++) {
-        for (int y = 0; y < height; y++) {
-            NSString* tileType = [[self.gameArray objectAtIndex:y] objectAtIndex:x];
+    for (int row = 0; row < height; row++) {
+        for (int column = 0; column < width; column++) {
+            NSString* tileType = [[self.gameArray objectAtIndex:row] objectAtIndex:column];
             
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+            TileButton *button = [TileButton buttonWithType:UIButtonTypeCustom];
+            [button setRow:row];
+            [button setColumn:column];
+            [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [button setTitle:@"" forState:UIControlStateNormal];
             [button setBackgroundImage: [tiles objectForKey: tileType] forState:UIControlStateNormal];
-            button.frame = CGRectMake(x * tileSize, y * tileSize, tileSize, tileSize);
+            button.frame = CGRectMake(column * tileSize, row * tileSize, tileSize, tileSize);
             [self.gameField addSubview:button];
         }
     }
 }
 
--(void)buttonClicked {
+-(void)buttonClicked:(TileButton*)sender {
+    int row = sender.row;
+    int column = sender.column;
     
+    NSLog(@"button clicked %i %i", row, column);
 }
 
 /*

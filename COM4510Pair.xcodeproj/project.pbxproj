@@ -36,6 +36,7 @@
 		58E225811DEC605A0080882D /* grid_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E225801DEC605A0080882D /* grid_fish.png */; };
 		58E225831DEC60670080882D /* grid_bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E225821DEC60670080882D /* grid_bird.png */; };
 		58E225851DEC62910080882D /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E225841DEC62910080882D /* button_back.png */; };
+		58E225881DEC69310080882D /* TileButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E225871DEC69310080882D /* TileButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		58E225801DEC605A0080882D /* grid_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_fish.png; sourceTree = "<group>"; };
 		58E225821DEC60670080882D /* grid_bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_bird.png; sourceTree = "<group>"; };
 		58E225841DEC62910080882D /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
+		58E225861DEC69310080882D /* TileButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileButton.h; sourceTree = "<group>"; };
+		58E225871DEC69310080882D /* TileButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 				588050E81DDF5243006D2AA3 /* BackgroundViewController.m */,
 				588050EA1DDF5926006D2AA3 /* GameViewController.h */,
 				588050EB1DDF5926006D2AA3 /* GameViewController.m */,
+				58E225861DEC69310080882D /* TileButton.h */,
+				58E225871DEC69310080882D /* TileButton.m */,
 				583654181DDB485E00AC0F2D /* Main.storyboard */,
 				5836541B1DDB485E00AC0F2D /* Assets.xcassets */,
 				5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */,
@@ -357,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */,
+				58E225881DEC69310080882D /* TileButton.m in Sources */,
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
 				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
