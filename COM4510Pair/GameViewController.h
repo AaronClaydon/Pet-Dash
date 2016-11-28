@@ -15,7 +15,10 @@
 @property (weak) IBOutlet UILabel* timerLabel;
 @property (weak) IBOutlet UIView* gameField;
 @property (strong) NSArray* gameArray;
+@property int width;
+@property int height;
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
+-(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 @end

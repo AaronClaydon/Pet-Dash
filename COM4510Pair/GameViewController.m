@@ -28,9 +28,9 @@
 }
 
 -(void)initGame {
-    int width = 7;
-    int height = 8;
-    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / 7;
+    self.width = 7;
+    self.height = 8;
+    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.width;
     
     self.gameArray = @[
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
@@ -51,8 +51,8 @@
                                 @"orange" : [UIImage imageNamed:@"grid_fish.png"]
                                 };
     
-    for (int row = 0; row < height; row++) {
-        for (int column = 0; column < width; column++) {
+    for (int row = 0; row < self.height; row++) {
+        for (int column = 0; column < self.width; column++) {
             NSString* tileType = [[self.gameArray objectAtIndex:row] objectAtIndex:column];
             
             TileButton *button = [TileButton buttonWithType:UIButtonTypeCustom];
@@ -70,8 +70,36 @@
 -(void)buttonClicked:(TileButton*)sender {
     int row = sender.row;
     int column = sender.column;
+    NSString* tileType = [[self.gameArray objectAtIndex:row] objectAtIndex:column];
     
-    NSLog(@"button clicked %i %i", row, column);
+    int score = [self checkClusterMatchForTile:tileType inRow:row andColumn:column];
+    
+    NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
+}
+
+-(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column {
+    if(row - 1 >= 0) {
+        if([[self.gameArray objectAtIndex:row - 1] objectAtIndex:column] == tile) {
+            NSLog(@"row -1 match");
+        }
+    }
+    if(row + 1 < self.height) {
+        if([[self.gameArray objectAtIndex:row + 1] objectAtIndex:column] == tile) {
+            NSLog(@"row +1 match");
+        }
+    }
+    if(column - 1 >= 0) {
+        if([[self.gameArray objectAtIndex:row] objectAtIndex:column - 1] == tile) {
+            NSLog(@"column -1 match");
+        }
+    }
+    if(column + 1 < self.width) {
+        if([[self.gameArray objectAtIndex:row] objectAtIndex:column + 1] == tile) {
+            NSLog(@"column +1 match");
+        }
+    }
+    
+    return 0;
 }
 
 /*
