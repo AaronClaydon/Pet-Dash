@@ -31,7 +31,7 @@
     int height = 8;
     int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / 7;
     
-    NSArray *gameArray = @[
+    self.gameArray = @[
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
@@ -45,14 +45,14 @@
     NSDictionary *tiles = @{
                                 @"red" : [UIImage imageNamed:@"grid_red.png"],
                                 @"green" : [UIImage imageNamed:@"grid_green.png"],
-                                @"blue" : [UIImage imageNamed:@"grid_blue.png"],
+                                @"blue" : [UIImage imageNamed:@"grid_bird.png"],
                                 @"yellow" : [UIImage imageNamed:@"grid_cat.png"],
-                                @"orange" : [UIImage imageNamed:@"grid_orange.png"]
+                                @"orange" : [UIImage imageNamed:@"grid_fish.png"]
                                 };
     
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
-            NSString* tileType = [[gameArray objectAtIndex:y] objectAtIndex:x];
+            NSString* tileType = [[self.gameArray objectAtIndex:y] objectAtIndex:x];
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];

@@ -13,6 +13,7 @@
 @property (weak) IBOutlet UILabel* scoreLabel;
 @property (weak) IBOutlet UILabel* timerLabel;
 @property (weak) IBOutlet UIView* gameField;
+@property (strong) NSArray* gameArray;
 
 -(void)initGame;
 -(void)buttonClicked;
