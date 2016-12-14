@@ -121,7 +121,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-X0-Ov4">
                                 <rect key="frame" x="26" y="15" width="34" height="30"/>
-                                <state key="normal" backgroundImage="button_back.png"/>
+                                <state key="normal" backgroundImage="button_back_smaller.png"/>
                                 <connections>
                                     <segue destination="O7t-Sy-kha" kind="show" id="UtM-ev-Xm3"/>
                                 </connections>
@@ -250,7 +250,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-QK-UFU">
                                 <rect key="frame" x="31" y="37" width="34" height="30"/>
-                                <state key="normal" backgroundImage="button_back.png"/>
+                                <state key="normal" backgroundImage="button_back_smaller.png"/>
                                 <connections>
                                     <segue destination="O7t-Sy-kha" kind="show" id="JoY-oV-gFU"/>
                                 </connections>
@@ -304,7 +304,7 @@
                                     <constraint firstAttribute="height" constant="45" id="ZHX-8z-dhq"/>
                                     <constraint firstAttribute="width" constant="45" id="fJ7-Xy-e6D"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="button_pause.png"/>
+                                <state key="normal" backgroundImage="button_pause_smaller.png"/>
                                 <connections>
                                     <segue destination="c3F-KU-nqH" kind="show" id="Gxa-hR-rGz"/>
                                 </connections>
@@ -398,7 +398,7 @@
                                     <constraint firstAttribute="height" constant="63" id="zT4-VS-Rga"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="Continue" backgroundImage="button.png">
+                                <state key="normal" title="Continue" backgroundImage="button_smaller.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -412,7 +412,7 @@
                                     <constraint firstAttribute="height" constant="63" id="3Rp-kY-2qg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="Change levels" backgroundImage="button.png">
+                                <state key="normal" title="Change levels" backgroundImage="button_smaller.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -426,7 +426,7 @@
                                     <constraint firstAttribute="height" constant="63" id="NNc-h9-IbA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="Back to home" backgroundImage="button.png">
+                                <state key="normal" title="Back to home" backgroundImage="button_smaller.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -525,7 +525,7 @@
                                             <constraint firstAttribute="height" constant="59" id="vaf-US-Oz4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Restart" backgroundImage="button.png">
+                                        <state key="normal" title="Restart" backgroundImage="button_smaller.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -539,7 +539,7 @@
                                             <constraint firstAttribute="width" constant="146" id="xzt-fl-pC0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Back to home" backgroundImage="button.png">
+                                        <state key="normal" title="Back to home" backgroundImage="button_smaller.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -553,7 +553,7 @@
                                             <constraint firstAttribute="height" constant="59" id="czL-GX-66x"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Change levels" backgroundImage="button.png">
+                                        <state key="normal" title="Change levels" backgroundImage="button_smaller.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -587,10 +587,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button.png" width="500" height="180"/>
-        <image name="button_back.png" width="500" height="500"/>
+        <image name="button_back_smaller.png" width="100" height="100"/>
         <image name="button_mute.png" width="500" height="500"/>
-        <image name="button_pause.png" width="500" height="500"/>
+        <image name="button_pause_smaller.png" width="100" height="100"/>
         <image name="button_smaller.png" width="250" height="90"/>
         <image name="grid_red.png" width="500" height="500"/>
         <image name="score.png" width="500" height="500"/>
@@ -598,8 +597,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JoY-oV-gFU"/>
-        <segue reference="IM3-SV-jrg"/>
-        <segue reference="u0Z-WW-6w5"/>
+        <segue reference="yun-N7-0Vo"/>
+        <segue reference="e6D-FK-vsE"/>
+        <segue reference="Ghj-ud-LWn"/>
     </inferredMetricsTieBreakers>
 </document>

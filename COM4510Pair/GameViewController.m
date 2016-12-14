@@ -33,12 +33,12 @@
     int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.width;
     
     self.gameArray = [@[
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         @[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
                          ] mutableCopy];
@@ -46,9 +46,9 @@
     NSDictionary *tiles = @{
                                 @"red" : [UIImage imageNamed:@"grid_red.png"],
                                 @"green" : [UIImage imageNamed:@"grid_green.png"],
-                                @"blue" : [UIImage imageNamed:@"grid_bird.png"],
-                                @"yellow" : [UIImage imageNamed:@"grid_cat.png"],
-                                @"orange" : [UIImage imageNamed:@"grid_fish.png"]
+                                @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
+                                @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
+                                @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
                                 };
     
     for (int row = 0; row < self.height; row++) {
