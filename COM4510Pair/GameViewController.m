@@ -53,6 +53,8 @@
                                 @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
                                 };
     
+    [self updateScore];
+    
     for (int row = 0; row < self.gameModel.height; row++) {
         for (int column = 0; column < self.gameModel.width; column++) {
             NSString* tileType = [[self.gameModel.gameArray objectAtIndex:row] objectAtIndex:column];
@@ -86,10 +88,16 @@
                        ] mutableCopy];
     
     int score = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
+    self.gameModel.score += score;
+    
+    [self updateScore];
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
 }
 
+-(void)updateScore {
+    [self.scoreLabel setText:[NSString stringWithFormat:@"%i", self.gameModel.score]];
+}
 
 /*
 #pragma mark - Navigation

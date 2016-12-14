@@ -371,7 +371,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="gameField" destination="yCa-XD-DP2" id="DU4-3o-lYU"/>
-                        <outlet property="scoreLabel" destination="WpG-VU-YBQ" id="Lkl-KJ-ID6"/>
+                        <outlet property="scoreLabel" destination="WpG-VU-YBQ" id="cK5-wz-nXh"/>
                         <outlet property="timerLabel" destination="izL-Z5-X3b" id="zQd-sb-qnA"/>
                     </connections>
                 </viewController>

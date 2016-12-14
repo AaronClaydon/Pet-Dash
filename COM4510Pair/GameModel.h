@@ -19,4 +19,6 @@
 @property (strong) NSMutableArray* gameArray;
 @property (strong) NSMutableArray* checkedArray;
 -(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
+
+-(void)totalScores;
 @end
