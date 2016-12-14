@@ -8,20 +8,16 @@
 
 #import "BackgroundViewController.h"
 #import "TileButton.h"
+#import "GameModel.h"
 
 @interface GameViewController : BackgroundViewController
 
 @property (weak) IBOutlet UILabel* scoreLabel;
 @property (weak) IBOutlet UILabel* timerLabel;
 @property (weak) IBOutlet UIView* gameField;
-@property (strong) NSMutableArray* gameArray;
-@property int width;
-@property int height;
 
-
-@property (strong) NSMutableArray* checkedArray;
+@property (strong) GameModel* gameModel;
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
--(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 @end
