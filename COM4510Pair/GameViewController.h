@@ -20,4 +20,5 @@
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
+-(void)drawTiles;
 @end

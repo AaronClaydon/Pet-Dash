@@ -19,6 +19,8 @@
     //Add the first point to the stack of tiles to check
     [self addPointToCheckArray:toCheckArray withRow:row andColumn:column];
     
+    self.gameArrayNew = [self.gameArray mutableCopy];
+    
     while ([toCheckArray count] > 0) {
         //Get and remove the first value from the stack
         NSValue* pointValue = [toCheckArray objectAtIndex:0];
@@ -32,6 +34,17 @@
         
         //Incrase the score by one
         score++;
+        
+        //replace tiles
+        NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
+        int lowerBound = 0;
+        int upperBound = 4;
+        int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
+        NSString* newTile = [tileTypes objectAtIndex:tileNumber];
+        
+        NSMutableArray* rowArray = [self.gameArrayNew objectAtIndex:row];
+        [rowArray replaceObjectAtIndex:column withObject:newTile];
+        [self.gameArrayNew replaceObjectAtIndex:row withObject:rowArray];
         
         //Check the nearby touching tiles
         if(row - 1 >= 0) {

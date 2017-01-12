@@ -16,7 +16,8 @@
 @property int width;
 @property int height;
 
-@property (strong) NSMutableArray* gameArray;
+@property (strong,retain) NSMutableArray* gameArray;
+@property (strong,retain) NSMutableArray* gameArrayNew;
 @property (strong) NSMutableArray* checkedArray;
 -(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 

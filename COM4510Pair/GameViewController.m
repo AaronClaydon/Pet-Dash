@@ -32,28 +32,35 @@
     
     self.gameModel.width = 7;
     self.gameModel.height = 8;
-    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
     
     self.gameModel.gameArray = [@[
-                         @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
-                         @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ],
+                         [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
+                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                        [ @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                        [ @[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                        [ @[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          ] mutableCopy];
     
-    NSDictionary *tiles = @{
-                                @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
-                                @"green" : [UIImage imageNamed:@"grid_dog_smaller.png"],
-                                @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
-                                @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
-                                @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
-                                };
-    
     [self updateScore];
+    [self drawTiles];
+}
+
+-(void)drawTiles {
+    //delete all current tiles
+    [[self.gameField subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    NSDictionary *tiles = @{
+                            @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
+                            @"green" : [UIImage imageNamed:@"grid_dog_smaller.png"],
+                            @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
+                            @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
+                            @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
+                            };
+    
+    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
     
     for (int row = 0; row < self.gameModel.height; row++) {
         for (int column = 0; column < self.gameModel.width; column++) {
@@ -88,9 +95,15 @@
                        ] mutableCopy];
     
     int score = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
-    self.gameModel.score += score;
     
-    [self updateScore];
+    if (score >= 3) {
+        self.gameModel.score += score;
+        
+        [self updateScore];
+        
+        self.gameModel.gameArray = self.gameModel.gameArrayNew;
+        [self drawTiles];
+    }
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
 }
