@@ -46,8 +46,8 @@
                          ] mutableCopy];
     
     NSDictionary *tiles = @{
-                                @"red" : [UIImage imageNamed:@"grid_red.png"],
-                                @"green" : [UIImage imageNamed:@"grid_green.png"],
+                                @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
+                                @"green" : [UIImage imageNamed:@"grid_dog_smaller.png"],
                                 @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
                                 @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
                                 @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]

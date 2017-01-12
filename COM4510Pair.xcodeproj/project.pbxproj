@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */; };
+		5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
 		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_mouse_smaller.png; sourceTree = "<group>"; };
+		5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_dog_smaller.png; sourceTree = "<group>"; };
 		5836540C1DDB485E00AC0F2D /* COM4510Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COM4510Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		5836540F1DDB485E00AC0F2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */,
+				5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */,
 				58B759B61E019F67007F8A79 /* grid_bird_smaller.png */,
 				58B759B41E019E44007F8A79 /* grid_fish_smaller.png */,
 				58B759B81E019F8C007F8A79 /* grid_cat_smaller.png */,
@@ -322,9 +328,11 @@
 				58B759BD1E019FBB007F8A79 /* button_pause_smaller.png in Resources */,
 				58C0E8D11DDF1F4F004D847F /* grid_blue.png in Resources */,
 				58C0E8D31DDF1F4F004D847F /* grid_orange.png in Resources */,
+				5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */,
 				58B759B91E019F8C007F8A79 /* grid_cat_smaller.png in Resources */,
 				58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */,
 				58C0E8C81DDF1D10004D847F /* background image.png in Resources */,
+				5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */,
 				5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */,
 				58C0E8D51DDF1F4F004D847F /* score.png in Resources */,
 				5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */,
