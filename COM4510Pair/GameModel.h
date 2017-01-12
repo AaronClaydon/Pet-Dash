@@ -11,6 +11,7 @@
 @interface GameModel : NSObject
 
 @property int score;
+@property int currentTime;
 @property NSTimer *timer;
 
 @property int width;
@@ -21,5 +22,7 @@
 @property (strong) NSMutableArray* checkedArray;
 -(int)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 
+
 -(void)totalScores;
+
 @end

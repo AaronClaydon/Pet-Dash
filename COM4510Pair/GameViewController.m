@@ -46,6 +46,8 @@
     
     [self updateScore];
     [self drawTiles];
+    [self initTimer];
+    [self updateTimer];
 }
 
 -(void)drawTiles {
@@ -110,6 +112,26 @@
 
 -(void)updateScore {
     [self.scoreLabel setText:[NSString stringWithFormat:@"%i", self.gameModel.score]];
+}
+
+-(void)updateTimer {
+    int seconds = self.gameModel.currentTime % 60;
+    int minutes = (self.gameModel.currentTime / 60) % 60;
+    [self.timerLabel setText:[NSString stringWithFormat:@"%2d:%02d", minutes, seconds]];
+}
+
+
+-(void)initTimer{
+    self.gameModel.timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+    self.gameModel.currentTime = 10;
+}
+-(void)timerFired{
+    self.gameModel.currentTime--;
+    [self updateTimer];
+    
+    if(self.gameModel.currentTime == 0) {
+        [self performSegueWithIdentifier:@"segueToScore" sender:self];
+    }
 }
 
 /*

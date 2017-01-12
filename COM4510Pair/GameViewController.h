@@ -21,4 +21,7 @@
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
 -(void)drawTiles;
+-(void)initTimer;
+-(void)timerFired;
+
 @end
