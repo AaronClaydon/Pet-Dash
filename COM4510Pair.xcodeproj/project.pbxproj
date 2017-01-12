@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */; };
 		5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */; };
+		5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FEB71E27CE3400076BED /* ScoreViewController.m */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
 		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_mouse_smaller.png; sourceTree = "<group>"; };
 		5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_dog_smaller.png; sourceTree = "<group>"; };
+		5818FEB61E27CE3400076BED /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		5818FEB71E27CE3400076BED /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		5836540C1DDB485E00AC0F2D /* COM4510Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COM4510Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				583654161DDB485E00AC0F2D /* ViewController.m */,
 				588050E71DDF5243006D2AA3 /* BackgroundViewController.h */,
 				588050E81DDF5243006D2AA3 /* BackgroundViewController.m */,
+				5818FEB61E27CE3400076BED /* ScoreViewController.h */,
+				5818FEB71E27CE3400076BED /* ScoreViewController.m */,
 				588050EA1DDF5926006D2AA3 /* GameViewController.h */,
 				588050EB1DDF5926006D2AA3 /* GameViewController.m */,
 				58E225861DEC69310080882D /* TileButton.h */,
@@ -373,6 +378,7 @@
 				588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */,
 				58E225881DEC69310080882D /* TileButton.m in Sources */,
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
+				5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */,
 				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
 				583654111DDB485E00AC0F2D /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "BackgroundViewController.h"
 #import "TileButton.h"
 #import "GameModel.h"
+#import "ScoreViewController.h"
 
 @interface GameViewController : BackgroundViewController
 

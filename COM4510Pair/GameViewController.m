@@ -134,6 +134,14 @@
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueToScore"]) {
+        ScoreViewController* scoreViewController = [segue destinationViewController];
+        
+        [scoreViewController setScoreResult:self.gameModel.score];
+    }
+}
+
 /*
 #pragma mark - Navigation
 
