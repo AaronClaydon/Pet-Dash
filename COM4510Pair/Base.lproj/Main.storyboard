@@ -306,7 +306,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="button_pause_smaller.png"/>
                                 <connections>
-                                    <segue destination="c3F-KU-nqH" kind="show" id="Gxa-hR-rGz"/>
+                                    <segue destination="c3F-KU-nqH" kind="presentation" identifier="segueToPause" id="Gxa-hR-rGz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timer.png" translatesAutoresizingMaskIntoConstraints="NO" id="vol-9P-812">
@@ -383,7 +383,7 @@
         <!--Pause Menu-->
         <scene sceneID="vPP-pr-WTI">
             <objects>
-                <viewController title="Pause Menu" id="c3F-KU-nqH" customClass="BackgroundViewController" sceneMemberID="viewController">
+                <viewController title="Pause Menu" id="c3F-KU-nqH" customClass="PauseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GGN-8a-fUd"/>
                         <viewControllerLayoutGuide type="bottom" id="tuj-M5-gvq"/>
@@ -403,7 +403,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BvY-tY-9db" kind="show" id="gWI-Sr-xIM"/>
+                                    <action selector="continueButtonTapped:" destination="c3F-KU-nqH" eventType="primaryActionTriggered" id="g91-Ev-8Si"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgu-xi-KAK">
@@ -604,7 +604,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="2Nz-Bl-DLE"/>
         <segue reference="yun-N7-0Vo"/>
-        <segue reference="e6D-FK-vsE"/>
-        <segue reference="Ghj-ud-LWn"/>
+        <segue reference="eXL-Hs-ZZ9"/>
+        <segue reference="Ru2-Wx-vd4"/>
     </inferredMetricsTieBreakers>
 </document>

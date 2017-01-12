@@ -19,10 +19,15 @@
 
 @property (strong) GameModel* gameModel;
 
+@property (strong) NSDate* pauseStart;
+@property (strong) NSDate* previousFireDate;
+
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
 -(void)drawTiles;
 -(void)initTimer;
 -(void)timerFired;
+-(void)pauseTimer:(NSTimer*)timer;
+-(void)resumeTimer:(NSTimer*)timer;
 
 @end

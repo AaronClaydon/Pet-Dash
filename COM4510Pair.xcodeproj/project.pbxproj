@@ -10,6 +10,7 @@
 		5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */; };
 		5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */; };
 		5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FEB71E27CE3400076BED /* ScoreViewController.m */; };
+		5818FEBB1E27D3D700076BED /* PauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FEBA1E27D3D700076BED /* PauseViewController.m */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
 		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
@@ -64,6 +65,8 @@
 		5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_dog_smaller.png; sourceTree = "<group>"; };
 		5818FEB61E27CE3400076BED /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		5818FEB71E27CE3400076BED /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		5818FEB91E27D3D700076BED /* PauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseViewController.h; sourceTree = "<group>"; };
+		5818FEBA1E27D3D700076BED /* PauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseViewController.m; sourceTree = "<group>"; };
 		5836540C1DDB485E00AC0F2D /* COM4510Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COM4510Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				5818FEB71E27CE3400076BED /* ScoreViewController.m */,
 				588050EA1DDF5926006D2AA3 /* GameViewController.h */,
 				588050EB1DDF5926006D2AA3 /* GameViewController.m */,
+				5818FEB91E27D3D700076BED /* PauseViewController.h */,
+				5818FEBA1E27D3D700076BED /* PauseViewController.m */,
 				58E225861DEC69310080882D /* TileButton.h */,
 				58E225871DEC69310080882D /* TileButton.m */,
 				58B759BE1E01A556007F8A79 /* GameModel.h */,
@@ -382,6 +387,7 @@
 				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
 				583654111DDB485E00AC0F2D /* main.m in Sources */,
+				5818FEBB1E27D3D700076BED /* PauseViewController.m in Sources */,
 				58B759C01E01A556007F8A79 /* GameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

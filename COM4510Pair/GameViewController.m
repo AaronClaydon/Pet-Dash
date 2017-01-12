@@ -22,6 +22,10 @@
     [self initGame];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [self resumeTimer:self.gameModel.timer];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -139,7 +143,20 @@
         ScoreViewController* scoreViewController = [segue destinationViewController];
         
         [scoreViewController setScoreResult:self.gameModel.score];
+    } else if ([[segue identifier] isEqualToString:@"segueToPause"]) {
+        [self pauseTimer:self.gameModel.timer];
     }
+}
+
+-(void)pauseTimer:(NSTimer*)timer {
+    self.pauseStart = [NSDate dateWithTimeIntervalSinceNow:0];
+    self.previousFireDate = [self.gameModel.timer fireDate];
+    [self.gameModel.timer setFireDate:[NSDate distantFuture]];
+}
+
+-(void)resumeTimer:(NSTimer*)timer {
+    float pauseTime = -1*[self.pauseStart timeIntervalSinceNow];
+    [self.gameModel.timer setFireDate:[self.previousFireDate initWithTimeInterval:pauseTime sinceDate: self.previousFireDate]];
 }
 
 /*
