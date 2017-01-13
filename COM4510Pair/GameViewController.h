@@ -26,6 +26,7 @@
 @property (strong) NSDictionary* tileImages;
 
 @property int tileSize;
+@property int leftPadding;
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;

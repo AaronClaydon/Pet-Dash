@@ -56,6 +56,10 @@
     //size of each individual tile
     self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
     
+    //left padding of the game field
+    //worked out by the different of the game screen width and width of all the tiles
+    self.leftPadding = ([UIScreen mainScreen].bounds.size.width - 20) - (self.gameModel.width * self.tileSize) + 1;
+    
     self.gameModel.gameArray = [@[
                          [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
                          [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
@@ -98,7 +102,7 @@
             //set the correct image for the tile
             [button setBackgroundImage: [self.tileImages objectForKey: tileType] forState:UIControlStateNormal];
             //set position of the tile based of array position and tile size
-            button.frame = CGRectMake(column * self.tileSize, row * self.tileSize, self.tileSize, self.tileSize);
+            button.frame = CGRectMake(self.leftPadding + (column * self.tileSize), row * self.tileSize, self.tileSize, self.tileSize);
             
             //add button to the game field
             [self.gameField addSubview:button];
