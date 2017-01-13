@@ -28,7 +28,6 @@
 }
 
 -(void)displaytotalTime{
-    self.totalTime = 10;
     int seconds = self.totalTime % 60;
     int minutes = (self.totalTime / 60) % 60;
     [self.totalTimeLabel setText:[NSString stringWithFormat:@"%2d:%02d", minutes, seconds]];
@@ -40,7 +39,6 @@
 }
 
 -(IBAction)FBPressed{
-    self.totalTime = 10;
     int seconds = self.totalTime % 60;
     int minutes = (self.totalTime / 60) % 60;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
@@ -61,7 +59,6 @@
 }
 
 -(IBAction)TweetPressed{
-    self.totalTime = 10;
     int seconds = self.totalTime % 60;
     int minutes = (self.totalTime / 60) % 60;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])

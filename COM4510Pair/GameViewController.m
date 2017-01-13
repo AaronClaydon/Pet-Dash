@@ -45,6 +45,8 @@
     self.gameModel.width = 7;
     self.gameModel.height = 8;
     
+    self.gameModel.startTime = 30;
+    
     //size of each individual tile
     self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
     
@@ -282,7 +284,7 @@
 -(void)initTimer{
     //start the countdown timer
     self.gameModel.timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
-    self.gameModel.currentTime = 120;
+    self.gameModel.currentTime = self.gameModel.startTime;
 }
 
 -(void)timerFired{
@@ -303,6 +305,7 @@
         ScoreViewController* scoreViewController = [segue destinationViewController];
         
         [scoreViewController setScoreResult:self.gameModel.score];
+        [scoreViewController setTotalTime:self.gameModel.startTime];
     } else if ([[segue identifier] isEqualToString:@"segueToPause"]) {
         //if we are transfering to pause page - actually pause the timer
         [self pauseTimer:self.gameModel.timer];

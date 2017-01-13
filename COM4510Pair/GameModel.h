@@ -10,6 +10,7 @@
 
 @interface GameModel : NSObject
 
+@property int startTime;
 @property int score;
 @property int currentTime;
 @property NSTimer *timer;
