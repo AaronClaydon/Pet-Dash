@@ -23,6 +23,4 @@
 -(NSMutableDictionary*)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 
 
--(void)totalScores;
-
 @end

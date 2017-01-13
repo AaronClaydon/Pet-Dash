@@ -27,9 +27,13 @@
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
 -(void)drawTiles;
+
 -(void)initTimer;
 -(void)timerFired;
 -(void)pauseTimer:(NSTimer*)timer;
 -(void)resumeTimer:(NSTimer*)timer;
+
+-(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed withAnimationLength:(double)animationLength;
+-(void)dropTiles;
 
 @end

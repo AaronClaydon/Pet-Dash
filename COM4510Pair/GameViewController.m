@@ -41,8 +41,8 @@
                          [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
                          [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"yellow", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          [@[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
@@ -118,14 +118,21 @@
         [self updateScore];
         
         //self.gameModel.gameArray = self.gameModel.gameArrayNew;
-        [self animateTileDestruction:[clusterCheck objectForKey:@"tilestobedestroyed"]];
+        double animationLength = 0.4;
+        [self animateTileDestruction:[clusterCheck objectForKey:@"tilestobedestroyed"] withAnimationLength:animationLength];
+        
+        //drop tiles once shrink animations have been completed
+        dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)((animationLength * 0.5) * NSEC_PER_SEC));
+        dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+            [self dropTiles];
+        });
         //[self drawTiles];
     }
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
 }
 
--(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed {
+-(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed withAnimationLength:(double)animationLength {
     for (int i = 0; i < [tilesToBeDestroyed count]; i++) {
         NSValue* pointValue = [tilesToBeDestroyed objectAtIndex:i];
         CGPoint point;
@@ -137,13 +144,63 @@
         TileButton* tile = [[self.tilesImages objectAtIndex:row] objectAtIndex:column];
         
         //animate tile shrinking
-        [UIView animateWithDuration:0.4 animations:^ {
+        [UIView animateWithDuration:animationLength animations:^ {
             tile.transform = CGAffineTransformMakeScale(0.01, 0.01);
         } completion:^(BOOL finished) {
             [tile removeFromSuperview];
         }];
         
     }
+}
+
+-(void)dropTiles {
+    //amount we need to drop a tile
+    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
+    
+    for (int i = 0; i < self.gameModel.height; i++) {
+        
+        //go through all the tiles
+        for (int row = self.gameModel.height-1; row >= 1; row--) {
+            for (int column = self.gameModel.width-1; column >= 0; column--) {
+                NSString* tileType = [[self.gameModel.gameArrayNew objectAtIndex:row] objectAtIndex:column];
+                
+                if([tileType isEqualToString:@"deleted"]) {
+                    
+                    NSString* tileAboveType = [[self.gameModel.gameArrayNew objectAtIndex:row-1] objectAtIndex:column];
+                    
+                    //replace current tile with one above
+                    [[self.gameModel.gameArrayNew objectAtIndex:row] replaceObjectAtIndex:column withObject:tileAboveType];
+                    //replace tile above with deleted
+                    [[self.gameModel.gameArrayNew objectAtIndex:row-1] replaceObjectAtIndex:column withObject:@"deleted"];
+                    
+                    //animate tile falling
+                    TileButton* tileCurrent = [[self.tilesImages objectAtIndex:row] objectAtIndex:column];
+                    TileButton* tileAbove = [[self.tilesImages objectAtIndex:row-1] objectAtIndex:column];
+                    [UIView animateWithDuration:0.2 animations:^ {
+                        CGRect frame = tileAbove.frame;
+                        frame.origin.y += tileSize;
+                
+                        tileAbove.frame = frame;
+                    }];
+                    
+                    [[self.tilesImages objectAtIndex:row] replaceObjectAtIndex:column withObject:tileAbove];
+                    [[self.tilesImages objectAtIndex:row-1] replaceObjectAtIndex:column withObject:tileCurrent];
+                }
+            }
+        }
+    }
+    
+    NSLog(@"done");
+//    //animate tile falling
+//    [UIView animateWithDuration:animationLength animations:^ {
+//        //tile.transform = CGAffineTransformMakeScale(0.01, 0.01);
+//        CGRect frame = tile.frame;
+//        frame.origin.y += 20;
+//        
+//        tile.frame = frame;
+//    } completion:^(BOOL finished) {
+//        [tile removeFromSuperview];
+//    }];
 }
 
 -(void)updateScore {
