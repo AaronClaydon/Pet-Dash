@@ -22,7 +22,10 @@
 @property (strong) NSDate* pauseStart;
 @property (strong) NSDate* previousFireDate;
 
-@property (strong) NSMutableArray* tilesImages;
+@property (strong) NSMutableArray* gameFieldTileImages;
+@property (strong) NSDictionary* tileImages;
+
+@property int tileSize;
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
@@ -34,6 +37,7 @@
 -(void)resumeTimer:(NSTimer*)timer;
 
 -(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed withAnimationLength:(double)animationLength;
--(void)dropTiles;
+-(void)dropCurrentTiles:(double)animationLength;
+-(void)dropNewTiles:(double)animationLength;
 
 @end

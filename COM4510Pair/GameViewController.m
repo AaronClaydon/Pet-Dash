@@ -17,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //tile types and their associated image
+    self.tileImages = @{
+                        @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
+                        @"green" : [UIImage imageNamed:@"grid_dog_smaller.png"],
+                        @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
+                        @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
+                        @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
+                        };
     
     [self initGame];
 }
@@ -36,6 +44,9 @@
     
     self.gameModel.width = 7;
     self.gameModel.height = 8;
+    
+    //size of each individual tile
+    self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
     
     self.gameModel.gameArray = [@[
                          [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
@@ -58,17 +69,8 @@
     //delete all current tiles
     [[self.gameField subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    NSDictionary *tiles = @{
-                            @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
-                            @"green" : [UIImage imageNamed:@"grid_dog_smaller.png"],
-                            @"blue" : [UIImage imageNamed:@"grid_bird_smaller.png"],
-                            @"yellow" : [UIImage imageNamed:@"grid_cat_smaller.png"],
-                            @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
-                            };
-    
-    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
-    
-    self.tilesImages = [[NSMutableArray alloc] init];
+    //2d array of buttons
+    self.gameFieldTileImages = [[NSMutableArray alloc] init];
     
     //render all the tiles
     for (int row = 0; row < self.gameModel.height; row++) {
@@ -78,22 +80,36 @@
             NSString* tileType = [[self.gameModel.gameArray objectAtIndex:row] objectAtIndex:column];
             
             TileButton *button = [TileButton buttonWithType:UIButtonTypeCustom];
+            //set the array position of the tile
             [button setRow:row];
             [button setColumn:column];
+            //button calls function buttonClicked on click
             [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            //no text in the button
             [button setTitle:@"" forState:UIControlStateNormal];
-            [button setBackgroundImage: [tiles objectForKey: tileType] forState:UIControlStateNormal];
-            button.frame = CGRectMake(column * tileSize, row * tileSize, tileSize, tileSize);
-            [self.gameField addSubview:button];
+            //set the correct image for the tile
+            [button setBackgroundImage: [self.tileImages objectForKey: tileType] forState:UIControlStateNormal];
+            //set position of the tile based of array position and tile size
+            button.frame = CGRectMake(column * self.tileSize, row * self.tileSize, self.tileSize, self.tileSize);
             
+            //add button to the game field
+            [self.gameField addSubview:button];
+            //add button to row array of buttons
             [tileImagesRow addObject:button];
         }
         
-        [self.tilesImages addObject:tileImagesRow];
+        //add row of buttons to 2d array of buttons
+        [self.gameFieldTileImages addObject:tileImagesRow];
     }
 }
 
 -(void)buttonClicked:(TileButton*)sender {
+    //prevent player from clicking again while animations are playing
+    if(self.gameModel.gameArrayNew != nil) {
+        NSLog(@"blocked click");
+        return;
+    }
+    
     int row = sender.row;
     int column = sender.column;
     NSString* tileType = [[self.gameModel.gameArray objectAtIndex:row] objectAtIndex:column];
@@ -109,24 +125,27 @@
                        [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
                        ] mutableCopy];
     
+    //get the score for that cluster click
     NSMutableDictionary* clusterCheck = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
     int score = [[clusterCheck objectForKey:@"score"] intValue];
     
+    //cluster must give a score of at least 3 to actually get deleted
     if (score >= 3) {
         self.gameModel.score += score;
         
         [self updateScore];
         
-        //self.gameModel.gameArray = self.gameModel.gameArrayNew;
         double animationLength = 0.4;
         [self animateTileDestruction:[clusterCheck objectForKey:@"tilestobedestroyed"] withAnimationLength:animationLength];
         
         //drop tiles once shrink animations have been completed
         dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)((animationLength * 0.5) * NSEC_PER_SEC));
         dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
-            [self dropTiles];
+            [self dropCurrentTiles:0.2];
         });
-        //[self drawTiles];
+    } else {
+        //delete everything we learnt from that click
+        self.gameModel.gameArrayNew = nil;
     }
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
@@ -141,22 +160,20 @@
         int row = point.x;
         int column = point.y;
         
-        TileButton* tile = [[self.tilesImages objectAtIndex:row] objectAtIndex:column];
+        TileButton* tile = [[self.gameFieldTileImages objectAtIndex:row] objectAtIndex:column];
         
         //animate tile shrinking
         [UIView animateWithDuration:animationLength animations:^ {
             tile.transform = CGAffineTransformMakeScale(0.01, 0.01);
         } completion:^(BOOL finished) {
-            [tile removeFromSuperview];
+            tile.alpha = 0.0; //hide the tile for now
         }];
         
     }
 }
 
--(void)dropTiles {
-    //amount we need to drop a tile
-    int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
-    
+-(void)dropCurrentTiles:(double)animationLength {
+    //to make sure all tiles have falled, run through a number of times equal to the height of the game field
     for (int i = 0; i < self.gameModel.height; i++) {
         
         //go through all the tiles
@@ -164,8 +181,8 @@
             for (int column = self.gameModel.width-1; column >= 0; column--) {
                 NSString* tileType = [[self.gameModel.gameArrayNew objectAtIndex:row] objectAtIndex:column];
                 
+                //if deleted tile, swap it with the one above - this simulates falling
                 if([tileType isEqualToString:@"deleted"]) {
-                    
                     NSString* tileAboveType = [[self.gameModel.gameArrayNew objectAtIndex:row-1] objectAtIndex:column];
                     
                     //replace current tile with one above
@@ -174,33 +191,80 @@
                     [[self.gameModel.gameArrayNew objectAtIndex:row-1] replaceObjectAtIndex:column withObject:@"deleted"];
                     
                     //animate tile falling
-                    TileButton* tileCurrent = [[self.tilesImages objectAtIndex:row] objectAtIndex:column];
-                    TileButton* tileAbove = [[self.tilesImages objectAtIndex:row-1] objectAtIndex:column];
-                    [UIView animateWithDuration:0.2 animations:^ {
+                    TileButton* tileCurrent = [[self.gameFieldTileImages objectAtIndex:row] objectAtIndex:column];
+                    TileButton* tileAbove = [[self.gameFieldTileImages objectAtIndex:row-1] objectAtIndex:column];
+                    [UIView animateWithDuration:animationLength animations:^ {
                         CGRect frame = tileAbove.frame;
-                        frame.origin.y += tileSize;
+                        frame.origin.y += self.tileSize;
                 
                         tileAbove.frame = frame;
                     }];
                     
-                    [[self.tilesImages objectAtIndex:row] replaceObjectAtIndex:column withObject:tileAbove];
-                    [[self.tilesImages objectAtIndex:row-1] replaceObjectAtIndex:column withObject:tileCurrent];
+                    [[self.gameFieldTileImages objectAtIndex:row] replaceObjectAtIndex:column withObject:tileAbove];
+                    [[self.gameFieldTileImages objectAtIndex:row-1] replaceObjectAtIndex:column withObject:tileCurrent];
                 }
             }
         }
     }
     
-    NSLog(@"done");
-//    //animate tile falling
-//    [UIView animateWithDuration:animationLength animations:^ {
-//        //tile.transform = CGAffineTransformMakeScale(0.01, 0.01);
-//        CGRect frame = tile.frame;
-//        frame.origin.y += 20;
-//        
-//        tile.frame = frame;
-//    } completion:^(BOOL finished) {
-//        [tile removeFromSuperview];
-//    }];
+    //drop tiles once dropping of current tiles animations have been completed
+    dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(animationLength * NSEC_PER_SEC));
+    dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+        [self dropNewTiles:animationLength];
+    });
+}
+
+-(void)dropNewTiles:(double)animationLength {
+    //go through all the tiles in the game board
+    for (int row = 0; row < self.gameModel.height; row++) {
+        for (int column = 0; column < self.gameModel.width; column++) {
+            NSString* tileType = [[self.gameModel.gameArrayNew objectAtIndex:row] objectAtIndex:column];
+            
+            //if deleted tile then replace with a random kind
+            if([tileType isEqualToString:@"deleted"]) {
+                //generate new random tile type
+                //I SHOULD BE IN THE MODEL!!!!!!!!
+                NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
+                int lowerBound = 0;
+                int upperBound = (int)[tileTypes count] - 1;
+                int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
+                NSString* newTileType = [tileTypes objectAtIndex:tileNumber];
+                [[self.gameModel.gameArrayNew objectAtIndex:row] replaceObjectAtIndex:column withObject:newTileType];
+                
+                //update tile image to new type
+                TileButton* tile = [[self.gameFieldTileImages objectAtIndex:row] objectAtIndex:column];
+                [tile setBackgroundImage: [self.tileImages objectForKey: newTileType] forState:UIControlStateNormal];
+                
+                //make the tile visible again
+                tile.alpha = 1.0; //unhide the tile
+                tile.transform = CGAffineTransformMakeScale(1.0, 1.0); //make the tile the right size again
+                
+                //move tile to above the game field
+                CGRect frame = tile.frame;
+                frame.origin.y = -(self.tileSize * (self.gameModel.height - row));
+                tile.frame = frame;
+                
+                //make the tile drop to it's proper position
+                [UIView animateWithDuration:animationLength animations:^ {
+                    CGRect frame = tile.frame;
+                    frame.origin.y = (self.tileSize * row);
+                    tile.frame = frame;
+                }];
+            }
+        }
+    }
+    
+    //after all the animations have complete return the game state back to normal
+    dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)((animationLength * 1.0) * NSEC_PER_SEC));
+    dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+        //replace current game array with new one
+        self.gameModel.gameArray = self.gameModel.gameArrayNew;
+        //delete the gameArrayNew variable value - allow the player to touch a cluster again
+        self.gameModel.gameArrayNew = nil;
+        
+        //redraw all the tiles
+        [self drawTiles];
+    });
 }
 
 -(void)updateScore {
@@ -208,6 +272,7 @@
 }
 
 -(void)updateTimer {
+    //display time as minutes:seconds
     int seconds = self.gameModel.currentTime % 60;
     int minutes = (self.gameModel.currentTime / 60) % 60;
     [self.timerLabel setText:[NSString stringWithFormat:@"%2d:%02d", minutes, seconds]];
@@ -215,13 +280,18 @@
 
 
 -(void)initTimer{
+    //start the countdown timer
     self.gameModel.timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
     self.gameModel.currentTime = 120;
 }
+
 -(void)timerFired{
+    //decrease the current time by one second
     self.gameModel.currentTime--;
+    //redraw the timer
     [self updateTimer];
     
+    //if the timer hits zero, send the user to the score page
     if(self.gameModel.currentTime == 0) {
         [self performSegueWithIdentifier:@"segueToScore" sender:self];
     }
@@ -229,10 +299,12 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"segueToScore"]) {
+        //if we are transfering to score page - set the score
         ScoreViewController* scoreViewController = [segue destinationViewController];
         
         [scoreViewController setScoreResult:self.gameModel.score];
     } else if ([[segue identifier] isEqualToString:@"segueToPause"]) {
+        //if we are transfering to pause page - actually pause the timer
         [self pauseTimer:self.gameModel.timer];
     }
 }
@@ -247,15 +319,5 @@
     float pauseTime = -1*[self.pauseStart timeIntervalSinceNow];
     [self.gameModel.timer setFireDate:[self.previousFireDate initWithTimeInterval:pauseTime sinceDate: self.previousFireDate]];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

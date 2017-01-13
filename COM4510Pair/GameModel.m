@@ -41,13 +41,6 @@
         //add to list of tiles to be killed
         [tilesToBeDestroyed addObject:pointValue];
         
-        //replace tiles
-        //NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
-        //int lowerBound = 0;
-        //int upperBound = 4;
-        //int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
-        //NSString* newTile = [tileTypes objectAtIndex:tileNumber];
-        
         //set the tile as deleted
         NSMutableArray* rowArray = [self.gameArrayNew objectAtIndex:row];
         [rowArray replaceObjectAtIndex:column withObject:@"deleted"];
