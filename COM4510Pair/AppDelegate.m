@@ -28,10 +28,16 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    //pause game timer when game enters background
+    [self.gameViewController pauseTimer:self.gameViewController.gameModel.timer];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    //restart game timer when game enters background
+    [self.gameViewController resumeTimer:self.gameViewController.gameModel.timer];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

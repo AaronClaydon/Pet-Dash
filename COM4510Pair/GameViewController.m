@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "TileButton.h"
+#import "AppDelegate.h"
 
 @interface GameViewController ()
 
@@ -17,6 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //set reference to this game view controller in the app delegate
+    //so we can pause the game timer on app entering background
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.gameViewController = self;
     
     //tile types and their associated image
     self.tileImages = @{
