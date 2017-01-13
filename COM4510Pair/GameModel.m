@@ -12,14 +12,17 @@
 
 @implementation GameModel
 
--(int)checkClusterMatchForTile:(NSString *)tile inRow:(int)row andColumn:(int)column {
+-(NSMutableDictionary*)checkClusterMatchForTile:(NSString *)tile inRow:(int)row andColumn:(int)column {
+    NSMutableDictionary* returnValues = [[NSMutableDictionary alloc] init];
+    
+    NSMutableArray* tilesToBeDestroyed = [[NSMutableArray alloc] init];
     int score = 0;
     NSMutableArray* toCheckArray = [[NSMutableArray alloc] init];
     
     //Add the first point to the stack of tiles to check
     [self addPointToCheckArray:toCheckArray withRow:row andColumn:column];
     
-    self.gameArrayNew = [self.gameArray mutableCopy];
+    self.gameArrayNew = [self copy2DArray:self.gameArray];
     
     while ([toCheckArray count] > 0) {
         //Get and remove the first value from the stack
@@ -35,6 +38,9 @@
         //Incrase the score by one
         score++;
         
+        //add to list of tiles to be killed
+        [tilesToBeDestroyed addObject:pointValue];
+        
         //replace tiles
         NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
         int lowerBound = 0;
@@ -44,7 +50,7 @@
         
         NSMutableArray* rowArray = [self.gameArrayNew objectAtIndex:row];
         [rowArray replaceObjectAtIndex:column withObject:newTile];
-        [self.gameArrayNew replaceObjectAtIndex:row withObject:rowArray];
+        //[self.gameArrayNew replaceObjectAtIndex:row withObject:rowArray];
         
         //Check the nearby touching tiles
         if(row - 1 >= 0) {
@@ -70,7 +76,20 @@
         
     }
     
-    return score;
+    [returnValues setValue:[NSNumber numberWithInt:score] forKey:@"score"];
+    [returnValues setValue:tilesToBeDestroyed forKey:@"tilestobedestroyed"];
+    
+    return returnValues;
+}
+
+-(NSMutableArray*)copy2DArray:(NSMutableArray*)originalArray {
+    NSMutableArray* newArray = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [originalArray count]; i++) {
+        [newArray addObject:[[originalArray objectAtIndex:i] mutableCopy]];
+    }
+    
+    return newArray;
 }
 
 -(void)addPointToCheckArray:(NSMutableArray*)toCheckArray withRow:(int)row andColumn:(int)column {

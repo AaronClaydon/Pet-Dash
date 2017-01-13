@@ -22,6 +22,8 @@
 @property (strong) NSDate* pauseStart;
 @property (strong) NSDate* previousFireDate;
 
+@property (strong) NSMutableArray* tilesImages;
+
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
 -(void)drawTiles;

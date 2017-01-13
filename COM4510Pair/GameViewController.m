@@ -39,13 +39,13 @@
     
     self.gameModel.gameArray = [@[
                          [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
-                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                        [ @[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                        [ @[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                        [ @[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                        [ @[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"yellow", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
+                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
                          ] mutableCopy];
     
     [self updateScore];
@@ -68,7 +68,12 @@
     
     int tileSize = ([UIScreen mainScreen].bounds.size.width - 10) / self.gameModel.width;
     
+    self.tilesImages = [[NSMutableArray alloc] init];
+    
+    //render all the tiles
     for (int row = 0; row < self.gameModel.height; row++) {
+        NSMutableArray* tileImagesRow = [[NSMutableArray alloc] init];
+        
         for (int column = 0; column < self.gameModel.width; column++) {
             NSString* tileType = [[self.gameModel.gameArray objectAtIndex:row] objectAtIndex:column];
             
@@ -80,7 +85,11 @@
             [button setBackgroundImage: [tiles objectForKey: tileType] forState:UIControlStateNormal];
             button.frame = CGRectMake(column * tileSize, row * tileSize, tileSize, tileSize);
             [self.gameField addSubview:button];
+            
+            [tileImagesRow addObject:button];
         }
+        
+        [self.tilesImages addObject:tileImagesRow];
     }
 }
 
@@ -100,18 +109,41 @@
                        [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
                        ] mutableCopy];
     
-    int score = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
+    NSMutableDictionary* clusterCheck = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
+    int score = [[clusterCheck objectForKey:@"score"] intValue];
     
     if (score >= 3) {
         self.gameModel.score += score;
         
         [self updateScore];
         
-        self.gameModel.gameArray = self.gameModel.gameArrayNew;
-        [self drawTiles];
+        //self.gameModel.gameArray = self.gameModel.gameArrayNew;
+        [self animateTileDestruction:[clusterCheck objectForKey:@"tilestobedestroyed"]];
+        //[self drawTiles];
     }
     
     NSLog(@"button clicked %@ %i %i %i", tileType, row, column, score);
+}
+
+-(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed {
+    for (int i = 0; i < [tilesToBeDestroyed count]; i++) {
+        NSValue* pointValue = [tilesToBeDestroyed objectAtIndex:i];
+        CGPoint point;
+        [pointValue getValue:&point];
+        
+        int row = point.x;
+        int column = point.y;
+        
+        TileButton* tile = [[self.tilesImages objectAtIndex:row] objectAtIndex:column];
+        
+        //animate tile shrinking
+        [UIView animateWithDuration:0.4 animations:^ {
+            tile.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        } completion:^(BOOL finished) {
+            [tile removeFromSuperview];
+        }];
+        
+    }
 }
 
 -(void)updateScore {
@@ -127,7 +159,7 @@
 
 -(void)initTimer{
     self.gameModel.timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
-    self.gameModel.currentTime = 10;
+    self.gameModel.currentTime = 120;
 }
 -(void)timerFired{
     self.gameModel.currentTime--;
