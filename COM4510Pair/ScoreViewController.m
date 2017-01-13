@@ -39,6 +39,50 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)FBPressed{
+    self.totalTime = 10;
+    int seconds = self.totalTime % 60;
+    int minutes = (self.totalTime / 60) % 60;
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *fbPostSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I've got %i scores on%2d:%02d time, come and join me!",self.scoreResult,minutes, seconds]];
+        [self presentViewController:fbPostSheet animated:YES completion:nil];
+    } else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't post right now, make sure your device has an internet connection and you have at least one facebook account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+-(IBAction)TweetPressed{
+    self.totalTime = 10;
+    int seconds = self.totalTime % 60;
+    int minutes = (self.totalTime / 60) % 60;
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:[NSString stringWithFormat:@"I've got %i scores on%2d:%02d time, come and join me!",self.scoreResult,minutes, seconds]];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+        
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+}
 /*
 #pragma mark - Navigation
 
