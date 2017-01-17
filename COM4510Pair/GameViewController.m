@@ -151,9 +151,13 @@
     
     //cluster must give a score of at least 3 to actually get deleted
     if (score >= 3) {
-        //play the tiles sound effect
-        AVAudioPlayer* soundPlayer = [self.tileSoundEffects objectForKey:tileType];
-        [soundPlayer play];
+        AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        if(appDelegate.playGameAudio) {
+            //play the tiles sound effect
+            AVAudioPlayer* soundPlayer = [self.tileSoundEffects objectForKey:tileType];
+            [soundPlayer play];
+        }
         
         //Update the players score
         self.gameModel.score += score;

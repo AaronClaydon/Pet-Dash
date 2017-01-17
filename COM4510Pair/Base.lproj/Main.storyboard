@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BvY-tY-9db">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BvY-tY-9db">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -63,14 +63,6 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-40-v2Y">
-                                <rect key="frame" x="343" y="94" width="46" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="4aM-Fk-e76"/>
-                                    <constraint firstAttribute="width" constant="46" id="U9Z-PD-nlg"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="button_mute.png"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,7 +71,6 @@
                             <constraint firstAttribute="trailing" secondItem="U8b-NX-FcA" secondAttribute="trailing" constant="65" id="7Ym-eR-Fg3"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leadingMargin" constant="50" id="9G1-Gp-549"/>
                             <constraint firstItem="RwE-Fh-QBt" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="65" id="CMo-gN-em5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fKx-40-v2Y" secondAttribute="trailing" constant="10" id="ERr-qa-Tif"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LC3-6u-T2d" secondAttribute="trailing" constant="50" id="J55-V3-aDt"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="top" secondItem="RwE-Fh-QBt" secondAttribute="bottom" constant="20" id="Kd1-4h-a3k"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="top" secondItem="U8b-NX-FcA" secondAttribute="bottom" constant="20" id="N2X-PI-JuW"/>
@@ -87,8 +78,6 @@
                             <constraint firstAttribute="trailing" secondItem="hLl-Ii-vD7" secondAttribute="trailing" constant="80" id="Qpk-Sq-jjy"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="65" id="UKN-oJ-B9t"/>
                             <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="LC3-6u-T2d" secondAttribute="bottom" constant="45" id="Uld-hI-bNV"/>
-                            <constraint firstItem="fKx-40-v2Y" firstAttribute="top" secondItem="UFx-jb-hwY" secondAttribute="bottom" constant="10" id="rR8-v1-f4j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fKx-40-v2Y" secondAttribute="trailing" constant="5" id="upd-sX-CN1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="lOM-4Z-321"/>
@@ -240,14 +229,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-bV-R4A">
-                                <rect key="frame" x="331" y="28" width="46" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="NzE-mR-u0X"/>
-                                    <constraint firstAttribute="height" constant="46" id="hDx-bu-hFZ"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="button_mute.png"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-QK-UFU">
                                 <rect key="frame" x="31" y="37" width="34" height="30"/>
                                 <state key="normal" backgroundImage="button_back_smaller.png"/>
@@ -267,8 +248,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="lJ7-bV-R4A" secondAttribute="trailing" constant="10" id="5GT-MG-M05"/>
-                            <constraint firstItem="lJ7-bV-R4A" firstAttribute="top" secondItem="kBe-rM-QRQ" secondAttribute="bottom" constant="10" id="N6J-yU-gJn"/>
                             <constraint firstItem="uRp-Cv-3V4" firstAttribute="leading" secondItem="XkF-7a-PSW" secondAttribute="leading" constant="10" id="PvX-L9-ZSc"/>
                             <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerX" secondItem="XkF-7a-PSW" secondAttribute="centerX" id="gra-EM-tXl"/>
                             <constraint firstAttribute="trailing" secondItem="uRp-Cv-3V4" secondAttribute="trailing" constant="10" id="hFs-ej-cor"/>
@@ -298,17 +277,6 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os8-Um-jqv">
-                                <rect key="frame" x="335" y="28" width="42" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ZHX-8z-dhq"/>
-                                    <constraint firstAttribute="width" constant="45" id="fJ7-Xy-e6D"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="button_pause_smaller.png"/>
-                                <connections>
-                                    <segue destination="c3F-KU-nqH" kind="presentation" identifier="segueToPause" id="Gxa-hR-rGz"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timer.png" translatesAutoresizingMaskIntoConstraints="NO" id="vol-9P-812">
                                 <rect key="frame" x="20" y="28" width="39" height="39"/>
                                 <constraints>
@@ -329,35 +297,36 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFy-J3-6Dt">
-                                <rect key="frame" x="330" y="84" width="47" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="40K-VF-Ygo"/>
-                                    <constraint firstAttribute="height" constant="45" id="NxM-g2-3Yr"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="button_mute.png"/>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCa-XD-DP2">
                                 <rect key="frame" x="20" y="149" width="374" height="481"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os8-Um-jqv">
+                                <rect key="frame" x="335" y="84" width="42" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="GYT-ru-ovr"/>
+                                    <constraint firstAttribute="height" constant="45" id="PGV-1l-yYc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="button_pause_smaller.png"/>
+                                <connections>
+                                    <segue destination="c3F-KU-nqH" kind="presentation" identifier="segueToPause" id="Gxa-hR-rGz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vol-9P-812" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="10" id="6SM-uv-yRH"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="trailing" secondItem="ccd-Nh-Z2R" secondAttribute="trailingMargin" constant="10" id="Ap8-Cb-nlt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fFy-J3-6Dt" secondAttribute="trailing" constant="10" id="DaM-aF-788"/>
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="70" id="Jjw-Ab-aAr"/>
                             <constraint firstItem="vol-9P-812" firstAttribute="leading" secondItem="ccd-Nh-Z2R" secondAttribute="leadingMargin" constant="10" id="M7t-lm-3gU"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="leading" secondItem="ccd-Nh-Z2R" secondAttribute="leadingMargin" constant="-10" id="Qcx-wY-ZV0"/>
                             <constraint firstItem="izL-Z5-X3b" firstAttribute="leading" secondItem="vol-9P-812" secondAttribute="trailing" constant="5" id="SV5-4t-OAA"/>
                             <constraint firstItem="WpG-VU-YBQ" firstAttribute="top" secondItem="izL-Z5-X3b" secondAttribute="bottom" constant="40" id="TLZ-pl-lQ6"/>
                             <constraint firstItem="izL-Z5-X3b" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="15" id="YJy-s1-g9M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="os8-Um-jqv" secondAttribute="trailing" constant="10" id="irf-YF-wpE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="os8-Um-jqv" secondAttribute="trailing" constant="10" id="aqt-GY-FWx"/>
                             <constraint firstItem="WpG-VU-YBQ" firstAttribute="leading" secondItem="fTS-Bc-u1s" secondAttribute="trailing" constant="5" id="n5m-OC-UbM"/>
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="leading" secondItem="vol-9P-812" secondAttribute="leading" id="nz9-dd-z8h"/>
-                            <constraint firstItem="os8-Um-jqv" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="10" id="qt3-C7-FAz"/>
                             <constraint firstItem="4HD-6E-ghQ" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="bottom" id="x69-Za-DTi"/>
-                            <constraint firstItem="fFy-J3-6Dt" firstAttribute="top" secondItem="os8-Um-jqv" secondAttribute="bottom" constant="15" id="zPH-zq-jK8"/>
+                            <constraint firstItem="os8-Um-jqv" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="72" id="xRz-Nv-kuV"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="55" id="zfj-jX-T1P"/>
                         </constraints>
                     </view>
@@ -605,7 +574,6 @@
         <image name="FBshare.png" width="300" height="118"/>
         <image name="Twittershare.png" width="200" height="82"/>
         <image name="button_back_smaller.png" width="100" height="100"/>
-        <image name="button_mute.png" width="500" height="500"/>
         <image name="button_pause_smaller.png" width="100" height="100"/>
         <image name="button_smaller.png" width="250" height="90"/>
         <image name="grid_red.png" width="500" height="500"/>
@@ -614,8 +582,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e6D-FK-vsE"/>
-        <segue reference="yun-N7-0Vo"/>
-        <segue reference="Ghj-ud-LWn"/>
+        <segue reference="JoY-oV-gFU"/>
+        <segue reference="IM3-SV-jrg"/>
+        <segue reference="u0Z-WW-6w5"/>
     </inferredMetricsTieBreakers>
 </document>

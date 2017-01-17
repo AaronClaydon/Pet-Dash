@@ -7,6 +7,7 @@
 //
 
 #import "BackgroundViewController.h"
+#import "AppDelegate.h"
 
 @interface BackgroundViewController ()
 
@@ -26,6 +27,23 @@
                                                 orientation:(originalImage.imageOrientation)];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage: scaledImage];
+    
+    
+    //Add mute button
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(muteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"" forState:UIControlStateNormal];
+    [button setBackgroundImage: [UIImage imageNamed:@"button_mute.png"] forState:UIControlStateNormal];
+
+    button.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 72), 30, 45, 45);
+    [[self view] addSubview:button];
+}
+
+-(void)muteButtonClicked:(UIButton*)sender {
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    //Invert current value of if play audio
+    appDelegate.playGameAudio = !appDelegate.playGameAudio;
 }
 
 - (void)didReceiveMemoryWarning {
