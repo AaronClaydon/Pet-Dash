@@ -238,7 +238,7 @@
                 //I SHOULD BE IN THE MODEL!!!!!!!!
                 NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
                 int lowerBound = 0;
-                int upperBound = (int)[tileTypes count] - 1;
+                int upperBound = (int)[tileTypes count];
                 int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
                 NSString* newTileType = [tileTypes objectAtIndex:tileNumber];
                 [[self.gameModel.gameArrayNew objectAtIndex:row] replaceObjectAtIndex:column withObject:newTileType];
@@ -289,7 +289,6 @@
     int minutes = (self.gameModel.currentTime / 60) % 60;
     [self.timerLabel setText:[NSString stringWithFormat:@"%2d:%02d", minutes, seconds]];
 }
-
 
 -(void)initTimer{
     //start the countdown timer
