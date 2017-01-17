@@ -14,6 +14,7 @@
 		582AE77C1E29154300F18D29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582AE77B1E29154300F18D29 /* Social.framework */; };
 		582BEEA11E2E56A700A1ED8C /* FBshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA01E2E56A700A1ED8C /* FBshare.png */; };
 		582BEEA31E2E57CA00A1ED8C /* Twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA21E2E57CA00A1ED8C /* Twittershare.png */; };
+		582BEEA81E2E70EB00A1ED8C /* button_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA71E2E70EB00A1ED8C /* button_muted.png */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
 		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
@@ -79,6 +80,7 @@
 		582AE77B1E29154300F18D29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		582BEEA01E2E56A700A1ED8C /* FBshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBshare.png; sourceTree = "<group>"; };
 		582BEEA21E2E57CA00A1ED8C /* Twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twittershare.png; sourceTree = "<group>"; };
+		582BEEA71E2E70EB00A1ED8C /* button_muted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_muted.png; sourceTree = "<group>"; };
 		5836540C1DDB485E00AC0F2D /* COM4510Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COM4510Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				58C0E8CE1DDF1F4F004D847F /* score.png */,
 				58C0E8CF1DDF1F4F004D847F /* timer.png */,
 				58C0E8C71DDF1D10004D847F /* background image.png */,
+				582BEEA71E2E70EB00A1ED8C /* button_muted.png */,
 				58C0E8C31DDF1D07004D847F /* button_mute.png */,
 				58B759BA1E019FBB007F8A79 /* button_back_smaller.png */,
 				58B759BB1E019FBB007F8A79 /* button_pause_smaller.png */,
@@ -386,6 +389,7 @@
 				5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */,
 				5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */,
 				9327E34C1E2E6672000C5505 /* sound_mouse.wav in Resources */,
+				582BEEA81E2E70EB00A1ED8C /* button_muted.png in Resources */,
 				58C0E8D51DDF1F4F004D847F /* score.png in Resources */,
 				5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */,
 				58C0E8D81DDF211C004D847F /* button_smaller.png in Resources */,
