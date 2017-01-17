@@ -30,13 +30,28 @@
     
     
     //Add mute button
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:@selector(muteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"" forState:UIControlStateNormal];
-    [button setBackgroundImage: [UIImage imageNamed:@"button_mute.png"] forState:UIControlStateNormal];
+    self.muteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.muteButton addTarget:self action:@selector(muteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.muteButton setTitle:@"" forState:UIControlStateNormal];
+    
+    [self updateMuteButton];
+    
+    self.muteButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 72), 30, 45, 45);
+    [[self view] addSubview:self.muteButton];
+}
 
-    button.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 72), 30, 45, 45);
-    [[self view] addSubview:button];
+-(void)updateMuteButton {
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    UIImage* muteImage;
+    
+    if(appDelegate.playGameAudio) {
+        muteImage = [UIImage imageNamed:@"button_mute.png"];
+    } else {
+        muteImage = [UIImage imageNamed:@"button_muted.png"];
+    }
+    
+    [self.muteButton setBackgroundImage: muteImage forState:UIControlStateNormal];
+
 }
 
 -(void)muteButtonClicked:(UIButton*)sender {
@@ -44,6 +59,8 @@
     
     //Invert current value of if play audio
     appDelegate.playGameAudio = !appDelegate.playGameAudio;
+    
+    [self updateMuteButton];
 }
 
 - (void)didReceiveMemoryWarning {

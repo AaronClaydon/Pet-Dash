@@ -46,6 +46,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [self resumeTimer:self.gameModel.timer];
+    [self updateMuteButton];
 }
 
 - (void)didReceiveMemoryWarning {

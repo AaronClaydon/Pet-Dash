@@ -21,6 +21,8 @@
     // Do any additional setup after loading the view.
     [self displayScoreResult];
     [self displaytotalTime];
+    
+    self.muteButton.hidden = YES;
 }
 
 -(void)displayScoreResult {

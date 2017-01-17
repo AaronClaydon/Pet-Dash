@@ -10,4 +10,8 @@
 
 @interface BackgroundViewController : UIViewController
 
+@property UIButton* muteButton;
+
+-(void)updateMuteButton;
+
 @end
