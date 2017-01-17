@@ -33,6 +33,14 @@
                         @"orange" : [UIImage imageNamed:@"grid_fish_smaller.png"]
                         };
     
+    self.tileSoundEffects = @{
+                              @"red": [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_mouse.wav",[[NSBundle mainBundle] resourcePath]]] error:nil],
+                              @"green": [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_dog.wav",[[NSBundle mainBundle] resourcePath]]] error:nil],
+                              @"blue": [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_bird.wav",[[NSBundle mainBundle] resourcePath]]] error:nil],
+                              @"yellow": [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_cat.wav",[[NSBundle mainBundle] resourcePath]]] error:nil],
+                              @"orange": [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_fish.wav",[[NSBundle mainBundle] resourcePath]]] error:nil]
+                              };
+    
     [self initGame];
 }
 
@@ -143,10 +151,15 @@
     
     //cluster must give a score of at least 3 to actually get deleted
     if (score >= 3) {
-        self.gameModel.score += score;
+        //play the tiles sound effect
+        AVAudioPlayer* soundPlayer = [self.tileSoundEffects objectForKey:tileType];
+        [soundPlayer play];
         
+        //Update the players score
+        self.gameModel.score += score;
         [self updateScore];
         
+        //animate the cluster desctruction
         double animationLength = 0.4;
         [self animateTileDestruction:[clusterCheck objectForKey:@"tilestobedestroyed"] withAnimationLength:animationLength];
         

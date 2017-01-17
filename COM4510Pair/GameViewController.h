@@ -6,6 +6,8 @@
 //  Copyright © 2016 aca13ytw. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 #import "BackgroundViewController.h"
 #import "TileButton.h"
 #import "GameModel.h"
@@ -24,6 +26,7 @@
 
 @property (strong) NSMutableArray* gameFieldTileImages;
 @property (strong) NSDictionary* tileImages;
+@property (strong) NSDictionary* tileSoundEffects;
 
 @property int tileSize;
 @property int leftPadding;

@@ -44,6 +44,12 @@
 		58C0E8D81DDF211C004D847F /* button_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8D71DDF211C004D847F /* button_smaller.png */; };
 		58C0E8DA1DDF3292004D847F /* game field demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8D91DDF3292004D847F /* game field demo.png */; };
 		58E225881DEC69310080882D /* TileButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E225871DEC69310080882D /* TileButton.m */; };
+		9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9327E3361E2E5971000C5505 /* AVFoundation.framework */; };
+		9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3431E2E6663000C5505 /* sound_bird.wav */; };
+		9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3451E2E6672000C5505 /* sound_cat.wav */; };
+		9327E34A1E2E6672000C5505 /* sound_dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3461E2E6672000C5505 /* sound_dog.wav */; };
+		9327E34B1E2E6672000C5505 /* sound_fish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3471E2E6672000C5505 /* sound_fish.wav */; };
+		9327E34C1E2E6672000C5505 /* sound_mouse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3481E2E6672000C5505 /* sound_mouse.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +121,12 @@
 		58C0E8D91DDF3292004D847F /* game field demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game field demo.png"; sourceTree = "<group>"; };
 		58E225861DEC69310080882D /* TileButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileButton.h; sourceTree = "<group>"; };
 		58E225871DEC69310080882D /* TileButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileButton.m; sourceTree = "<group>"; };
+		9327E3361E2E5971000C5505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9327E3431E2E6663000C5505 /* sound_bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_bird.wav; sourceTree = "<group>"; };
+		9327E3451E2E6672000C5505 /* sound_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cat.wav; sourceTree = "<group>"; };
+		9327E3461E2E6672000C5505 /* sound_dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_dog.wav; sourceTree = "<group>"; };
+		9327E3471E2E6672000C5505 /* sound_fish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_fish.wav; sourceTree = "<group>"; };
+		9327E3481E2E6672000C5505 /* sound_mouse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_mouse.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */,
 				582AE77C1E29154300F18D29 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +159,7 @@
 		583654031DDB485E00AC0F2D = {
 			isa = PBXGroup;
 			children = (
+				9327E3361E2E5971000C5505 /* AVFoundation.framework */,
 				582AE77B1E29154300F18D29 /* Social.framework */,
 				5836540E1DDB485E00AC0F2D /* COM4510Pair */,
 				583654281DDB485E00AC0F2D /* COM4510PairTests */,
@@ -167,6 +181,7 @@
 		5836540E1DDB485E00AC0F2D /* COM4510Pair */ = {
 			isa = PBXGroup;
 			children = (
+				9327E3381E2E5A02000C5505 /* Sounds */,
 				583654121DDB485E00AC0F2D /* AppDelegate.h */,
 				583654131DDB485E00AC0F2D /* AppDelegate.m */,
 				583654151DDB485E00AC0F2D /* ViewController.h */,
@@ -238,6 +253,18 @@
 				583654361DDB485F00AC0F2D /* Info.plist */,
 			);
 			path = COM4510PairUITests;
+			sourceTree = "<group>";
+		};
+		9327E3381E2E5A02000C5505 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9327E3451E2E6672000C5505 /* sound_cat.wav */,
+				9327E3461E2E6672000C5505 /* sound_dog.wav */,
+				9327E3471E2E6672000C5505 /* sound_fish.wav */,
+				9327E3481E2E6672000C5505 /* sound_mouse.wav */,
+				9327E3431E2E6663000C5505 /* sound_bird.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,14 +373,18 @@
 				58B759BC1E019FBB007F8A79 /* button_back_smaller.png in Resources */,
 				5836541F1DDB485E00AC0F2D /* LaunchScreen.storyboard in Resources */,
 				58B759BD1E019FBB007F8A79 /* button_pause_smaller.png in Resources */,
+				9327E34B1E2E6672000C5505 /* sound_fish.wav in Resources */,
 				58C0E8D11DDF1F4F004D847F /* grid_blue.png in Resources */,
 				58C0E8D31DDF1F4F004D847F /* grid_orange.png in Resources */,
 				5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */,
 				58B759B91E019F8C007F8A79 /* grid_cat_smaller.png in Resources */,
+				9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */,
 				58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */,
 				58C0E8C81DDF1D10004D847F /* background image.png in Resources */,
+				9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */,
 				5818FEB31E27BE8000076BED /* grid_mouse_smaller.png in Resources */,
 				5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */,
+				9327E34C1E2E6672000C5505 /* sound_mouse.wav in Resources */,
 				58C0E8D51DDF1F4F004D847F /* score.png in Resources */,
 				5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */,
 				58C0E8D81DDF211C004D847F /* button_smaller.png in Resources */,
@@ -368,6 +399,7 @@
 				58B759B71E019F67007F8A79 /* grid_bird_smaller.png in Resources */,
 				58C0E8DA1DDF3292004D847F /* game field demo.png in Resources */,
 				582AE78A1E292F7000F18D29 /* Twittershare.png in Resources */,
+				9327E34A1E2E6672000C5505 /* sound_dog.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
