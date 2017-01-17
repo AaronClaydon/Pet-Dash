@@ -12,8 +12,8 @@
 		5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FEB71E27CE3400076BED /* ScoreViewController.m */; };
 		5818FEBB1E27D3D700076BED /* PauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FEBA1E27D3D700076BED /* PauseViewController.m */; };
 		582AE77C1E29154300F18D29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582AE77B1E29154300F18D29 /* Social.framework */; };
-		582AE7881E292F5D00F18D29 /* FBshare.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 582AE7871E292F5D00F18D29 /* FBshare.jpg */; };
-		582AE78A1E292F7000F18D29 /* Twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 582AE7891E292F7000F18D29 /* Twittershare.png */; };
+		582BEEA11E2E56A700A1ED8C /* FBshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA01E2E56A700A1ED8C /* FBshare.png */; };
+		582BEEA31E2E57CA00A1ED8C /* Twittershare.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA21E2E57CA00A1ED8C /* Twittershare.png */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
 		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
@@ -77,8 +77,8 @@
 		5818FEB91E27D3D700076BED /* PauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseViewController.h; sourceTree = "<group>"; };
 		5818FEBA1E27D3D700076BED /* PauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseViewController.m; sourceTree = "<group>"; };
 		582AE77B1E29154300F18D29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		582AE7871E292F5D00F18D29 /* FBshare.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FBshare.jpg; sourceTree = "<group>"; };
-		582AE7891E292F7000F18D29 /* Twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twittershare.png; sourceTree = "<group>"; };
+		582BEEA01E2E56A700A1ED8C /* FBshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBshare.png; sourceTree = "<group>"; };
+		582BEEA21E2E57CA00A1ED8C /* Twittershare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twittershare.png; sourceTree = "<group>"; };
 		5836540C1DDB485E00AC0F2D /* COM4510Pair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COM4510Pair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -210,8 +210,8 @@
 		5836540F1DDB485E00AC0F2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				582AE7871E292F5D00F18D29 /* FBshare.jpg */,
-				582AE7891E292F7000F18D29 /* Twittershare.png */,
+				582BEEA21E2E57CA00A1ED8C /* Twittershare.png */,
+				582BEEA01E2E56A700A1ED8C /* FBshare.png */,
 				5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */,
 				5818FEB21E27BE8000076BED /* grid_mouse_smaller.png */,
 				58B759B61E019F67007F8A79 /* grid_bird_smaller.png */,
@@ -379,6 +379,7 @@
 				5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */,
 				58B759B91E019F8C007F8A79 /* grid_cat_smaller.png in Resources */,
 				9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */,
+				582BEEA11E2E56A700A1ED8C /* FBshare.png in Resources */,
 				58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */,
 				58C0E8C81DDF1D10004D847F /* background image.png in Resources */,
 				9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */,
@@ -395,11 +396,10 @@
 				58C0E8D61DDF1F4F004D847F /* timer.png in Resources */,
 				58C0E8C21DDF1C9A004D847F /* grid_red.png in Resources */,
 				58C0E8D41DDF1F4F004D847F /* grid_yellow.png in Resources */,
-				582AE7881E292F5D00F18D29 /* FBshare.jpg in Resources */,
 				58B759B71E019F67007F8A79 /* grid_bird_smaller.png in Resources */,
 				58C0E8DA1DDF3292004D847F /* game field demo.png in Resources */,
-				582AE78A1E292F7000F18D29 /* Twittershare.png in Resources */,
 				9327E34A1E2E6672000C5505 /* sound_dog.wav in Resources */,
+				582BEEA31E2E57CA00A1ED8C /* Twittershare.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
