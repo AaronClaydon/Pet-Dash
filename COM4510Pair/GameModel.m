@@ -160,4 +160,28 @@
     }
 }
 
+-(BOOL)checkIfPossibleGameField {
+    BOOL isPossible = NO;
+    
+    //go through all tiles and check if clicking it would give a score
+    for(int row = 0; row < self.height; row++) {
+        for(int column = 0; column < self.width; column++) {
+            NSString* tileType = [[self.gameArray objectAtIndex:row] objectAtIndex:column];
+            
+            NSMutableDictionary* clusterCheck = [self checkClusterMatchForTile:tileType inRow:row andColumn:column];
+            int score = [[clusterCheck objectForKey:@"score"] intValue];
+            
+            //at least one tile gave a score - so field is possible
+            if(score >= 3) {
+                isPossible = YES;
+            }
+        }
+    }
+    
+    //ignore the recreated game array
+    self.gameArrayNew = nil;
+    
+    return isPossible;
+}
+
 @end

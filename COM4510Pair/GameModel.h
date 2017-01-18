@@ -22,9 +22,12 @@
 @property (strong,retain) NSMutableArray* gameArrayNew;
 @property (strong) NSMutableArray* checkedArray;
 
+-(NSMutableArray*)copy2DArray:(NSMutableArray*)originalArray;
+
 -(id)initWithWidth:(int)width andHeight:(int)height andStartTime:(int)startTime;
 -(NSMutableDictionary*)checkClusterMatchForTile:(NSString*)tile inRow:(int)row andColumn:(int)column;
 -(NSString*)generateRandomTile;
 -(void)generateGameField;
+-(BOOL)checkIfPossibleGameField;
 
 @end

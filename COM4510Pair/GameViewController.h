@@ -41,7 +41,7 @@
 -(void)resumeTimer:(NSTimer*)timer;
 
 -(void)animateTileDestruction:(NSMutableArray*) tilesToBeDestroyed withAnimationLength:(double)animationLength;
--(void)dropCurrentTiles:(double)animationLength;
+-(void)dropCurrentTiles:(double)animationLength andDropNewTiles:(BOOL)dropNewTiles;
 -(void)dropNewTiles:(double)animationLength;
 
 @end

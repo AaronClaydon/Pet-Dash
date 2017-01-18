@@ -152,7 +152,7 @@
         //drop tiles once shrink animations have been completed
         dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)((animationLength * 0.5) * NSEC_PER_SEC));
         dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
-            [self dropCurrentTiles:0.2];
+            [self dropCurrentTiles:0.2 andDropNewTiles:YES];
         });
     } else {
         //delete everything we learnt from that click
@@ -183,7 +183,7 @@
     }
 }
 
--(void)dropCurrentTiles:(double)animationLength {
+-(void)dropCurrentTiles:(double)animationLength andDropNewTiles:(BOOL)dropNewTiles {
     //to make sure all tiles have falled, run through a number of times equal to the height of the game field
     for (int i = 0; i < self.gameModel.height; i++) {
         
@@ -204,9 +204,15 @@
                     //animate tile falling
                     TileButton* tileCurrent = [[self.gameFieldTileImages objectAtIndex:row] objectAtIndex:column];
                     TileButton* tileAbove = [[self.gameFieldTileImages objectAtIndex:row-1] objectAtIndex:column];
+                    
                     [UIView animateWithDuration:animationLength animations:^ {
                         CGRect frame = tileAbove.frame;
                         frame.origin.y += self.tileSize;
+                        
+                        //if we are not dropping new tiles then hide them as well
+                        if(!dropNewTiles) {
+                            tileAbove.alpha = 0.0;
+                        }
                 
                         tileAbove.frame = frame;
                     }];
@@ -218,11 +224,13 @@
         }
     }
     
-    //drop tiles once dropping of current tiles animations have been completed
-    dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(animationLength * NSEC_PER_SEC));
-    dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
-        [self dropNewTiles:animationLength];
-    });
+    if(dropNewTiles) {
+        //drop tiles once dropping of current tiles animations have been completed
+        dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(animationLength * NSEC_PER_SEC));
+        dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+            [self dropNewTiles:animationLength];
+        });
+    }
 }
 
 -(void)dropNewTiles:(double)animationLength {
@@ -270,7 +278,49 @@
         
         //redraw all the tiles
         [self drawTiles];
+        
+        //check if the board is possible
+        [self checkIfImpossibleGamefieldAndAnimateRedraw:NO];
     });
+}
+
+-(void)checkIfImpossibleGamefieldAndAnimateRedraw:(BOOL)animateRedraw {
+    BOOL isPossible = [self.gameModel checkIfPossibleGameField];
+    
+    if (animateRedraw && isPossible) {
+        //Game field is possible and we need to animate the redraw
+        NSLog(@"ANIMATE ALL THE DROPS");
+        
+        //copy the new game array
+        self.gameModel.gameArrayNew = [self.gameModel copy2DArray:self.gameModel.gameArray];
+        
+        //set all current tiles as deleted
+        for (int row = 0; row < self.gameModel.height; row++) {
+            for (int column = 0; column < self.gameModel.width; column++) {
+                [[self.gameModel.gameArrayNew objectAtIndex:row] replaceObjectAtIndex:column withObject:@"deleted"];
+            }
+        }
+        
+        //animate the dropping of all current tiles
+        [self dropCurrentTiles:0.5 andDropNewTiles:NO];
+        
+        //redraw the game board
+        dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC));
+        dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+            [self drawTiles];
+        });
+        
+        //let player click again
+        self.gameModel.gameArrayNew = nil;
+    } else if(!isPossible) {
+        //No clusters can be destroyed
+        NSLog(@"IMPOSSIBLE");
+        
+        [self.gameModel generateGameField];
+        
+        //re run this again and check if the new game field is possible
+        [self checkIfImpossibleGamefieldAndAnimateRedraw:YES];
+    }
 }
 
 -(void)updateScore {
