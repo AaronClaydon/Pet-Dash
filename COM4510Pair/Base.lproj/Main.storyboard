@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zZR-Ui-eKb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wxd-gA-tI4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-6u-T2d">
@@ -81,6 +81,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="lOM-4Z-321"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3R-e1-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +96,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5Kh-nZ-97H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h6M-zh-WOY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-Di-iEV">
@@ -131,7 +132,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2mk-FP-mQu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XkF-7a-PSW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-Cv-3V4">
@@ -280,7 +281,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4HD-6E-ghQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ccd-Nh-Z2R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izL-Z5-X3b">
@@ -342,6 +343,7 @@
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="55" id="zfj-jX-T1P"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="gameField" destination="yCa-XD-DP2" id="DU4-3o-lYU"/>
                         <outlet property="scoreLabel" destination="WpG-VU-YBQ" id="cK5-wz-nXh"/>
@@ -362,14 +364,14 @@
                         <viewControllerLayoutGuide type="bottom" id="tuj-M5-gvq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VqY-4J-uTf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-7A-eud">
-                                <rect key="frame" x="139" y="150" width="149" height="63"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-7A-eud">
+                                <rect key="frame" x="132" y="187" width="149" height="63"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="jMO-pP-TtL"/>
-                                    <constraint firstAttribute="height" constant="63" id="zT4-VS-Rga"/>
+                                    <constraint firstAttribute="height" constant="63" id="fZL-r5-8DU"/>
+                                    <constraint firstAttribute="width" constant="160" id="w8y-Mq-mm6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="Continue" backgroundImage="button_smaller.png">
@@ -379,8 +381,8 @@
                                     <action selector="continueButtonTapped:" destination="c3F-KU-nqH" eventType="primaryActionTriggered" id="g91-Ev-8Si"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgu-xi-KAK">
-                                <rect key="frame" x="139" y="266" width="149" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgu-xi-KAK">
+                                <rect key="frame" x="133" y="295" width="149" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="167-yB-k9H"/>
                                     <constraint firstAttribute="height" constant="63" id="3Rp-kY-2qg"/>
@@ -393,8 +395,8 @@
                                     <segue destination="lCb-sS-AFS" kind="show" id="Ru2-Wx-vd4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-p8-NBv">
-                                <rect key="frame" x="139" y="394" width="149" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-p8-NBv">
+                                <rect key="frame" x="132" y="406" width="149" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2ed-dS-pfp"/>
                                     <constraint firstAttribute="height" constant="63" id="NNc-h9-IbA"/>
@@ -410,13 +412,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="w6x-p8-NBv" secondAttribute="trailing" constant="70" id="2Ws-zI-bBg"/>
-                            <constraint firstItem="w6x-p8-NBv" firstAttribute="top" secondItem="Jgu-xi-KAK" secondAttribute="bottom" constant="50" id="DOE-kf-1H3"/>
-                            <constraint firstItem="Jgu-xi-KAK" firstAttribute="leading" secondItem="VqY-4J-uTf" secondAttribute="leadingMargin" constant="70" id="I3d-ou-pOv"/>
-                            <constraint firstItem="nWe-7A-eud" firstAttribute="leading" secondItem="VqY-4J-uTf" secondAttribute="leadingMargin" constant="70" id="ISt-d6-SbK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nWe-7A-eud" secondAttribute="trailing" constant="70" id="gcC-Az-98N"/>
-                            <constraint firstItem="w6x-p8-NBv" firstAttribute="leading" secondItem="VqY-4J-uTf" secondAttribute="leadingMargin" constant="70" id="h43-Bo-WkD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jgu-xi-KAK" secondAttribute="trailing" constant="70" id="rh0-mh-guO"/>
+                            <constraint firstItem="nWe-7A-eud" firstAttribute="centerX" secondItem="VqY-4J-uTf" secondAttribute="centerX" id="5cS-9t-BIe"/>
+                            <constraint firstItem="w6x-p8-NBv" firstAttribute="centerX" secondItem="VqY-4J-uTf" secondAttribute="centerX" id="6op-J3-OaE"/>
+                            <constraint firstItem="Jgu-xi-KAK" firstAttribute="centerX" secondItem="VqY-4J-uTf" secondAttribute="centerX" id="FyK-wd-zlf"/>
+                            <constraint firstItem="w6x-p8-NBv" firstAttribute="centerY" secondItem="VqY-4J-uTf" secondAttribute="centerY" constant="100" id="HVt-Qq-omV"/>
+                            <constraint firstItem="Jgu-xi-KAK" firstAttribute="centerY" secondItem="VqY-4J-uTf" secondAttribute="centerY" id="U2O-g8-3XV"/>
+                            <constraint firstItem="nWe-7A-eud" firstAttribute="centerY" secondItem="VqY-4J-uTf" secondAttribute="centerY" constant="-100" id="fbq-cz-faw"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -433,7 +434,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vqz-3q-EIl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IjY-Pu-gzI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-Py-KpW">
@@ -498,20 +499,6 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-o3-Mjc">
                                 <rect key="frame" x="130" y="429" width="150" height="214"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-M2-PwL">
-                                        <rect key="frame" x="4" y="0.0" width="146" height="59"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="146" id="rRl-Ov-Rey"/>
-                                            <constraint firstAttribute="height" constant="59" id="vaf-US-Oz4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Restart" backgroundImage="button_smaller.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BvY-tY-9db" kind="show" id="yun-N7-0Vo"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De9-Tu-7nn">
                                         <rect key="frame" x="2" y="151" width="146" height="55"/>
                                         <constraints>
@@ -540,6 +527,20 @@
                                             <segue destination="lCb-sS-AFS" kind="show" id="Ghj-ud-LWn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-M2-PwL">
+                                        <rect key="frame" x="4" y="0.0" width="146" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="rRl-Ov-Rey"/>
+                                            <constraint firstAttribute="height" constant="59" id="vaf-US-Oz4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Restart" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BvY-tY-9db" kind="show" id="yun-N7-0Vo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNr-L8-H9X">
@@ -556,14 +557,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kpf-o3-Mjc" firstAttribute="centerX" secondItem="IjY-Pu-gzI" secondAttribute="centerX" id="24w-g2-jz4"/>
                             <constraint firstItem="NNr-L8-H9X" firstAttribute="top" secondItem="qFi-A7-RYB" secondAttribute="bottom" constant="10" id="4sL-Y5-kR2"/>
+                            <constraint firstItem="Kpf-o3-Mjc" firstAttribute="centerY" secondItem="IjY-Pu-gzI" secondAttribute="centerY" constant="145" id="6tT-dI-HzF"/>
+                            <constraint firstItem="Hh0-Py-KpW" firstAttribute="centerX" secondItem="IjY-Pu-gzI" secondAttribute="centerX" id="85C-pP-adb"/>
                             <constraint firstItem="NNr-L8-H9X" firstAttribute="leading" secondItem="qLn-CR-IGi" secondAttribute="trailing" constant="30" id="IJB-bc-P5y"/>
-                            <constraint firstItem="Hh0-Py-KpW" firstAttribute="centerY" secondItem="IjY-Pu-gzI" secondAttribute="centerY" constant="-70" id="J9v-yP-lAT"/>
+                            <constraint firstItem="Hh0-Py-KpW" firstAttribute="centerY" secondItem="IjY-Pu-gzI" secondAttribute="centerY" constant="-120" id="bdN-dC-8Km"/>
                             <constraint firstItem="qLn-CR-IGi" firstAttribute="top" secondItem="qFi-A7-RYB" secondAttribute="bottom" constant="15" id="cwg-YM-ybi"/>
-                            <constraint firstItem="Hh0-Py-KpW" firstAttribute="centerX" secondItem="IjY-Pu-gzI" secondAttribute="centerX" id="isR-hZ-mqk"/>
-                            <constraint firstItem="Kpf-o3-Mjc" firstAttribute="centerY" secondItem="IjY-Pu-gzI" secondAttribute="centerY" constant="170" id="jFC-mv-SsX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NNr-L8-H9X" secondAttribute="trailing" constant="25" id="kST-iG-LZP"/>
+                            <constraint firstItem="Kpf-o3-Mjc" firstAttribute="centerX" secondItem="IjY-Pu-gzI" secondAttribute="centerX" id="tiM-o2-PPR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SsX-15-YrM"/>
@@ -591,8 +592,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ghj-ud-LWn"/>
         <segue reference="qsA-u0-Ryj"/>
-        <segue reference="JoY-oV-gFU"/>
+        <segue reference="Ru2-Wx-vd4"/>
+        <segue reference="eXL-Hs-ZZ9"/>
     </inferredMetricsTieBreakers>
 </document>
