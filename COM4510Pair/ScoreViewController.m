@@ -20,19 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self displayScoreResult];
-    [self displaytotalTime];
     
     self.muteButton.hidden = YES;
 }
 
 -(void)displayScoreResult {
-    [self.scoreResultLabel setText:[NSString stringWithFormat:@"%i", self.scoreResult]];
-}
-
--(void)displaytotalTime{
     int seconds = self.totalTime % 60;
     int minutes = (self.totalTime / 60) % 60;
-    [self.totalTimeLabel setText:[NSString stringWithFormat:@"%2d:%02d", minutes, seconds]];
+    
+    [self.scoreResultLabel setText:[NSString stringWithFormat:@"Wow! You got a score of %i\nin a time of %2d:%02d", self.scoreResult, minutes, seconds]];
+    
+    [self.totalTimeLabel setText:[NSString stringWithFormat:@"in a time of %2d:%02d", minutes, seconds]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +44,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *fbPostSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I've got %i scores on%2d:%02d time, come and join me!",self.scoreResult,minutes, seconds]];
+        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.scoreResult,minutes, seconds]];
         [self presentViewController:fbPostSheet animated:YES completion:nil];
     } else
     {
@@ -66,7 +64,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:[NSString stringWithFormat:@"I've got %i scores on%2d:%02d time, come and join me!",self.scoreResult,minutes, seconds]];
+        [tweetSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.scoreResult,minutes, seconds]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
     }
