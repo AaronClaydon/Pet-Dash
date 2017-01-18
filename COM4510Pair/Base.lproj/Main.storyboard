@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BvY-tY-9db">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lCb-sS-AFS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -127,7 +127,7 @@
         <!--Level-->
         <scene sceneID="wBk-NW-9o4">
             <objects>
-                <viewController title="Level" id="lCb-sS-AFS" customClass="BackgroundViewController" sceneMemberID="viewController">
+                <viewController title="Level" id="lCb-sS-AFS" customClass="LevelSelectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kBe-rM-QRQ"/>
                         <viewControllerLayoutGuide type="bottom" id="2mk-FP-mQu"/>
@@ -139,17 +139,6 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-Cv-3V4">
                                 <rect key="frame" x="16" y="227" width="382" height="246"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7po-Mp-hQV">
-                                        <rect key="frame" x="24" y="21" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="4Is-VP-5iv"/>
-                                            <constraint firstAttribute="width" constant="64" id="J5e-Md-byi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
-                                        <state key="normal" title="1" backgroundImage="grid_red.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-ha-tA1">
                                         <rect key="frame" x="153" y="21" width="80" height="80"/>
                                         <constraints>
@@ -160,6 +149,9 @@
                                         <state key="normal" title="2" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelTwoClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="k3o-vU-O5t"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0o-92-rHw">
                                         <rect key="frame" x="289" y="21" width="80" height="80"/>
@@ -171,6 +163,9 @@
                                         <state key="normal" title="3" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelThreeClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="UBH-ag-6c3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iny-ii-7xB">
                                         <rect key="frame" x="289" y="140" width="80" height="80"/>
@@ -182,6 +177,9 @@
                                         <state key="normal" title="6" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelSixClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="jug-Ou-m0O"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-Ip-2eu">
                                         <rect key="frame" x="24" y="140" width="80" height="80"/>
@@ -193,6 +191,9 @@
                                         <state key="normal" title="4" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelFourClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="mh1-jI-PUs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-eK-woQ">
                                         <rect key="frame" x="153" y="140" width="80" height="80"/>
@@ -204,6 +205,23 @@
                                         <state key="normal" title="5" backgroundImage="grid_red.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelFiveClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="Dy3-ha-U3N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7po-Mp-hQV">
+                                        <rect key="frame" x="24" y="21" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="4Is-VP-5iv"/>
+                                            <constraint firstAttribute="width" constant="64" id="J5e-Md-byi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="45"/>
+                                        <state key="normal" title="1" backgroundImage="grid_red.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="levelOneClicked:" destination="lCb-sS-AFS" eventType="primaryActionTriggered" id="nvS-tn-LK2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -236,15 +254,6 @@
                                     <segue destination="O7t-Sy-kha" kind="show" id="JoY-oV-gFU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp1-zg-Lt7">
-                                <rect key="frame" x="190" y="102" width="96" height="30"/>
-                                <state key="normal" title="Choose levels"/>
-                                <connections>
-                                    <segue destination="BvY-tY-9db" kind="popoverPresentation" popoverAnchorView="fp1-zg-Lt7" id="u0Z-WW-6w5">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -254,6 +263,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="BvY-tY-9db" kind="show" identifier="segueToGame" id="qsA-u0-Ryj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKd-O7-2aN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -582,8 +594,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ghj-ud-LWn"/>
+        <segue reference="qsA-u0-Ryj"/>
         <segue reference="JoY-oV-gFU"/>
-        <segue reference="IM3-SV-jrg"/>
-        <segue reference="u0Z-WW-6w5"/>
     </inferredMetricsTieBreakers>
 </document>

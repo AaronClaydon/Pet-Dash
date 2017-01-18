@@ -55,13 +55,13 @@
 }
 
 -(void)initGame {
-    self.gameModel = [[GameModel alloc] init];
+    //self.gameModel = [[GameModel alloc] init];
     
     //game parameters
-    self.gameModel.width = 7;
-    self.gameModel.height = 8;
+    //self.gameModel.width = 7;
+    //self.gameModel.height = 8;
     
-    self.gameModel.startTime = 30;
+    //self.gameModel.startTime = 30;
     
     [self.gameModel generateGameField];
     

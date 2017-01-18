@@ -36,7 +36,7 @@
     
     [self updateMuteButton];
     
-    self.muteButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 72), 30, 45, 45);
+    self.muteButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 75), 30, 45, 45);
     [[self view] addSubview:self.muteButton];
 }
 

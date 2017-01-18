@@ -12,6 +12,18 @@
 
 @implementation GameModel
 
+-(id)initWithWidth:(int)width andHeight:(int)height andStartTime:(int)startTime {
+    self = [super init];
+    
+    if (self) {
+        self.width = width;
+        self.height = height;
+        self.startTime = startTime;
+    }
+    
+    return self;
+}
+
 -(NSMutableDictionary*)checkClusterMatchForTile:(NSString *)tile inRow:(int)row andColumn:(int)column {
     //Reset the array of tiles that have already been checked
     [self resetCheckedArray];
