@@ -55,15 +55,11 @@
 }
 
 -(void)initGame {
-    //self.gameModel = [[GameModel alloc] init];
-    
-    //game parameters
-    //self.gameModel.width = 7;
-    //self.gameModel.height = 8;
-    
-    //self.gameModel.startTime = 30;
-    
+    //generate a random game field
     [self.gameModel generateGameField];
+    
+    //check if the new game field is possible
+    [self checkIfImpossibleGamefieldAndAnimateRedraw:NO];
     
     //size of each individual tile
     self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
