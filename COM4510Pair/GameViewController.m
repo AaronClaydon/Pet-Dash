@@ -57,10 +57,13 @@
 -(void)initGame {
     self.gameModel = [[GameModel alloc] init];
     
+    //game parameters
     self.gameModel.width = 7;
     self.gameModel.height = 8;
     
     self.gameModel.startTime = 30;
+    
+    [self.gameModel generateGameField];
     
     //size of each individual tile
     self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
@@ -68,17 +71,6 @@
     //left padding of the game field
     //worked out by the different of the game screen width and width of all the tiles
     self.leftPadding = ([UIScreen mainScreen].bounds.size.width - 20) - (self.gameModel.width * self.tileSize) + 1;
-    
-    self.gameModel.gameArray = [@[
-                         [@[ @"yellow", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ] mutableCopy],
-                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"yellow", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"red", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"green", @"yellow", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         [@[ @"red", @"green", @"blue", @"yellow", @"orange", @"red", @"red" ]mutableCopy],
-                         ] mutableCopy];
     
     [self updateScore];
     [self drawTiles];
@@ -134,17 +126,6 @@
     int row = sender.row;
     int column = sender.column;
     NSString* tileType = [[self.gameModel.gameArray objectAtIndex:row] objectAtIndex:column];
-    
-    self.gameModel.checkedArray = [@[
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       [@[ @false, @false, @false, @false, @false, @false, @false ] mutableCopy],
-                       ] mutableCopy];
     
     //get the score for that cluster click
     NSMutableDictionary* clusterCheck = [self.gameModel checkClusterMatchForTile:tileType inRow:row andColumn:column];
@@ -253,12 +234,7 @@
             //if deleted tile then replace with a random kind
             if([tileType isEqualToString:@"deleted"]) {
                 //generate new random tile type
-                //I SHOULD BE IN THE MODEL!!!!!!!!
-                NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
-                int lowerBound = 0;
-                int upperBound = (int)[tileTypes count];
-                int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
-                NSString* newTileType = [tileTypes objectAtIndex:tileNumber];
+                NSString* newTileType = [self.gameModel generateRandomTile];
                 [[self.gameModel.gameArrayNew objectAtIndex:row] replaceObjectAtIndex:column withObject:newTileType];
                 
                 //update tile image to new type

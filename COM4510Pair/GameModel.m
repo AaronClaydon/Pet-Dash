@@ -13,10 +13,16 @@
 @implementation GameModel
 
 -(NSMutableDictionary*)checkClusterMatchForTile:(NSString *)tile inRow:(int)row andColumn:(int)column {
+    //Reset the array of tiles that have already been checked
+    [self resetCheckedArray];
+    
+    //To return multiple values we store them in a dictionary
     NSMutableDictionary* returnValues = [[NSMutableDictionary alloc] init];
     
+    //Array of all tiles that will be destroyed
     NSMutableArray* tilesToBeDestroyed = [[NSMutableArray alloc] init];
     int score = 0;
+    //Array of points that need to be checked if they match the tile type
     NSMutableArray* toCheckArray = [[NSMutableArray alloc] init];
     
     //Add the first point to the stack of tiles to check
@@ -76,6 +82,22 @@
     return returnValues;
 }
 
+-(void)resetCheckedArray {
+    //Set all values in the has been checked 2D array to be false
+    self.checkedArray = [[NSMutableArray alloc] init];
+    
+    for(int row = 0; row < self.height; row++) {
+        NSMutableArray* rowArray = [[NSMutableArray alloc] init];
+        
+        for(int column = 0; column < self.width; column++) {
+            [rowArray addObject:@false];
+        }
+        
+        [self.checkedArray addObject:rowArray];
+    }
+
+}
+
 -(NSMutableArray*)copy2DArray:(NSMutableArray*)originalArray {
     NSMutableArray* newArray = [[NSMutableArray alloc] init];
     
@@ -100,6 +122,30 @@
     }
 }
 
+-(NSString*)generateRandomTile {
+    NSArray* tileTypes = @[@"red", @"yellow", @"orange", @"green", @"blue"];
+    int lowerBound = 0;
+    int upperBound = (int)[tileTypes count];
+    int tileNumber = lowerBound + arc4random() % (upperBound - lowerBound);
+    NSString* newTileType = [tileTypes objectAtIndex:tileNumber];
+    
+    return newTileType;
+}
 
+-(void)generateGameField {
+    self.gameArray = [[NSMutableArray alloc] init];
+    
+    for(int row = 0; row < self.height; row++) {
+        NSMutableArray* rowArray = [[NSMutableArray alloc] init];
+        
+        for(int column = 0; column < self.width; column++) {
+            NSString* tileType = [self generateRandomTile];
+            
+            [rowArray addObject:tileType];
+        }
+        
+        [self.gameArray addObject:rowArray];
+    }
+}
 
 @end
