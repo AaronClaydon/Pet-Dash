@@ -8,6 +8,7 @@
 
 #import "ScoreViewController.h"
 #import "GameModel.h"
+#import "GameViewController.h"
 
 
 @interface ScoreViewController ()
@@ -25,10 +26,10 @@
 }
 
 -(void)displayScoreResult {
-    int seconds = self.totalTime % 60;
-    int minutes = (self.totalTime / 60) % 60;
+    int seconds = self.gameModel.startTime % 60;
+    int minutes = (self.gameModel.startTime / 60) % 60;
     
-    [self.scoreResultLabel setText:[NSString stringWithFormat:@"Wow! You got a score of %i\nin a time of %2d:%02d", self.scoreResult, minutes, seconds]];
+    [self.scoreResultLabel setText:[NSString stringWithFormat:@"Wow! You got a score of %i\nin a time of %2d:%02d", self.gameModel.score, minutes, seconds]];
     
     [self.totalTimeLabel setText:[NSString stringWithFormat:@"in a time of %2d:%02d", minutes, seconds]];
 }
@@ -39,12 +40,12 @@
 }
 
 -(IBAction)FBPressed{
-    int seconds = self.totalTime % 60;
-    int minutes = (self.totalTime / 60) % 60;
+    int seconds = self.gameModel.startTime % 60;
+    int minutes = (self.gameModel.startTime / 60) % 60;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *fbPostSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.scoreResult,minutes, seconds]];
+        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.gameModel.score, minutes, seconds]];
         [self presentViewController:fbPostSheet animated:YES completion:nil];
     } else
     {
@@ -59,12 +60,12 @@
 }
 
 -(IBAction)TweetPressed{
-    int seconds = self.totalTime % 60;
-    int minutes = (self.totalTime / 60) % 60;
+    int seconds = self.gameModel.startTime % 60;
+    int minutes = (self.gameModel.startTime / 60) % 60;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.scoreResult,minutes, seconds]];
+        [tweetSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.gameModel.score, minutes, seconds]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
     }
@@ -80,14 +81,14 @@
     }
     
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"segueToRestartGame"]) {
+        //if we are transfering to score page - set the score
+        GameViewController* gameViewController = [segue destinationViewController];
+        
+        [gameViewController setGameModel:self.gameModel];
+    }
 }
-*/
 
 @end

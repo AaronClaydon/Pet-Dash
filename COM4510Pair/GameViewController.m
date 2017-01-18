@@ -304,11 +304,13 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"segueToScore"]) {
+        //kill the timer
+        [self.gameModel.timer invalidate];
+        
         //if we are transfering to score page - set the score
         ScoreViewController* scoreViewController = [segue destinationViewController];
         
-        [scoreViewController setScoreResult:self.gameModel.score];
-        [scoreViewController setTotalTime:self.gameModel.startTime];
+        [scoreViewController setGameModel:self.gameModel];
     } else if ([[segue identifier] isEqualToString:@"segueToPause"]) {
         //if we are transfering to pause page - actually pause the timer
         [self pauseTimer:self.gameModel.timer];

@@ -437,6 +437,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-o3-Mjc">
+                                <rect key="frame" x="130" y="429" width="150" height="214"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-M2-PwL">
+                                        <rect key="frame" x="4" y="0.0" width="146" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="rRl-Ov-Rey"/>
+                                            <constraint firstAttribute="height" constant="59" id="vaf-US-Oz4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Restart" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BvY-tY-9db" kind="show" identifier="segueToRestartGame" id="arK-F5-9Mm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De9-Tu-7nn">
+                                        <rect key="frame" x="2" y="151" width="146" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="ULe-u4-w8e"/>
+                                            <constraint firstAttribute="width" constant="146" id="xzt-fl-pC0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Back to home" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="O7t-Sy-kha" kind="show" id="e6D-FK-vsE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-9G-aS1">
+                                        <rect key="frame" x="4" y="77" width="146" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="BAp-DO-wEn"/>
+                                            <constraint firstAttribute="height" constant="59" id="czL-GX-66x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Change levels" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lCb-sS-AFS" kind="show" id="Ghj-ud-LWn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" id="36D-VR-ObW"/>
+                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="3F4-cE-jQQ"/>
+                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="KKY-gw-Ico"/>
+                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="100" id="R8L-6y-pNq"/>
+                                    <constraint firstAttribute="width" constant="150" id="V28-d1-pfQ"/>
+                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="a25-DL-3eb"/>
+                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="-100" id="cCK-Vn-qQt"/>
+                                    <constraint firstAttribute="height" constant="360" id="hNr-2a-qsU"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-Py-KpW">
                                 <rect key="frame" x="66" y="162" width="283" height="243"/>
                                 <subviews>
@@ -450,13 +507,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-Au-7Vb">
                                         <rect key="frame" x="8" y="122" width="267" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOp-nD-RP4">
                                         <rect key="frame" x="8" y="103" width="269" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -480,61 +537,6 @@
                                     <action selector="FBPressed" destination="bzU-Gw-5Jv" eventType="touchUpInside" id="bS6-nQ-s1P"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-o3-Mjc">
-                                <rect key="frame" x="130" y="429" width="150" height="214"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-9G-aS1">
-                                        <rect key="frame" x="4" y="77" width="146" height="59"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="146" id="BAp-DO-wEn"/>
-                                            <constraint firstAttribute="height" constant="59" id="czL-GX-66x"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Change levels" backgroundImage="button_smaller.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="lCb-sS-AFS" kind="show" id="Ghj-ud-LWn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-M2-PwL">
-                                        <rect key="frame" x="4" y="0.0" width="146" height="59"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="146" id="rRl-Ov-Rey"/>
-                                            <constraint firstAttribute="height" constant="59" id="vaf-US-Oz4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Restart" backgroundImage="button_smaller.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BvY-tY-9db" kind="show" id="yun-N7-0Vo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De9-Tu-7nn">
-                                        <rect key="frame" x="2" y="151" width="146" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="ULe-u4-w8e"/>
-                                            <constraint firstAttribute="width" constant="146" id="xzt-fl-pC0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                        <state key="normal" title="Back to home" backgroundImage="button_smaller.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="O7t-Sy-kha" kind="show" id="e6D-FK-vsE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" id="36D-VR-ObW"/>
-                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="3F4-cE-jQQ"/>
-                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="KKY-gw-Ico"/>
-                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="100" id="R8L-6y-pNq"/>
-                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="a25-DL-3eb"/>
-                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="-100" id="cCK-Vn-qQt"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNr-L8-H9X">
                                 <rect key="frame" x="318" y="41" width="72" height="38"/>
                                 <constraints>
@@ -560,6 +562,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SsX-15-YrM"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="FBPost" destination="qLn-CR-IGi" id="auH-9V-MlY"/>
                         <outlet property="Tweet" destination="NNr-L8-H9X" id="DSA-ao-V1f"/>
@@ -569,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKe-KC-xKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4811" y="438"/>
+            <point key="canvasLocation" x="4570" y="363"/>
         </scene>
     </scenes>
     <resources>
@@ -584,8 +587,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e6D-FK-vsE"/>
-        <segue reference="yun-N7-0Vo"/>
         <segue reference="Ghj-ud-LWn"/>
+        <segue reference="arK-F5-9Mm"/>
+        <segue reference="e6D-FK-vsE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 #import "BackgroundViewController.h"
 #import "Social/Social.h"
+#import "GameModel.h"
 
 
 @interface ScoreViewController : BackgroundViewController
@@ -21,9 +22,9 @@
 @property (weak)IBOutlet UILabel* scoreResultLabel;
 @property (weak)IBOutlet UILabel* totalTimeLabel;
 
-@property int scoreResult;
-@property int totalTime;
+@property GameModel* gameModel;
 
 -(void)displayScoreResult;
 -(void)displaytotalTime;
+
 @end
