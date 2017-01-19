@@ -33,7 +33,7 @@
 
 -(void)initGame;
 -(void)buttonClicked:(TileButton*)sender;
--(void)drawTiles;
+-(void)drawTilesWithScale:(double)scale;
 
 -(void)initTimer;
 -(void)timerFired;

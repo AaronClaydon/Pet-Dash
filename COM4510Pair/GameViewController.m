@@ -69,12 +69,12 @@
     self.leftPadding = ([UIScreen mainScreen].bounds.size.width - 20) - (self.gameModel.width * self.tileSize) + 1;
     
     [self updateScore];
-    [self drawTiles];
+    [self drawTilesWithScale:1.0];
     [self initTimer];
     [self updateTimer];
 }
 
--(void)drawTiles {
+-(void)drawTilesWithScale:(double)scale {
     //delete all current tiles
     [[self.gameField subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
@@ -100,6 +100,8 @@
             [button setBackgroundImage: [self.tileImages objectForKey: tileType] forState:UIControlStateNormal];
             //set position of the tile based of array position and tile size
             button.frame = CGRectMake(self.leftPadding + (column * self.tileSize), row * self.tileSize, self.tileSize, self.tileSize);
+            
+            button.transform = CGAffineTransformMakeScale(scale, scale);
             
             //add button to the game field
             [self.gameField addSubview:button];
@@ -273,7 +275,7 @@
         self.gameModel.gameArrayNew = nil;
         
         //redraw all the tiles
-        [self drawTiles];
+        [self drawTilesWithScale:1.0];
         
         //check if the board is possible
         [self checkIfImpossibleGamefieldAndAnimateRedraw:NO];
@@ -285,7 +287,6 @@
     
     if (animateRedraw && isPossible) {
         //Game field is possible and we need to animate the redraw
-        NSLog(@"ANIMATE ALL THE DROPS");
         
         //copy the new game array
         self.gameModel.gameArrayNew = [self.gameModel copy2DArray:self.gameModel.gameArray];
@@ -302,16 +303,27 @@
         
         //redraw the game board
         dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC));
-        dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
-            [self drawTiles];
+        dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void) {
+            //redraw all of them with a tiny scale
+            [self drawTilesWithScale:0.01];
+            
+            //animate them scaling back up
+            for (int row = 0; row < self.gameModel.height; row++) {
+                for (int column = 0; column < self.gameModel.width; column++) {
+                    TileButton* tile = [[self.gameFieldTileImages objectAtIndex:row] objectAtIndex:column];
+                    
+                    //animate tile scaling
+                    [UIView animateWithDuration:0.2 animations:^ {
+                        tile.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                    }];
+                }
+            }
         });
         
         //let player click again
         self.gameModel.gameArrayNew = nil;
     } else if(!isPossible) {
         //No clusters can be destroyed
-        NSLog(@"IMPOSSIBLE");
-        
         [self.gameModel generateGameField];
         
         //re run this again and check if the new game field is possible
