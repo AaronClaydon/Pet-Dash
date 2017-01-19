@@ -19,11 +19,29 @@
         scores = [[NSMutableArray alloc] init];
     }
     
+    //add new score
     NSMutableDictionary* newScore = [[NSMutableDictionary alloc] init];
     [newScore setValue:[NSNumber numberWithInt:score] forKey:@"score"];
     [newScore setValue:name forKey:@"name"];
     
     [scores addObject:newScore];
+    
+    //sort it
+    [scores sortUsingComparator:^NSComparisonResult(id a, id b) {
+        NSMutableDictionary* valueA = (NSMutableDictionary*)a;
+        NSMutableDictionary* valueB = (NSMutableDictionary*)b;
+        
+        NSNumber* scoreA = [valueA objectForKey:@"score"];
+        NSNumber* scoreB = [valueB objectForKey:@"score"];
+        
+        return [scoreB compare:scoreA];
+    }];
+    
+    //delete any score with a position > 6
+    int maxLength = 6;
+    if(scores.count > maxLength) {
+        [scores removeObjectsInRange:NSMakeRange(maxLength, scores.count-maxLength)];
+    }
     
     [defaults setObject:[scores copy] forKey:@"highscores"];
     [defaults synchronize];
