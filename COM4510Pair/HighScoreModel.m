@@ -36,4 +36,11 @@
     return scores;
 }
 
+-(void)clearScores {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:nil forKey:@"highscores"];
+    [defaults synchronize];
+}
+
 @end

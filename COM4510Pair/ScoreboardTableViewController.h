@@ -12,6 +12,8 @@
 @interface ScoreboardTableViewController : UITableViewController
 
 -(IBAction)closeButtonTapped:(UIButton *)sender;
+-(IBAction)clearButtonTapped:(id)sender;
+
 @property (strong) HighScoreModel* highScoreModel;
 
 @end

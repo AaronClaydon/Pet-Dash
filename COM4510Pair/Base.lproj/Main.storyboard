@@ -136,6 +136,11 @@
                                 <action selector="closeButtonTapped:" destination="whe-NP-IZK" id="aDw-RP-eVP"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="Py8-wg-FhE">
+                            <connections>
+                                <action selector="clearButtonTapped:" destination="whe-NP-IZK" id="b1D-wL-T8b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTn-4b-db5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -547,6 +552,9 @@
                                         <state key="normal" title="Save Score" backgroundImage="button_smaller.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveScore" destination="bzU-Gw-5Jv" eventType="primaryActionTriggered" id="Jpl-NQ-JZK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

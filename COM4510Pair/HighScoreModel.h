@@ -12,5 +12,6 @@
 
 -(void)addHighScoreOf:(int)score withName:(NSString*)name;
 -(NSArray*)getHighScores;
+-(void)clearScores;
 
 @end

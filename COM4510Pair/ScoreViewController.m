@@ -26,10 +26,6 @@
 }
 
 -(void)displayScoreResult {
-    HighScoreModel* highScores = [[HighScoreModel alloc] init];
-    [highScores addHighScoreOf:4545 withName:@"test"];
-    [highScores getHighScores];
-    
     int seconds = self.gameModel.startTime % 60;
     int minutes = (self.gameModel.startTime / 60) % 60;
     
@@ -84,6 +80,32 @@
         [alertView show];
     }
     
+}
+
+-(IBAction)saveScore {
+    UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"New Score" message:@"Enter your name" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* saveButton = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
+        NSString* name = ((UITextField*)[scoreAlert.textFields objectAtIndex:0]).text;
+        
+        HighScoreModel* highScoreModel= [[HighScoreModel alloc] init];
+        [highScoreModel addHighScoreOf:self.gameModel.score withName:name];
+    }];
+    
+    UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+        [scoreAlert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [scoreAlert addTextFieldWithConfigurationHandler:^(UITextField* textField) {
+        textField.placeholder = @"Name";
+    }];
+    
+    //add the buttons
+    [scoreAlert addAction:saveButton];
+    [scoreAlert addAction:cancelButton];
+    
+    //show the save score alert
+    [self presentViewController:scoreAlert animated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

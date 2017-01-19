@@ -18,6 +18,7 @@
 
 -(IBAction)TweetPressed;
 -(IBAction)FBPressed;
+-(IBAction)saveScore;
   
 @property (weak)IBOutlet UILabel* scoreResultLabel;
 @property (weak)IBOutlet UILabel* totalTimeLabel;
