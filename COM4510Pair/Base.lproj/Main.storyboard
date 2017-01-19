@@ -493,7 +493,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-o3-Mjc">
-                                <rect key="frame" x="130" y="429" width="150" height="214"/>
+                                <rect key="frame" x="130" y="429" width="150" height="287"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6V-M2-PwL">
                                         <rect key="frame" x="4" y="0.0" width="146" height="59"/>
@@ -510,7 +510,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De9-Tu-7nn">
-                                        <rect key="frame" x="2" y="151" width="146" height="55"/>
+                                        <rect key="frame" x="4" y="224" width="146" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="ULe-u4-w8e"/>
                                             <constraint firstAttribute="width" constant="146" id="xzt-fl-pC0"/>
@@ -537,16 +537,29 @@
                                             <segue destination="lCb-sS-AFS" kind="show" id="Ghj-ud-LWn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIE-oh-Crl">
+                                        <rect key="frame" x="4" y="151" width="146" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="IEw-tF-wnW"/>
+                                            <constraint firstAttribute="height" constant="55" id="gAZ-Yp-iae"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                        <state key="normal" title="Save Score" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" id="36D-VR-ObW"/>
+                                    <constraint firstItem="iad-9G-aS1" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="-50" id="36D-VR-ObW"/>
                                     <constraint firstItem="De9-Tu-7nn" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="3F4-cE-jQQ"/>
                                     <constraint firstItem="j6V-M2-PwL" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="KKY-gw-Ico"/>
-                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="100" id="R8L-6y-pNq"/>
+                                    <constraint firstItem="De9-Tu-7nn" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="90" id="R8L-6y-pNq"/>
                                     <constraint firstAttribute="width" constant="150" id="V28-d1-pfQ"/>
                                     <constraint firstItem="iad-9G-aS1" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="a25-DL-3eb"/>
-                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="-100" id="cCK-Vn-qQt"/>
+                                    <constraint firstItem="j6V-M2-PwL" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="-120" id="cCK-Vn-qQt"/>
                                     <constraint firstAttribute="height" constant="360" id="hNr-2a-qsU"/>
+                                    <constraint firstItem="TIE-oh-Crl" firstAttribute="centerY" secondItem="Kpf-o3-Mjc" secondAttribute="centerY" constant="20" id="kxq-ri-TZE"/>
+                                    <constraint firstItem="TIE-oh-Crl" firstAttribute="centerX" secondItem="Kpf-o3-Mjc" secondAttribute="centerX" id="rO0-lI-ahc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-Py-KpW">
@@ -555,7 +568,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="scorefield.png" translatesAutoresizingMaskIntoConstraints="NO" id="qxF-LT-RAv">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="241"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="241" id="uRL-pK-VDS"/>
+                                            <constraint firstAttribute="height" constant="220" id="uRL-pK-VDS"/>
                                             <constraint firstAttribute="width" constant="283" id="vn7-zW-IFm"/>
                                         </constraints>
                                     </imageView>
@@ -660,8 +673,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IM3-SV-jrg"/>
-        <segue reference="eXL-Hs-ZZ9"/>
+        <segue reference="Ghj-ud-LWn"/>
         <segue reference="arK-F5-9Mm"/>
+        <segue reference="e6D-FK-vsE"/>
     </inferredMetricsTieBreakers>
 </document>
