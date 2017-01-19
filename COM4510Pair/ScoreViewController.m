@@ -9,7 +9,7 @@
 #import "ScoreViewController.h"
 #import "GameModel.h"
 #import "GameViewController.h"
-
+#import "HighScoreModel.h"
 
 @interface ScoreViewController ()
 
@@ -26,6 +26,10 @@
 }
 
 -(void)displayScoreResult {
+    HighScoreModel* highScores = [[HighScoreModel alloc] init];
+    [highScores addHighScoreOf:4545 withName:@"test"];
+    [highScores getHighScores];
+    
     int seconds = self.gameModel.startTime % 60;
     int minutes = (self.gameModel.startTime / 60) % 60;
     

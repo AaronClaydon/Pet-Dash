@@ -44,6 +44,8 @@
 		58C0E8D61DDF1F4F004D847F /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8CF1DDF1F4F004D847F /* timer.png */; };
 		58C0E8D81DDF211C004D847F /* button_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8D71DDF211C004D847F /* button_smaller.png */; };
 		58C0E8DA1DDF3292004D847F /* game field demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8D91DDF3292004D847F /* game field demo.png */; };
+		58C3AD481E3100500020EB76 /* HighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3AD471E3100500020EB76 /* HighScoreModel.m */; };
+		58C3AD4B1E3104700020EB76 /* ScoreboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */; };
 		58E225881DEC69310080882D /* TileButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E225871DEC69310080882D /* TileButton.m */; };
 		9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9327E3361E2E5971000C5505 /* AVFoundation.framework */; };
 		9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3431E2E6663000C5505 /* sound_bird.wav */; };
@@ -122,6 +124,10 @@
 		58C0E8CF1DDF1F4F004D847F /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
 		58C0E8D71DDF211C004D847F /* button_smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_smaller.png; sourceTree = "<group>"; };
 		58C0E8D91DDF3292004D847F /* game field demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game field demo.png"; sourceTree = "<group>"; };
+		58C3AD461E3100500020EB76 /* HighScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreModel.h; sourceTree = "<group>"; };
+		58C3AD471E3100500020EB76 /* HighScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreModel.m; sourceTree = "<group>"; };
+		58C3AD491E3104700020EB76 /* ScoreboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardTableViewController.h; sourceTree = "<group>"; };
+		58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardTableViewController.m; sourceTree = "<group>"; };
 		58E225861DEC69310080882D /* TileButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileButton.h; sourceTree = "<group>"; };
 		58E225871DEC69310080882D /* TileButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileButton.m; sourceTree = "<group>"; };
 		9327E3361E2E5971000C5505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -201,10 +207,14 @@
 				5818FEBA1E27D3D700076BED /* PauseViewController.m */,
 				93A805571E2FAD2A00DE8053 /* LevelSelectViewController.h */,
 				93A805581E2FAD2A00DE8053 /* LevelSelectViewController.m */,
+				58C3AD491E3104700020EB76 /* ScoreboardTableViewController.h */,
+				58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */,
 				58E225861DEC69310080882D /* TileButton.h */,
 				58E225871DEC69310080882D /* TileButton.m */,
 				58B759BE1E01A556007F8A79 /* GameModel.h */,
 				58B759BF1E01A556007F8A79 /* GameModel.m */,
+				58C3AD461E3100500020EB76 /* HighScoreModel.h */,
+				58C3AD471E3100500020EB76 /* HighScoreModel.m */,
 				583654181DDB485E00AC0F2D /* Main.storyboard */,
 				5836541B1DDB485E00AC0F2D /* Assets.xcassets */,
 				5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */,
@@ -437,10 +447,12 @@
 				93A805591E2FAD2A00DE8053 /* LevelSelectViewController.m in Sources */,
 				58E225881DEC69310080882D /* TileButton.m in Sources */,
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
+				58C3AD481E3100500020EB76 /* HighScoreModel.m in Sources */,
 				5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */,
 				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
 				583654111DDB485E00AC0F2D /* main.m in Sources */,
+				58C3AD4B1E3104700020EB76 /* ScoreboardTableViewController.m in Sources */,
 				5818FEBB1E27D3D700076BED /* PauseViewController.m in Sources */,
 				58B759C01E01A556007F8A79 /* GameModel.m in Sources */,
 			);
