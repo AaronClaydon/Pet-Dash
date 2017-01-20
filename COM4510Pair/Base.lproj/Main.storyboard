@@ -191,42 +191,6 @@
             </objects>
             <point key="canvasLocation" x="3193" y="1368"/>
         </scene>
-        <!--How to play-->
-        <scene sceneID="aTh-iA-cCp">
-            <objects>
-                <viewController title="How to play" id="uch-vg-1xS" customClass="BackgroundViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GsO-0z-hJf"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Kh-nZ-97H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="h6M-zh-WOY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-Di-iEV">
-                                <rect key="frame" x="94" y="378" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGc-2K-g8Z">
-                                <rect key="frame" x="94" y="554" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Sc-tQc">
-                                <rect key="frame" x="94" y="204" width="240" height="128"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-X0-Ov4">
-                                <rect key="frame" x="26" y="15" width="34" height="30"/>
-                                <state key="normal" backgroundImage="button_back_smaller.png"/>
-                                <connections>
-                                    <segue destination="O7t-Sy-kha" kind="show" id="UtM-ev-Xm3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oQF-AC-TvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3874" y="1197"/>
-        </scene>
         <!--Level-->
         <scene sceneID="wBk-NW-9o4">
             <objects>
@@ -727,7 +691,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="81r-Oi-0t7"/>
-        <segue reference="IM3-SV-jrg"/>
         <segue reference="qsA-u0-Ryj"/>
+        <segue reference="Ru2-Wx-vd4"/>
     </inferredMetricsTieBreakers>
 </document>
