@@ -6,6 +6,50 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="XbP-Th-mO4">
+            <objects>
+                <viewController id="hbx-Ig-sH1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0S4-WQ-8Ty"/>
+                        <viewControllerLayoutGuide type="bottom" id="EuU-uy-SUL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z40-XV-YQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-tI-NkS">
+                                <rect key="frame" x="14" y="14" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="65o-YM-8Mz"/>
+                                    <constraint firstAttribute="width" constant="34" id="Tej-kU-Slm"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="button_back_smaller.png"/>
+                                <connections>
+                                    <segue destination="O7t-Sy-kha" kind="show" id="81r-Oi-0t7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="how to play.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZGb-XP-dbJ">
+                                <rect key="frame" x="0.0" y="47" width="414" height="689"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="498" id="HSf-uY-dFy"/>
+                                    <constraint firstAttribute="width" constant="300" id="uaY-VM-YK7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hMz-tI-NkS" firstAttribute="top" secondItem="Z40-XV-YQe" secondAttribute="topMargin" constant="20" id="KGQ-1X-kBE"/>
+                            <constraint firstItem="ZGb-XP-dbJ" firstAttribute="top" secondItem="hMz-tI-NkS" secondAttribute="bottom" constant="10" id="nuy-f9-TYI"/>
+                            <constraint firstItem="ZGb-XP-dbJ" firstAttribute="centerX" secondItem="Z40-XV-YQe" secondAttribute="centerX" id="wKd-Ol-vI9"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERS-gt-pqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2284" y="439"/>
+        </scene>
         <!--Home-->
         <scene sceneID="EL5-0u-CpK">
             <objects>
@@ -29,7 +73,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uch-vg-1xS" kind="show" id="NFb-v7-pSq"/>
+                                    <segue destination="hbx-Ig-sH1" kind="show" id="F2R-0T-x4T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-Fh-QBt">
@@ -110,7 +154,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="itj-Tg-h2u">
@@ -156,7 +200,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5Kh-nZ-97H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h6M-zh-WOY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-Di-iEV">
@@ -676,13 +720,14 @@
         <image name="button_pause_smaller.png" width="100" height="100"/>
         <image name="button_smaller.png" width="250" height="90"/>
         <image name="grid_red.png" width="500" height="500"/>
+        <image name="how to play.png" width="764" height="1312"/>
         <image name="score.png" width="500" height="500"/>
         <image name="scorefield.png" width="500" height="343"/>
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ghj-ud-LWn"/>
-        <segue reference="arK-F5-9Mm"/>
-        <segue reference="e6D-FK-vsE"/>
+        <segue reference="81r-Oi-0t7"/>
+        <segue reference="IM3-SV-jrg"/>
+        <segue reference="qsA-u0-Ryj"/>
     </inferredMetricsTieBreakers>
 </document>

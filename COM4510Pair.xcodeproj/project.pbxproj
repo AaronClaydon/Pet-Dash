@@ -47,6 +47,7 @@
 		58C3AD481E3100500020EB76 /* HighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3AD471E3100500020EB76 /* HighScoreModel.m */; };
 		58C3AD4B1E3104700020EB76 /* ScoreboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */; };
 		58E225881DEC69310080882D /* TileButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E225871DEC69310080882D /* TileButton.m */; };
+		58ED2FC01E321E4000286F7C /* how to play.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ED2FBF1E321E4000286F7C /* how to play.png */; };
 		9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9327E3361E2E5971000C5505 /* AVFoundation.framework */; };
 		9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3431E2E6663000C5505 /* sound_bird.wav */; };
 		9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3451E2E6672000C5505 /* sound_cat.wav */; };
@@ -130,6 +131,7 @@
 		58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardTableViewController.m; sourceTree = "<group>"; };
 		58E225861DEC69310080882D /* TileButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileButton.h; sourceTree = "<group>"; };
 		58E225871DEC69310080882D /* TileButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileButton.m; sourceTree = "<group>"; };
+		58ED2FBF1E321E4000286F7C /* how to play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "how to play.png"; sourceTree = "<group>"; };
 		9327E3361E2E5971000C5505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9327E3431E2E6663000C5505 /* sound_bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_bird.wav; sourceTree = "<group>"; };
 		9327E3451E2E6672000C5505 /* sound_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cat.wav; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		5836540F1DDB485E00AC0F2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58ED2FBF1E321E4000286F7C /* how to play.png */,
 				582BEEA21E2E57CA00A1ED8C /* Twittershare.png */,
 				582BEEA01E2E56A700A1ED8C /* FBshare.png */,
 				5818FEB41E27BE8F00076BED /* grid_dog_smaller.png */,
@@ -397,6 +400,7 @@
 				5818FEB51E27BE8F00076BED /* grid_dog_smaller.png in Resources */,
 				58B759B91E019F8C007F8A79 /* grid_cat_smaller.png in Resources */,
 				9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */,
+				58ED2FC01E321E4000286F7C /* how to play.png in Resources */,
 				582BEEA11E2E56A700A1ED8C /* FBshare.png in Resources */,
 				58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */,
 				58C0E8C81DDF1D10004D847F /* background image.png in Resources */,
