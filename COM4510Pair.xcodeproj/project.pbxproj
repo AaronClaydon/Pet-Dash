@@ -21,7 +21,6 @@
 		5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583654181DDB485E00AC0F2D /* Main.storyboard */; };
 		5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5836541B1DDB485E00AC0F2D /* Assets.xcassets */; };
 		5836541F1DDB485E00AC0F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */; };
-		5836542A1DDB485E00AC0F2D /* COM4510PairTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654291DDB485E00AC0F2D /* COM4510PairTests.m */; };
 		583654351DDB485F00AC0F2D /* COM4510PairUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654341DDB485F00AC0F2D /* COM4510PairUITests.m */; };
 		588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050E81DDF5243006D2AA3 /* BackgroundViewController.m */; };
 		588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588050EB1DDF5926006D2AA3 /* GameViewController.m */; };
@@ -48,6 +47,7 @@
 		58C3AD4B1E3104700020EB76 /* ScoreboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3AD4A1E3104700020EB76 /* ScoreboardTableViewController.m */; };
 		58E225881DEC69310080882D /* TileButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E225871DEC69310080882D /* TileButton.m */; };
 		58ED2FC01E321E4000286F7C /* how to play.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ED2FBF1E321E4000286F7C /* how to play.png */; };
+		930BE2081E32310300EA1545 /* testHighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930BE2071E32310300EA1545 /* testHighScoreModel.m */; };
 		9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9327E3361E2E5971000C5505 /* AVFoundation.framework */; };
 		9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3431E2E6663000C5505 /* sound_bird.wav */; };
 		9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3451E2E6672000C5505 /* sound_cat.wav */; };
@@ -55,6 +55,7 @@
 		9327E34B1E2E6672000C5505 /* sound_fish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3471E2E6672000C5505 /* sound_fish.wav */; };
 		9327E34C1E2E6672000C5505 /* sound_mouse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3481E2E6672000C5505 /* sound_mouse.wav */; };
 		93A805591E2FAD2A00DE8053 /* LevelSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A805581E2FAD2A00DE8053 /* LevelSelectViewController.m */; };
+		93AC710A1E322BA400C07A34 /* testGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC71091E322BA400C07A34 /* testGameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +97,6 @@
 		5836541E1DDB485E00AC0F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		583654201DDB485E00AC0F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583654251DDB485E00AC0F2D /* COM4510PairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COM4510PairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		583654291DDB485E00AC0F2D /* COM4510PairTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COM4510PairTests.m; sourceTree = "<group>"; };
 		5836542B1DDB485F00AC0F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583654301DDB485F00AC0F2D /* COM4510PairUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COM4510PairUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		583654341DDB485F00AC0F2D /* COM4510PairUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COM4510PairUITests.m; sourceTree = "<group>"; };
@@ -132,6 +132,7 @@
 		58E225861DEC69310080882D /* TileButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileButton.h; sourceTree = "<group>"; };
 		58E225871DEC69310080882D /* TileButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileButton.m; sourceTree = "<group>"; };
 		58ED2FBF1E321E4000286F7C /* how to play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "how to play.png"; sourceTree = "<group>"; };
+		930BE2071E32310300EA1545 /* testHighScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testHighScoreModel.m; sourceTree = "<group>"; };
 		9327E3361E2E5971000C5505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9327E3431E2E6663000C5505 /* sound_bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_bird.wav; sourceTree = "<group>"; };
 		9327E3451E2E6672000C5505 /* sound_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cat.wav; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		9327E3481E2E6672000C5505 /* sound_mouse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_mouse.wav; sourceTree = "<group>"; };
 		93A805571E2FAD2A00DE8053 /* LevelSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectViewController.h; sourceTree = "<group>"; };
 		93A805581E2FAD2A00DE8053 /* LevelSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectViewController.m; sourceTree = "<group>"; };
+		93AC71091E322BA400C07A34 /* testGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testGameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +263,8 @@
 		583654281DDB485E00AC0F2D /* COM4510PairTests */ = {
 			isa = PBXGroup;
 			children = (
-				583654291DDB485E00AC0F2D /* COM4510PairTests.m */,
+				930BE2071E32310300EA1545 /* testHighScoreModel.m */,
+				93AC71091E322BA400C07A34 /* testGameModel.m */,
 				5836542B1DDB485F00AC0F2D /* Info.plist */,
 			);
 			path = COM4510PairTests;
@@ -466,7 +469,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5836542A1DDB485E00AC0F2D /* COM4510PairTests.m in Sources */,
+				930BE2081E32310300EA1545 /* testHighScoreModel.m in Sources */,
+				93AC710A1E322BA400C07A34 /* testGameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
