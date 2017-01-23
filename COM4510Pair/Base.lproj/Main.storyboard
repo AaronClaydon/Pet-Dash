@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERS-gt-pqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="363"/>
+            <point key="canvasLocation" x="2268" y="1226"/>
         </scene>
         <!--Home-->
         <scene sceneID="EL5-0u-CpK">
@@ -332,6 +332,7 @@
                             <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerY" secondItem="XkF-7a-PSW" secondAttribute="centerY" constant="-180" id="ket-fp-Tum"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <segue destination="BvY-tY-9db" kind="show" identifier="segueToGame" id="qsA-u0-Ryj"/>
                     </connections>
@@ -488,6 +489,7 @@
                             <constraint firstItem="nWe-7A-eud" firstAttribute="centerY" secondItem="VqY-4J-uTf" secondAttribute="centerY" constant="-100" id="fbq-cz-faw"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByA-hd-pls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,8 +692,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e6D-FK-vsE"/>
-        <segue reference="arK-F5-9Mm"/>
-        <segue reference="Ghj-ud-LWn"/>
+        <segue reference="qsA-u0-Ryj"/>
+        <segue reference="Ru2-Wx-vd4"/>
+        <segue reference="eXL-Hs-ZZ9"/>
     </inferredMetricsTieBreakers>
 </document>

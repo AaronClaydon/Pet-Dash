@@ -32,22 +32,22 @@
 }
 
 -(IBAction)levelOneClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:5 andHeight:6 andStartTime:10]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:5 andHeight:6 andStartTime:120]];
 }
 -(IBAction)levelTwoClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:6 andHeight:7 andStartTime:150]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:6 andHeight:7 andStartTime:120]];
 }
 -(IBAction)levelThreeClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:7 andHeight:8 andStartTime:150]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:7 andHeight:8 andStartTime:120]];
 }
 -(IBAction)levelFourClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:8 andHeight:9 andStartTime:150]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:8 andHeight:9 andStartTime:120]];
 }
 -(IBAction)levelFiveClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:9 andHeight:10 andStartTime:150]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:9 andHeight:10 andStartTime:120]];
 }
 -(IBAction)levelSixClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:10 andHeight:11 andStartTime:150]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:10 andHeight:11 andStartTime:120]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
