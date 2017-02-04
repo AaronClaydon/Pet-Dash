@@ -24,8 +24,8 @@
 @property (weak)IBOutlet UILabel* totalTimeLabel;
 
 @property GameModel* gameModel;
+@property BOOL alreadySavedScore;
 
 -(void)displayScoreResult;
--(void)displaytotalTime;
 
 @end

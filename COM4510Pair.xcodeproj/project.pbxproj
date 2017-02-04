@@ -31,7 +31,6 @@
 		58B759BD1E019FBB007F8A79 /* button_pause_smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 58B759BB1E019FBB007F8A79 /* button_pause_smaller.png */; };
 		58B759C01E01A556007F8A79 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B759BF1E01A556007F8A79 /* GameModel.m */; };
 		58C0E8C01DDF1C92004D847F /* scorefield.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8BF1DDF1C92004D847F /* scorefield.png */; };
-		58C0E8C51DDF1D07004D847F /* button_mute.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8C31DDF1D07004D847F /* button_mute.png */; };
 		58C0E8C81DDF1D10004D847F /* background image.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8C71DDF1D10004D847F /* background image.png */; };
 		58C0E8D01DDF1F4F004D847F /* button_mute.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8C91DDF1F4F004D847F /* button_mute.png */; };
 		58C0E8D51DDF1F4F004D847F /* score.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C0E8CE1DDF1F4F004D847F /* score.png */; };
@@ -49,8 +48,10 @@
 		9327E34A1E2E6672000C5505 /* sound_dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3461E2E6672000C5505 /* sound_dog.wav */; };
 		9327E34B1E2E6672000C5505 /* sound_fish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3471E2E6672000C5505 /* sound_fish.wav */; };
 		9327E34C1E2E6672000C5505 /* sound_mouse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3481E2E6672000C5505 /* sound_mouse.wav */; };
+		939E69B91E4643A5006659BA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939E69B81E4643A5006659BA /* GameKit.framework */; };
 		93A805591E2FAD2A00DE8053 /* LevelSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A805581E2FAD2A00DE8053 /* LevelSelectViewController.m */; };
 		93AC710A1E322BA400C07A34 /* testGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC71091E322BA400C07A34 /* testGameModel.m */; };
+		93E495881E46434400C2AB21 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E495871E46434400C2AB21 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,9 +130,12 @@
 		9327E3461E2E6672000C5505 /* sound_dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_dog.wav; sourceTree = "<group>"; };
 		9327E3471E2E6672000C5505 /* sound_fish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_fish.wav; sourceTree = "<group>"; };
 		9327E3481E2E6672000C5505 /* sound_mouse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_mouse.wav; sourceTree = "<group>"; };
+		939E69B81E4643A5006659BA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		93A805571E2FAD2A00DE8053 /* LevelSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectViewController.h; sourceTree = "<group>"; };
 		93A805581E2FAD2A00DE8053 /* LevelSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectViewController.m; sourceTree = "<group>"; };
 		93AC71091E322BA400C07A34 /* testGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testGameModel.m; sourceTree = "<group>"; };
+		93E495861E46434400C2AB21 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ../MainMenuViewController.h; sourceTree = "<group>"; };
+		93E495871E46434400C2AB21 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = ../MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939E69B91E4643A5006659BA /* GameKit.framework in Frameworks */,
 				9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */,
 				582AE77C1E29154300F18D29 /* Social.framework in Frameworks */,
 			);
@@ -170,6 +175,7 @@
 				583654281DDB485E00AC0F2D /* COM4510PairTests */,
 				583654331DDB485F00AC0F2D /* COM4510PairUITests */,
 				5836540D1DDB485E00AC0F2D /* Products */,
+				939E69B71E4643A5006659BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +199,8 @@
 				583654161DDB485E00AC0F2D /* ViewController.m */,
 				588050E71DDF5243006D2AA3 /* BackgroundViewController.h */,
 				588050E81DDF5243006D2AA3 /* BackgroundViewController.m */,
+				93E495861E46434400C2AB21 /* MainMenuViewController.h */,
+				93E495871E46434400C2AB21 /* MainMenuViewController.m */,
 				5818FEB61E27CE3400076BED /* ScoreViewController.h */,
 				5818FEB71E27CE3400076BED /* ScoreViewController.m */,
 				588050EA1DDF5926006D2AA3 /* GameViewController.h */,
@@ -276,6 +284,14 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		939E69B71E4643A5006659BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				939E69B81E4643A5006659BA /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,11 +354,17 @@
 		583654041DDB485E00AC0F2D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = aca13ytw;
 				TargetAttributes = {
 					5836540B1DDB485E00AC0F2D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UZD7DQDC6Z;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					583654241DDB485E00AC0F2D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -399,7 +421,6 @@
 				5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */,
 				58C0E8D81DDF211C004D847F /* button_smaller.png in Resources */,
 				58C0E8C01DDF1C92004D847F /* scorefield.png in Resources */,
-				58C0E8C51DDF1D07004D847F /* button_mute.png in Resources */,
 				58B759B51E019E44007F8A79 /* grid_fish_smaller.png in Resources */,
 				58C0E8D61DDF1F4F004D847F /* timer.png in Resources */,
 				58B759B71E019F67007F8A79 /* grid_bird_smaller.png in Resources */,
@@ -433,6 +454,7 @@
 				588050EC1DDF5926006D2AA3 /* GameViewController.m in Sources */,
 				93A805591E2FAD2A00DE8053 /* LevelSelectViewController.m in Sources */,
 				58E225881DEC69310080882D /* TileButton.m in Sources */,
+				93E495881E46434400C2AB21 /* MainMenuViewController.m in Sources */,
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
 				58C3AD481E3100500020EB76 /* HighScoreModel.m in Sources */,
 				5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */,
@@ -511,8 +533,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -556,8 +580,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -586,6 +612,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = UZD7DQDC6Z;
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,6 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = UZD7DQDC6Z;
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -55,6 +55,9 @@
 }
 
 -(void)initGame {
+    //reset the score
+    self.gameModel.score = 0;
+    
     //generate a random game field
     [self.gameModel generateGameField];
     
