@@ -71,6 +71,8 @@
     //worked out by the different of the game screen width and width of all the tiles
     self.leftPadding = ([UIScreen mainScreen].bounds.size.width - 20) - (self.gameModel.width * self.tileSize) + 1;
     
+    self.gameModel.currentTime = self.gameModel.startTime;
+    
     [self updateScore];
     [self drawTilesWithScale:1.0];
     [self initTimer];
@@ -348,7 +350,6 @@
 -(void)initTimer{
     //start the countdown timer
     self.gameModel.timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
-    self.gameModel.currentTime = self.gameModel.startTime;
 }
 
 -(void)timerFired{
@@ -385,8 +386,8 @@
 }
 
 -(void)resumeTimer:(NSTimer*)timer {
-    float pauseTime = -1*[self.pauseStart timeIntervalSinceNow];
-    [self.gameModel.timer setFireDate:[self.previousFireDate initWithTimeInterval:pauseTime sinceDate: self.previousFireDate]];
+    [self.gameModel.timer invalidate];
+    [self initTimer];
 }
 
 @end

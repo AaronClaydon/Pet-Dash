@@ -17,7 +17,6 @@
 		582BEEA81E2E70EB00A1ED8C /* button_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 582BEEA71E2E70EB00A1ED8C /* button_muted.png */; };
 		583654111DDB485E00AC0F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654101DDB485E00AC0F2D /* main.m */; };
 		583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654131DDB485E00AC0F2D /* AppDelegate.m */; };
-		583654171DDB485E00AC0F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583654161DDB485E00AC0F2D /* ViewController.m */; };
 		5836541A1DDB485E00AC0F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583654181DDB485E00AC0F2D /* Main.storyboard */; };
 		5836541C1DDB485E00AC0F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5836541B1DDB485E00AC0F2D /* Assets.xcassets */; };
 		5836541F1DDB485E00AC0F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5836541D1DDB485E00AC0F2D /* LaunchScreen.storyboard */; };
@@ -86,8 +85,6 @@
 		583654101DDB485E00AC0F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		583654121DDB485E00AC0F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		583654131DDB485E00AC0F2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		583654151DDB485E00AC0F2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		583654161DDB485E00AC0F2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		583654191DDB485E00AC0F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5836541B1DDB485E00AC0F2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5836541E1DDB485E00AC0F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 				9327E3381E2E5A02000C5505 /* Sounds */,
 				583654121DDB485E00AC0F2D /* AppDelegate.h */,
 				583654131DDB485E00AC0F2D /* AppDelegate.m */,
-				583654151DDB485E00AC0F2D /* ViewController.h */,
-				583654161DDB485E00AC0F2D /* ViewController.m */,
 				588050E71DDF5243006D2AA3 /* BackgroundViewController.h */,
 				588050E81DDF5243006D2AA3 /* BackgroundViewController.m */,
 				93E495861E46434400C2AB21 /* MainMenuViewController.h */,
@@ -458,7 +453,6 @@
 				588050E91DDF5243006D2AA3 /* BackgroundViewController.m in Sources */,
 				58C3AD481E3100500020EB76 /* HighScoreModel.m in Sources */,
 				5818FEB81E27CE3400076BED /* ScoreViewController.m in Sources */,
-				583654171DDB485E00AC0F2D /* ViewController.m in Sources */,
 				583654141DDB485E00AC0F2D /* AppDelegate.m in Sources */,
 				583654111DDB485E00AC0F2D /* main.m in Sources */,
 				58C3AD4B1E3104700020EB76 /* ScoreboardTableViewController.m in Sources */,
