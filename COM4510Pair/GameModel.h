@@ -14,6 +14,7 @@
 @property int score;
 @property int currentTime;
 @property NSTimer *timer;
+@property BOOL isPaused;
 
 @property int width;
 @property int height;

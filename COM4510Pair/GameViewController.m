@@ -374,15 +374,14 @@
         
         [scoreViewController setGameModel:self.gameModel];
     } else if ([[segue identifier] isEqualToString:@"segueToPause"]) {
+        self.gameModel.isPaused = YES;
         //if we are transfering to pause page - actually pause the timer
         [self pauseTimer:self.gameModel.timer];
     }
 }
 
 -(void)pauseTimer:(NSTimer*)timer {
-    self.pauseStart = [NSDate dateWithTimeIntervalSinceNow:0];
-    self.previousFireDate = [self.gameModel.timer fireDate];
-    [self.gameModel.timer setFireDate:[NSDate distantFuture]];
+    [self.gameModel.timer invalidate];
 }
 
 -(void)resumeTimer:(NSTimer*)timer {

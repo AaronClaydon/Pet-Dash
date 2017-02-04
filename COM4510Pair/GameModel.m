@@ -19,6 +19,8 @@
         self.width = width;
         self.height = height;
         self.startTime = startTime;
+        
+        self.isPaused = NO;
     }
     
     return self;
