@@ -9,7 +9,6 @@
 #import "ScoreViewController.h"
 #import "GameModel.h"
 #import "GameViewController.h"
-#import "HighScoreModel.h"
 
 @interface ScoreViewController ()
 
@@ -85,8 +84,28 @@
 }
 
 -(IBAction)saveScore {
-    //prevent them from saving score twice
-    if(self.alreadySavedScore) {
+    if(!self.alreadySavedScore) {
+        GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:@"ACYW_petdash_topscore"];
+        score.value = self.gameModel.score;
+        
+        [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"%@", [error localizedDescription]);
+            } else {
+                self.alreadySavedScore = YES;
+                
+                UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Score Saved" message:@"Your highscore has been submitted" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+                    [scoreAlert dismissViewControllerAnimated:YES completion:nil];
+                }];
+                
+                [scoreAlert addAction:cancelButton];
+                
+                [self presentViewController:scoreAlert animated:YES completion:nil];
+            }
+        }];
+    } else {
         UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Not Saved" message:@"You have already submitted this score" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
@@ -96,46 +115,7 @@
         [scoreAlert addAction:cancelButton];
         
         [self presentViewController:scoreAlert animated:YES completion:nil];
-        
-        return;
     }
-    
-    UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"New Score" message:@"Enter your name" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* saveButton = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
-        NSString* name = ((UITextField*)[scoreAlert.textFields objectAtIndex:0]).text;
-        if([name isEqualToString:@""]) {
-            UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Not Saved" message:@"Please enter a name to save this score" preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
-                [scoreAlert dismissViewControllerAnimated:YES completion:nil];
-            }];
-            
-            [scoreAlert addAction:cancelButton];
-            
-            [self presentViewController:scoreAlert animated:YES completion:nil];
-        } else {
-            HighScoreModel* highScoreModel= [[HighScoreModel alloc] init];
-            [highScoreModel addHighScoreOf:self.gameModel.score withName:name];
-            
-            self.alreadySavedScore = YES;
-        }
-    }];
-    
-    UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
-        [scoreAlert dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
-    [scoreAlert addTextFieldWithConfigurationHandler:^(UITextField* textField) {
-        textField.placeholder = @"Name";
-    }];
-    
-    //add the buttons
-    [scoreAlert addAction:saveButton];
-    [scoreAlert addAction:cancelButton];
-    
-    //show the save score alert
-    [self presentViewController:scoreAlert animated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -41,10 +41,12 @@
 }
 
 -(void)updateMuteButton {
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL playSounds = [defaults boolForKey:@"playsounds"];
+    
     UIImage* muteImage;
     
-    if(appDelegate.playGameAudio) {
+    if(playSounds) {
         muteImage = [UIImage imageNamed:@"button_mute.png"];
     } else {
         muteImage = [UIImage imageNamed:@"button_muted.png"];
@@ -55,10 +57,12 @@
 }
 
 -(void)muteButtonClicked:(UIButton*)sender {
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL playSounds = [defaults boolForKey:@"playsounds"];
     
     //Invert current value of if play audio
-    appDelegate.playGameAudio = !appDelegate.playGameAudio;
+    [defaults setBool:!playSounds forKey:@"playsounds"];
+    [defaults synchronize];
     
     [self updateMuteButton];
 }

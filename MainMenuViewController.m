@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self authenticateLocalPlayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +26,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)authenticateLocalPlayer{
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    
+    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        if (viewController != nil) {
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+        else{
+            if ([GKLocalPlayer localPlayer].authenticated) {
+                self.gameCenterEnabled = YES;
+                
+                // Get the default leaderboard identifier.
+                [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
+                    
+                    if (error != nil) {
+                        NSLog(@"%@", [error localizedDescription]);
+                    }
+                }];
+            }
+            
+            else{
+                self.gameCenterEnabled = NO;
+            }
+        }
+    };
+}
+
 -(IBAction)clickScoreboard:(id)sender {
-    [self showLeaderboardAndAchievements:YES];
+    if(self.gameCenterEnabled) {
+        [self showLeaderboardAndAchievements:YES];
+    }
 }
 
 -(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard{
     GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
     
-    //gcViewController.gameCenterDelegate = self;
+    gcViewController.gameCenterDelegate = self;
     
     if (shouldShowLeaderboard) {
         gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
@@ -42,6 +73,12 @@
     }
     
     [self presentViewController:gcViewController animated:YES completion:nil];
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)viewController
+{
+    NSLog(@"Close");
+    [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

@@ -136,9 +136,10 @@
     
     //cluster must give a score of at least 3 to actually get deleted
     if (score >= 3) {
-        AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        BOOL playSounds = [defaults boolForKey:@"playsounds"];
         
-        if(appDelegate.playGameAudio) {
+        if(playSounds) {
             //play the tiles sound effect
             AVAudioPlayer* soundPlayer = [self.tileSoundEffects objectForKey:tileType];
             [soundPlayer play];

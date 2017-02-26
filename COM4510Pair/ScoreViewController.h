@@ -8,6 +8,7 @@
 
 #import "BackgroundViewController.h"
 #import "Social/Social.h"
+#import "GameKit/GameKit.h"
 #import "GameModel.h"
 
 

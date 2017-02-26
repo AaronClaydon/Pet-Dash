@@ -12,5 +12,6 @@
 @interface MainMenuViewController : BackgroundViewController
 
 -(IBAction)clickScoreboard:(id)sender;
+@property BOOL gameCenterEnabled;
 
 @end

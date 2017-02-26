@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E163f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -110,7 +110,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SMH-nl-Ots" kind="presentation" id="qaD-pq-qgD"/>
+                                    <action selector="clickScoreboard:" destination="O7t-Sy-kha" eventType="primaryActionTriggered" id="RIL-Op-dNm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,63 +135,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3R-e1-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2473" y="319"/>
-        </scene>
-        <!--Scoreboard-->
-        <scene sceneID="HZr-ZK-gOf">
-            <objects>
-                <tableViewController id="whe-NP-IZK" customClass="ScoreboardTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2gd-2h-yWM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreboardRow" textLabel="eTk-pp-5Wv" detailTextLabel="itj-Tg-h2u" style="IBUITableViewCellStyleValue1" id="9UD-vZ-8l7">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9UD-vZ-8l7" id="pWD-7y-xUf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eTk-pp-5Wv">
-                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="itj-Tg-h2u">
-                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="whe-NP-IZK" id="Zrq-fn-xuo"/>
-                            <outlet property="delegate" destination="whe-NP-IZK" id="PQo-sa-h65"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Scoreboard" id="Fqr-OJ-dKu">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Axg-0t-f8H"/>
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="dlO-Cw-uaM">
-                            <connections>
-                                <action selector="closeButtonTapped:" destination="whe-NP-IZK" id="aDw-RP-eVP"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="Py8-wg-FhE">
-                            <connections>
-                                <action selector="clearButtonTapped:" destination="whe-NP-IZK" id="b1D-wL-T8b"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTn-4b-db5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3265" y="1226"/>
         </scene>
         <!--Level-->
         <scene sceneID="wBk-NW-9o4">
@@ -653,7 +596,6 @@
                         <outlet property="Tweet" destination="NNr-L8-H9X" id="DSA-ao-V1f"/>
                         <outlet property="scoreResultLabel" destination="GOp-nD-RP4" id="0Q4-hk-G5C"/>
                         <outlet property="totalTimeLabel" destination="NPW-Au-7Vb" id="dfA-U6-EeS"/>
-                        <segue destination="whe-NP-IZK" kind="show" identifier="segueToScoreboard" id="wTe-m7-nsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKe-KC-xKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,14 +607,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SMH-nl-Ots" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pMl-mC-XcQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pMl-mC-XcQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="whe-NP-IZK" kind="relationship" relationship="rootViewController" id="Q70-8f-psx"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8c-fm-vRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -692,9 +631,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wTe-m7-nsa"/>
-        <segue reference="arK-F5-9Mm"/>
         <segue reference="eXL-Hs-ZZ9"/>
+        <segue reference="arK-F5-9Mm"/>
         <segue reference="IM3-SV-jrg"/>
     </inferredMetricsTieBreakers>
 </document>
