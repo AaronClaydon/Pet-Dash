@@ -36,17 +36,8 @@
         else{
             if ([GKLocalPlayer localPlayer].authenticated) {
                 self.gameCenterEnabled = YES;
-                
-                // Get the default leaderboard identifier.
-                [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
-                    
-                    if (error != nil) {
-                        NSLog(@"%@", [error localizedDescription]);
-                    }
-                }];
             }
-            
-            else{
+            else {
                 self.gameCenterEnabled = NO;
             }
         }

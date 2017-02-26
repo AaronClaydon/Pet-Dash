@@ -93,12 +93,6 @@
                                     <segue destination="lCb-sS-AFS" kind="show" id="IM3-SV-jrg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hi, player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-Ii-vD7">
-                                <rect key="frame" x="89" y="250" width="156" height="21"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-NX-FcA">
                                 <rect key="frame" x="127" y="503" width="161" height="70"/>
                                 <constraints>
@@ -116,7 +110,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hLl-Ii-vD7" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="30" id="1UR-ch-Wgx"/>
                             <constraint firstAttribute="trailing" secondItem="RwE-Fh-QBt" secondAttribute="trailing" constant="65" id="7QE-ow-vLg"/>
                             <constraint firstAttribute="trailing" secondItem="U8b-NX-FcA" secondAttribute="trailing" constant="65" id="7Ym-eR-Fg3"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leadingMargin" constant="50" id="9G1-Gp-549"/>
@@ -124,8 +117,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LC3-6u-T2d" secondAttribute="trailing" constant="50" id="J55-V3-aDt"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="top" secondItem="RwE-Fh-QBt" secondAttribute="bottom" constant="20" id="Kd1-4h-a3k"/>
                             <constraint firstItem="LC3-6u-T2d" firstAttribute="top" secondItem="U8b-NX-FcA" secondAttribute="bottom" constant="20" id="N2X-PI-JuW"/>
-                            <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="hLl-Ii-vD7" secondAttribute="bottom" constant="400" id="OUE-Gc-wPg"/>
-                            <constraint firstAttribute="trailing" secondItem="hLl-Ii-vD7" secondAttribute="trailing" constant="80" id="Qpk-Sq-jjy"/>
                             <constraint firstItem="U8b-NX-FcA" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="65" id="UKN-oJ-B9t"/>
                             <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="LC3-6u-T2d" secondAttribute="bottom" constant="45" id="Uld-hI-bNV"/>
                         </constraints>
@@ -134,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3R-e1-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2473" y="319"/>
+            <point key="canvasLocation" x="2472.8000000000002" y="318.89055472263868"/>
         </scene>
         <!--Level-->
         <scene sceneID="wBk-NW-9o4">
