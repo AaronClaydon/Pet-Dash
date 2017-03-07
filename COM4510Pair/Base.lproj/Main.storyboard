@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lCb-sS-AFS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -182,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-Cv-3V4">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-Cv-3V4" userLabel="Level buttons">
                                 <rect key="frame" x="16" y="227" width="382" height="246"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-ha-tA1">
@@ -306,9 +306,7 @@
                         <constraints>
                             <constraint firstItem="uRp-Cv-3V4" firstAttribute="centerX" secondItem="XkF-7a-PSW" secondAttribute="centerX" id="8ag-hy-DzE"/>
                             <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerX" secondItem="XkF-7a-PSW" secondAttribute="centerX" id="EBP-h3-mql"/>
-                            <constraint firstItem="uRp-Cv-3V4" firstAttribute="leading" secondItem="XkF-7a-PSW" secondAttribute="leading" constant="10" id="PvX-L9-ZSc"/>
                             <constraint firstItem="uRp-Cv-3V4" firstAttribute="centerY" secondItem="XkF-7a-PSW" secondAttribute="centerY" id="eDu-mR-NSK"/>
-                            <constraint firstAttribute="trailing" secondItem="uRp-Cv-3V4" secondAttribute="trailing" constant="10" id="hFs-ej-cor"/>
                             <constraint firstItem="CUx-fB-Bvp" firstAttribute="centerY" secondItem="XkF-7a-PSW" secondAttribute="centerY" constant="-180" id="ket-fp-Tum"/>
                         </constraints>
                     </view>
@@ -400,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e6-Tg-eoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3776" y="363"/>
+            <point key="canvasLocation" x="3975" y="363"/>
         </scene>
         <!--Pause Menu-->
         <scene sceneID="vPP-pr-WTI">
@@ -634,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKe-KC-xKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4276" y="363"/>
+            <point key="canvasLocation" x="4694" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gmc-JG-kXB">
@@ -667,7 +665,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qsA-u0-Ryj"/>
-        <segue reference="IM3-SV-jrg"/>
+        <segue reference="Ghj-ud-LWn"/>
         <segue reference="JoY-oV-gFU"/>
     </inferredMetricsTieBreakers>
 </document>
