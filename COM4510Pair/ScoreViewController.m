@@ -96,7 +96,7 @@
                 
                 UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Score Saved" message:@"Your highscore has been submitted" preferredStyle:UIAlertControllerStyleAlert];
                 
-                UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+                UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
                     [scoreAlert dismissViewControllerAnimated:YES completion:nil];
                 }];
                 
@@ -108,7 +108,7 @@
     } else {
         UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Not Saved" message:@"You have already submitted this score" preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
             [scoreAlert dismissViewControllerAnimated:YES completion:nil];
         }];
         

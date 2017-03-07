@@ -15,6 +15,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.gameCenterEnabled = NO;
     // Override point for customization after application launch.
     return YES;
 }

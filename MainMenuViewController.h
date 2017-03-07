@@ -7,11 +7,11 @@
 //
 
 #import "BackgroundViewController.h"
+#import "AppDelegate.h"
 #import <GameKit/GameKit.h>
 
 @interface MainMenuViewController : BackgroundViewController
 
 -(IBAction)clickScoreboard:(id)sender;
-@property BOOL gameCenterEnabled;
 
 @end

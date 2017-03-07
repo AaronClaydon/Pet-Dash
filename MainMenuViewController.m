@@ -33,19 +33,23 @@
         if (viewController != nil) {
             [self presentViewController:viewController animated:YES completion:nil];
         }
-        else{
+        else {
+            AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            
             if ([GKLocalPlayer localPlayer].authenticated) {
-                self.gameCenterEnabled = YES;
+                appDelegate.gameCenterEnabled = YES;
             }
             else {
-                self.gameCenterEnabled = NO;
+                appDelegate.gameCenterEnabled = NO;
             }
         }
     };
 }
 
 -(IBAction)clickScoreboard:(id)sender {
-    if(self.gameCenterEnabled) {
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if(appDelegate.gameCenterEnabled) {
         [self showLeaderboardAndAchievements:YES];
     }
 }
@@ -59,7 +63,7 @@
         gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
         gcViewController.leaderboardIdentifier = @"ACYW_petdash_topscore";
     }
-    else{
+    else {
         gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
     }
     
@@ -68,7 +72,6 @@
 
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)viewController
 {
-    NSLog(@"Close");
     [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
