@@ -24,6 +24,13 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.gameViewController = self;
     
+    //device rotate event
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(orientationChanged:)
+     name:UIDeviceOrientationDidChangeNotification
+     object:[UIDevice currentDevice]];
+    
     //tile types and their associated image
     self.tileImages = @{
                         @"red" : [UIImage imageNamed:@"grid_mouse_smaller.png"],
@@ -42,6 +49,14 @@
                               };
     
     [self initGame];
+}
+
+-(void)orientationChanged:(NSNotification *)note {
+    dispatch_time_t dropDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC));
+    dispatch_after(dropDelayTime, dispatch_get_main_queue(), ^(void){
+        [self calculateTileSize];
+        [self drawTilesWithScale:1.0];
+    });
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -64,6 +79,17 @@
     //check if the new game field is possible
     [self checkIfImpossibleGamefieldAndAnimateRedraw:NO];
     
+    [self calculateTileSize];
+    
+    self.gameModel.currentTime = self.gameModel.startTime;
+    
+    [self updateScore];
+    [self drawTilesWithScale:1.0];
+    [self initTimer];
+    [self updateTimer];
+}
+
+-(void)calculateTileSize {
     //size of each individual tile
     [self.gameField layoutIfNeeded];
     CGSize size = self.gameField.bounds.size;
@@ -95,13 +121,6 @@
     //left padding of the game field
     //worked out by the different of the game screen width and width of all the tiles
     self.leftPadding = (size.width - ((self.tileSize * self.gameModel.width) + 20)) / 2;
-    
-    self.gameModel.currentTime = self.gameModel.startTime;
-    
-    [self updateScore];
-    [self drawTilesWithScale:1.0];
-    [self initTimer];
-    [self updateTimer];
 }
 
 -(void)drawTilesWithScale:(double)scale {
@@ -413,6 +432,10 @@
 -(void)resumeTimer:(NSTimer*)timer {
     [self.gameModel.timer invalidate];
     [self initTimer];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 @end
