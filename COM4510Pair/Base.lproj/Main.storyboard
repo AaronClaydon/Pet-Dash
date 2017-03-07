@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lCb-sS-AFS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -384,7 +384,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="os8-Um-jqv" secondAttribute="trailing" constant="10" id="aqt-GY-FWx"/>
                             <constraint firstItem="WpG-VU-YBQ" firstAttribute="leading" secondItem="fTS-Bc-u1s" secondAttribute="trailing" constant="5" id="n5m-OC-UbM"/>
                             <constraint firstItem="fTS-Bc-u1s" firstAttribute="leading" secondItem="vol-9P-812" secondAttribute="leading" id="nz9-dd-z8h"/>
-                            <constraint firstItem="4HD-6E-ghQ" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="bottom" id="x69-Za-DTi"/>
+                            <constraint firstItem="4HD-6E-ghQ" firstAttribute="top" secondItem="yCa-XD-DP2" secondAttribute="bottom" constant="10" id="x69-Za-DTi"/>
                             <constraint firstItem="os8-Um-jqv" firstAttribute="top" secondItem="WYd-nj-lPf" secondAttribute="bottom" constant="72" id="xRz-Nv-kuV"/>
                             <constraint firstItem="yCa-XD-DP2" firstAttribute="top" secondItem="fTS-Bc-u1s" secondAttribute="bottom" constant="55" id="zfj-jX-T1P"/>
                         </constraints>
@@ -665,7 +665,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qsA-u0-Ryj"/>
-        <segue reference="Ghj-ud-LWn"/>
+        <segue reference="IM3-SV-jrg"/>
         <segue reference="JoY-oV-gFU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -65,11 +65,36 @@
     [self checkIfImpossibleGamefieldAndAnimateRedraw:NO];
     
     //size of each individual tile
-    self.tileSize = ([UIScreen mainScreen].bounds.size.width - 20) / self.gameModel.width;
+    [self.gameField layoutIfNeeded];
+    CGSize size = self.gameField.bounds.size;
+    self.tileSize = size.height / self.gameModel.height;
+    
+    int tileHeights = (self.tileSize * self.gameModel.height) + 20;
+    int tileWidths = (self.tileSize * self.gameModel.width) + 20;
+    
+    if(tileWidths > size.width || tileHeights > size.height) {
+        int widthDif = tileWidths - size.width;
+        int heightDif = tileHeights - size.height;
+        double difPerTileDouble;
+        
+        if(widthDif > heightDif) {
+            NSLog(@"TOO BIG - WIDTH BIGGER");
+            
+            difPerTileDouble = (double)widthDif / self.gameModel.width;
+        } else {
+            NSLog(@"TOO BIG - HEIGHT BIGGER");
+            
+            difPerTileDouble = (double)heightDif / self.gameModel.height;
+        }
+        
+        int difPerTile = ceil(difPerTileDouble);
+        
+        self.tileSize -= difPerTile;
+    }
     
     //left padding of the game field
     //worked out by the different of the game screen width and width of all the tiles
-    self.leftPadding = ([UIScreen mainScreen].bounds.size.width - 20) - (self.gameModel.width * self.tileSize) + 1;
+    self.leftPadding = (size.width - ((self.tileSize * self.gameModel.width) + 20)) / 2;
     
     self.gameModel.currentTime = self.gameModel.startTime;
     
