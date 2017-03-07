@@ -11,7 +11,6 @@
 #import "GameKit/GameKit.h"
 #import "GameModel.h"
 
-
 @interface ScoreViewController : BackgroundViewController
 
 @property (weak) IBOutlet UIButton *Tweet;

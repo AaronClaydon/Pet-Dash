@@ -9,6 +9,7 @@
 #import "ScoreViewController.h"
 #import "GameModel.h"
 #import "GameViewController.h"
+#import "AppDelegate.h"
 
 @interface ScoreViewController ()
 
@@ -84,6 +85,22 @@
 }
 
 -(IBAction)saveScore {
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if(!appDelegate.gameCenterEnabled) {
+        UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Not Saved" message:@"You must be signed in to Game Center to submit your score" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+            [scoreAlert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        [scoreAlert addAction:cancelButton];
+        
+        [self presentViewController:scoreAlert animated:YES completion:nil];
+        
+        return;
+    }
+    
     if(!self.alreadySavedScore) {
         GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:@"ACYW_petdash_topscore"];
         score.value = self.gameModel.score;

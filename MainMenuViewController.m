@@ -51,6 +51,16 @@
     
     if(appDelegate.gameCenterEnabled) {
         [self showLeaderboardAndAchievements:YES];
+    } else {
+        UIAlertController* scoreAlert = [UIAlertController alertControllerWithTitle:@"Not Signed In" message:@"You must be signed in to Game Center to view the scoreboard" preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action) {
+            [scoreAlert dismissViewControllerAnimated:YES completion:nil];
+        }];
+
+        [scoreAlert addAction:cancelButton];
+
+        [self presentViewController:scoreAlert animated:YES completion:nil];
     }
 }
 
