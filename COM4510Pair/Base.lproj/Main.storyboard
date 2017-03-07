@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E163f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7t-Sy-kha">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -65,63 +65,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-6u-T2d">
-                                <rect key="frame" x="127" y="611" width="161" height="70"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TN-91-1Kf" userLabel="Buttons">
+                                <rect key="frame" x="74" y="245" width="161" height="360"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-Fh-QBt">
+                                        <rect key="frame" x="39" y="28" width="161" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="PZh-vV-7aK"/>
+                                            <constraint firstAttribute="width" constant="220" id="ez5-4N-GJt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <state key="normal" title="Start" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lCb-sS-AFS" kind="show" id="IM3-SV-jrg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-NX-FcA">
+                                        <rect key="frame" x="39" y="29" width="161" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="Czk-GZ-Sad"/>
+                                            <constraint firstAttribute="height" constant="59" id="PjP-sp-2iy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <state key="normal" title="ScoreBoard" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickScoreboard:" destination="O7t-Sy-kha" eventType="primaryActionTriggered" id="RIL-Op-dNm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-6u-T2d">
+                                        <rect key="frame" x="39" y="29" width="161" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="Wao-R7-Yw5"/>
+                                            <constraint firstAttribute="height" constant="59" id="eJi-MG-nl8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <state key="normal" title="How to play" backgroundImage="button_smaller.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hbx-Ig-sH1" kind="show" id="F2R-0T-x4T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="18K-Sr-hrB"/>
-                                    <constraint firstAttribute="height" constant="50" id="m6D-io-qJd"/>
+                                    <constraint firstAttribute="width" constant="220" id="2tg-u9-Ua4"/>
+                                    <constraint firstItem="U8b-NX-FcA" firstAttribute="centerY" secondItem="9TN-91-1Kf" secondAttribute="centerY" id="Hrg-uK-t7l"/>
+                                    <constraint firstItem="RwE-Fh-QBt" firstAttribute="centerY" secondItem="9TN-91-1Kf" secondAttribute="centerY" constant="-80" id="Vtf-eG-qd7"/>
+                                    <constraint firstItem="U8b-NX-FcA" firstAttribute="centerX" secondItem="9TN-91-1Kf" secondAttribute="centerX" id="Ys1-D6-HY3"/>
+                                    <constraint firstItem="LC3-6u-T2d" firstAttribute="centerX" secondItem="9TN-91-1Kf" secondAttribute="centerX" id="eBO-Er-vh4"/>
+                                    <constraint firstAttribute="height" constant="360" id="i09-15-jDt"/>
+                                    <constraint firstItem="LC3-6u-T2d" firstAttribute="centerY" secondItem="9TN-91-1Kf" secondAttribute="centerY" constant="80" id="krk-fn-2j9"/>
+                                    <constraint firstItem="RwE-Fh-QBt" firstAttribute="centerX" secondItem="9TN-91-1Kf" secondAttribute="centerX" id="wx4-Px-bFA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                <state key="normal" title="How to play" backgroundImage="button_smaller.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hbx-Ig-sH1" kind="show" id="F2R-0T-x4T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-Fh-QBt">
-                                <rect key="frame" x="127" y="389" width="161" height="71"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created by Aaron Claydon &amp; Yangting Wang" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-dK-bJg">
+                                <rect key="frame" x="50" y="638" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.33761738989637302" green="0.33761738989637302" blue="0.33761738989637302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ZO-VD-YZR" userLabel="Logo">
+                                <rect key="frame" x="67" y="116" width="240" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="grid_cat_smaller.png" translatesAutoresizingMaskIntoConstraints="NO" id="HYM-y4-FdJ">
+                                        <rect key="frame" x="8" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="U0O-pL-pLz"/>
+                                            <constraint firstAttribute="height" constant="64" id="ahi-00-gHd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pet Dash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEi-Xx-vW7">
+                                        <rect key="frame" x="80" y="22" width="160" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5wY-bL-fbQ"/>
-                                    <constraint firstAttribute="width" constant="100" id="g99-fe-GY0"/>
+                                    <constraint firstItem="HYM-y4-FdJ" firstAttribute="leading" secondItem="3ZO-VD-YZR" secondAttribute="leading" id="6vR-nk-fYg"/>
+                                    <constraint firstItem="dEi-Xx-vW7" firstAttribute="centerX" secondItem="3ZO-VD-YZR" secondAttribute="centerX" constant="32" id="8cM-bV-j2W"/>
+                                    <constraint firstAttribute="height" constant="64" id="BMw-cd-kd5"/>
+                                    <constraint firstItem="dEi-Xx-vW7" firstAttribute="centerY" secondItem="3ZO-VD-YZR" secondAttribute="centerY" id="Eux-MQ-aXY"/>
+                                    <constraint firstAttribute="width" constant="224" id="Tr5-gD-hcK"/>
+                                    <constraint firstItem="HYM-y4-FdJ" firstAttribute="top" secondItem="3ZO-VD-YZR" secondAttribute="top" id="tga-76-koY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                <state key="normal" title="Start" backgroundImage="button_smaller.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lCb-sS-AFS" kind="show" id="IM3-SV-jrg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-NX-FcA">
-                                <rect key="frame" x="127" y="503" width="161" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3CR-HA-0wH"/>
-                                    <constraint firstAttribute="height" constant="50" id="J5B-LK-wta"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                <state key="normal" title="ScoreBoard" backgroundImage="button_smaller.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickScoreboard:" destination="O7t-Sy-kha" eventType="primaryActionTriggered" id="RIL-Op-dNm"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RwE-Fh-QBt" secondAttribute="trailing" constant="65" id="7QE-ow-vLg"/>
-                            <constraint firstAttribute="trailing" secondItem="U8b-NX-FcA" secondAttribute="trailing" constant="65" id="7Ym-eR-Fg3"/>
-                            <constraint firstItem="LC3-6u-T2d" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leadingMargin" constant="50" id="9G1-Gp-549"/>
-                            <constraint firstItem="RwE-Fh-QBt" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="65" id="CMo-gN-em5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LC3-6u-T2d" secondAttribute="trailing" constant="50" id="J55-V3-aDt"/>
-                            <constraint firstItem="U8b-NX-FcA" firstAttribute="top" secondItem="RwE-Fh-QBt" secondAttribute="bottom" constant="20" id="Kd1-4h-a3k"/>
-                            <constraint firstItem="LC3-6u-T2d" firstAttribute="top" secondItem="U8b-NX-FcA" secondAttribute="bottom" constant="20" id="N2X-PI-JuW"/>
-                            <constraint firstItem="U8b-NX-FcA" firstAttribute="leading" secondItem="Wxd-gA-tI4" secondAttribute="leading" constant="65" id="UKN-oJ-B9t"/>
-                            <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="LC3-6u-T2d" secondAttribute="bottom" constant="45" id="Uld-hI-bNV"/>
+                            <constraint firstItem="3ZO-VD-YZR" firstAttribute="centerX" secondItem="Wxd-gA-tI4" secondAttribute="centerX" id="0GN-gC-Pry"/>
+                            <constraint firstItem="9TN-91-1Kf" firstAttribute="centerX" secondItem="Wxd-gA-tI4" secondAttribute="centerX" id="NMe-rL-vRV"/>
+                            <constraint firstItem="9TN-91-1Kf" firstAttribute="centerY" secondItem="Wxd-gA-tI4" secondAttribute="centerY" constant="120" id="SfE-iN-MZN"/>
+                            <constraint firstItem="xxf-dK-bJg" firstAttribute="centerX" secondItem="Wxd-gA-tI4" secondAttribute="centerX" id="YDY-mH-OZg"/>
+                            <constraint firstItem="zZR-Ui-eKb" firstAttribute="top" secondItem="xxf-dK-bJg" secondAttribute="bottom" constant="10" id="cze-sG-Ewt"/>
+                            <constraint firstItem="3ZO-VD-YZR" firstAttribute="centerY" secondItem="Wxd-gA-tI4" secondAttribute="centerY" constant="-120" id="oZW-MX-mlQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="lOM-4Z-321"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3R-e1-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -598,7 +641,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SMH-nl-Ots" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pMl-mC-XcQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pMl-mC-XcQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -615,6 +658,7 @@
         <image name="button_back_smaller.png" width="100" height="100"/>
         <image name="button_pause_smaller.png" width="100" height="100"/>
         <image name="button_smaller.png" width="250" height="90"/>
+        <image name="grid_cat_smaller.png" width="150" height="150"/>
         <image name="grid_red.png" width="500" height="500"/>
         <image name="how to play.png" width="764" height="1312"/>
         <image name="score.png" width="500" height="500"/>
@@ -622,8 +666,8 @@
         <image name="timer.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eXL-Hs-ZZ9"/>
-        <segue reference="arK-F5-9Mm"/>
+        <segue reference="qsA-u0-Ryj"/>
         <segue reference="IM3-SV-jrg"/>
+        <segue reference="JoY-oV-gFU"/>
     </inferredMetricsTieBreakers>
 </document>
