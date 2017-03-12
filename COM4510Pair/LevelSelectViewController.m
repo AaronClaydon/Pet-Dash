@@ -32,7 +32,7 @@
 }
 
 -(IBAction)levelOneClicked:(id)sender {
-    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:5 andHeight:6 andStartTime:10]];
+    [self loadLevelWithModel: [[GameModel alloc] initWithWidth:5 andHeight:6 andStartTime:120]];
 }
 -(IBAction)levelTwoClicked:(id)sender {
     [self loadLevelWithModel: [[GameModel alloc] initWithWidth:6 andHeight:7 andStartTime:120]];
