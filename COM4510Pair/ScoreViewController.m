@@ -10,6 +10,7 @@
 #import "GameModel.h"
 #import "GameViewController.h"
 #import "AppDelegate.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface ScoreViewController ()
 
@@ -41,33 +42,20 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)FBPressed{
-    int seconds = self.gameModel.startTime % 60;
-    int minutes = (self.gameModel.startTime / 60) % 60;
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-    {
-        SLComposeViewController *fbPostSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbPostSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.gameModel.score, minutes, seconds]];
-        [self presentViewController:fbPostSheet animated:YES completion:nil];
-    } else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't post right now, make sure your device has an internet connection and you have at least one facebook account setup"
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
+-(IBAction)FBPressed {
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+    content.contentURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/pet-dash/id1199656030"];
+    content.quote = [NSString stringWithFormat:@"I got a score of %i in Pet Dash, come and join me!",self.gameModel.score];
+    [FBSDKShareDialog showFromViewController:self
+                                 withContent:content
+                                    delegate:nil];
 }
 
--(IBAction)TweetPressed{
-    int seconds = self.gameModel.startTime % 60;
-    int minutes = (self.gameModel.startTime / 60) % 60;
+-(IBAction)TweetPressed {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in the time of %2d:%02d , come and join me in Pet Dash!",self.gameModel.score, minutes, seconds]];
+        [tweetSheet setInitialText:[NSString stringWithFormat:@"I got a score of %i in Pet Dash, come and join me! Get it at https://itunes.apple.com/us/app/pet-dash/id1199656030",self.gameModel.score]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
     }

@@ -39,6 +39,10 @@
 		58ED2FC21E322D0A00286F7C /* grid_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 58ED2FC11E322D0A00286F7C /* grid_red.png */; };
 		930BE2081E32310300EA1545 /* testHighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 930BE2071E32310300EA1545 /* testHighScoreModel.m */; };
 		932139CD1E75B85E006BEB6E /* how to play.png in Resources */ = {isa = PBXBuildFile; fileRef = 932139CC1E75B85E006BEB6E /* how to play.png */; };
+		932139D21E75BABE006BEB6E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932139CE1E75BABE006BEB6E /* Bolts.framework */; };
+		932139D31E75BABE006BEB6E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932139CF1E75BABE006BEB6E /* FBSDKCoreKit.framework */; };
+		932139D41E75BABE006BEB6E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932139D01E75BABE006BEB6E /* FBSDKLoginKit.framework */; };
+		932139D51E75BABE006BEB6E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932139D11E75BABE006BEB6E /* FBSDKShareKit.framework */; };
 		9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9327E3361E2E5971000C5505 /* AVFoundation.framework */; };
 		9327E3441E2E6663000C5505 /* sound_bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3431E2E6663000C5505 /* sound_bird.wav */; };
 		9327E3491E2E6672000C5505 /* sound_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9327E3451E2E6672000C5505 /* sound_cat.wav */; };
@@ -115,6 +119,10 @@
 		58ED2FC11E322D0A00286F7C /* grid_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid_red.png; sourceTree = "<group>"; };
 		930BE2071E32310300EA1545 /* testHighScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testHighScoreModel.m; sourceTree = "<group>"; };
 		932139CC1E75B85E006BEB6E /* how to play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "how to play.png"; sourceTree = "<group>"; };
+		932139CE1E75BABE006BEB6E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		932139CF1E75BABE006BEB6E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		932139D01E75BABE006BEB6E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		932139D11E75BABE006BEB6E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9327E3361E2E5971000C5505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9327E3431E2E6663000C5505 /* sound_bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_bird.wav; sourceTree = "<group>"; };
 		9327E3451E2E6672000C5505 /* sound_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cat.wav; sourceTree = "<group>"; };
@@ -134,9 +142,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932139D31E75BABE006BEB6E /* FBSDKCoreKit.framework in Frameworks */,
 				939E69B91E4643A5006659BA /* GameKit.framework in Frameworks */,
+				932139D41E75BABE006BEB6E /* FBSDKLoginKit.framework in Frameworks */,
+				932139D51E75BABE006BEB6E /* FBSDKShareKit.framework in Frameworks */,
 				9327E3371E2E5971000C5505 /* AVFoundation.framework in Frameworks */,
 				582AE77C1E29154300F18D29 /* Social.framework in Frameworks */,
+				932139D21E75BABE006BEB6E /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +284,10 @@
 		939E69B71E4643A5006659BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				932139CE1E75BABE006BEB6E /* Bolts.framework */,
+				932139CF1E75BABE006BEB6E /* FBSDKCoreKit.framework */,
+				932139D01E75BABE006BEB6E /* FBSDKLoginKit.framework */,
+				932139D11E75BABE006BEB6E /* FBSDKShareKit.framework */,
 				939E69B81E4643A5006659BA /* GameKit.framework */,
 			);
 			name = Frameworks;
@@ -595,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = UZD7DQDC6Z;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,6 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = UZD7DQDC6Z;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				INFOPLIST_FILE = COM4510Pair/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
